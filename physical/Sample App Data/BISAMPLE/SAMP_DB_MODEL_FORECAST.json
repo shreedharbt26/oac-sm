@@ -17,7 +17,7 @@
       "length" : 0,
       "nullable" : false
     }, {
-      "name" : "OFFICE",
+      "name" : "OFFICE_NAME",
       "dataType" : "INT",
       "length" : 0,
       "nullable" : false
