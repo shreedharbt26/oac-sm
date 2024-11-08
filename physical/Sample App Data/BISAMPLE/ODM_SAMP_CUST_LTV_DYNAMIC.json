@@ -1,0 +1,31 @@
+{
+  "physicalTable" : {
+    "name" : "ODM_SAMP_CUST_LTV_DYNAMIC",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select Cust_key,\r\nto_number(extractValue(PREDICTION_DETAILS(DMUSER.ODM_LTV_BIN USING CUST_KEY, \r\nvalueof(NQ_SESSION.ODM_ARG_5) AS M_INCOME_LVL, \r\n'valueof(NQ_SESSION.ODM_ARG_6)' AS M_MARITAL_ST,\r\nvalueof(NQ_SESSION.ODM_ARG_7) AS M_CRDT_RATE,\r\nvalueof(NQ_SESSION.ODM_ARG_1) AS M_AGE,\r\nvalueof(NQ_SESSION.ODM_ARG_8) AS M_MONTHS_CONTACT\r\n),'Details/@node')) M_DYN_PRED_LTV_NODE,\r\n\r\nPREDICTION(DMUSER.ODM_LTV_BIN USING CUST_KEY, \r\nvalueof(NQ_SESSION.ODM_ARG_5) AS M_INCOME_LVL, \r\n'valueof(NQ_SESSION.ODM_ARG_6)' AS M_MARITAL_ST,\r\nvalueof(NQ_SESSION.ODM_ARG_7) AS M_CRDT_RATE,\r\nvalueof(NQ_SESSION.ODM_ARG_1) AS M_AGE,\r\nvalueof(NQ_SESSION.ODM_ARG_8) AS M_MONTHS_CONTACT\r\n) M_DYN_PRED_BIN,\r\n\r\nPREDICTION_PROBABILITY(DMUSER.ODM_LTV_BIN USING CUST_KEY, \r\nvalueof(NQ_SESSION.ODM_ARG_5) AS M_INCOME_LVL, \r\n'valueof(NQ_SESSION.ODM_ARG_6)' AS M_MARITAL_ST,\r\nvalueof(NQ_SESSION.ODM_ARG_7) AS M_CRDT_RATE,\r\nvalueof(NQ_SESSION.ODM_ARG_1) AS M_AGE,\r\nvalueof(NQ_SESSION.ODM_ARG_8) AS M_MONTHS_CONTACT\r\n) M_DYN_PRED_PROB\r\n\r\nfrom ODM_SAMP_CUSTOMERS_V"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "M_DYN_PRED_LTV_NODE",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CUST_KEY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "M_DYN_PRED_PROB",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "M_DYN_PRED_BIN",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    } ]
+  }
+}

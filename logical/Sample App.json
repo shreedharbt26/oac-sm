@@ -1,0 +1,8 @@
+{
+  "businessModel" : {
+    "name" : "Sample App",
+    "description" : "\r\n",
+    "tags" : [ "Project:Samp Relational" ],
+    "disable" : false
+  }
+}

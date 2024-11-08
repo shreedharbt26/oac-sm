@@ -1,0 +1,112 @@
+{
+  "physicalTable": {
+    "name": "F10 Billed Rev",
+    "description": "Reveue Billed Date Alias: Joins to the Time dimension tables on the Billed date column in the fact.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_REVENUE_F",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D01 Time Day Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Day_Dt",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D01 Time Day Grain.Calendar_Date"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Mth_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D02 Time Month Grain.Mth_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D03 Time Quarter Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Qtr_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D03 Time Quarter Grain.QTR_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Office_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D30 Offices.Office_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D60 Customers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D60 Customers.Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Shipto_Addr_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Address_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.Order_key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D80 Cust LTV (ODM)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D80 Cust LTV (ODM).CUST_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Order_Key"
+      ]
+    ]
+  }
+}

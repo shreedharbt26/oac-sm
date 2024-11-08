@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "ODM_ARG_7",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 'M_CRDT_RATE' FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "ODM_ARG_7",
+      "description" : "Used for Datamining interaction examples",
+      "value" : "'M_CRDT_RATE'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

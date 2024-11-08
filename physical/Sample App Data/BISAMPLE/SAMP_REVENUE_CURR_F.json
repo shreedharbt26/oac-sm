@@ -1,0 +1,97 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_REVENUE_CURR_F",
+    "description" : "Reveue Currency Fact table: Stores the converted fact information in different currencies.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Revenue_Aud",
+      "description" : "Revenue: Stores revenue converted to Australian Dollars as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Empl_Key",
+      "description" : "Employee Key: Joins to Empl_Key of Employees dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Prod_Key",
+      "description" : "Product Key: Joins to Prod_Key of Products dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Day_Dt",
+      "description" : "Bill Day Date: Joins to Calendar_date of Time dimension table (Day grain).",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Revenue",
+      "description" : "Revenue: Stores revenue information as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Office_Key",
+      "description" : "Office Key: Joins to Office_Key of Employees dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Currency",
+      "description" : "Currency: Stores currency information like AUD, USD, EUR..",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    }, {
+      "name" : "Cust_Key",
+      "description" : "Customer Key: Joins to Cust_Key of Customers dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Mth_Key",
+      "description" : "Bill Month Key: Joins to Mth_Key of Time dimension table (Mth grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Revenue_Usd",
+      "description" : "Revenue: Stores revenue converted to US Dollars as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Qtr_Key",
+      "description" : "Bill Quarter Key: Joins to Qtr_Key of Time dimension table (Qtr grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Order_Key",
+      "description" : "Order Number: Uniquely identifies each record in the fact table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Revenue_Eur",
+      "description" : "Revenue: Stores revenue converted to Euros as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Shipto_Addr_Key",
+      "description" : "Shipto Address Key: Joins to Address_Key column of Addresses dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Order_Key" ] ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    }
+  }
+}

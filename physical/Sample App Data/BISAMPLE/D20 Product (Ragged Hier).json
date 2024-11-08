@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D20 Product (Ragged Hier)",
+    "description": "Products dimension Alias Ragged: Stores ragged and skipped level data.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_PRODUCTS_DR",
+    "additionalKeys": [
+      [
+        "Prod_Key"
+      ]
+    ]
+  }
+}

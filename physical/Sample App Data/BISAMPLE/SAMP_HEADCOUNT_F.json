@@ -1,0 +1,25 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_HEADCOUNT_F",
+    "description" : "Headcount Fact table: Stores the headcount information at day and office grain.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Fte",
+      "description" : "Full Time Employee: Stores the fact information as an integer",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Day_Key",
+      "description" : "Day Key: Joins to Calendar_date of Time dimension table (Day grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Office_Key",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ]
+  }
+}

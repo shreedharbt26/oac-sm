@@ -1,0 +1,29 @@
+{
+  "initBlock" : {
+    "name" : "staticVariables",
+    "description" : "rpd repository static variables",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "STATIC",
+    "variables" : [ {
+      "name" : "BI_EE_HOME",
+      "description" : "This path should be the path of your OBIEE install\r\nPrevious path (11g) - '/app/oracle/biee/instances/instance1/bifoundation/OracleBIServerComponent/coreapplication_obis1'\r\nCurrent Path (12c) - /app/oracle/biee/bi/bifoundation/server/",
+      "value" : "'/app/oracle/biee/bi/bifoundation/server/'"
+    }, {
+      "name" : "DB_HOST",
+      "description" : "This host information should be the computer name (or IP) of your db host.",
+      "value" : "'localhost'"
+    }, {
+      "name" : "DB_USERNAME",
+      "description" : "This string should be the db login for BISAMPLE schema",
+      "value" : "'BISAMPLE'"
+    }, {
+      "name" : "DB_SID",
+      "description" : "This should be the SID number of your db host.",
+      "value" : "'PDBORCL'"
+    }, {
+      "name" : "DB_PORT",
+      "description" : "This should be the port number of your db host.",
+      "value" : "'1521'"
+    } ]
+  }
+}

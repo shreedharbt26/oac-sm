@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "TIMEZONE_EXAMPLE",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 'Etc/Greenwich' FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "TIMEZONE_VALUE",
+      "value" : "'Etc/Greenwich'",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

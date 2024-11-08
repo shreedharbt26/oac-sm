@@ -1,0 +1,55 @@
+{
+  "logicalTable" : {
+    "name" : "M:M Quotas Base Measures",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "8- Quota Amount",
+      "dataType" : "INT",
+      "writeable" : true,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Fact Quotas",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F30 Facts Quotas.VALUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders", "logicalLevel:Sample App.Customers (SCD Session).Customers Total", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Total", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Total", "logicalLevel:Sample App.Customers (Snowflakes).Customers Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LTS1 Fact Quotas",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F30 Facts Quotas" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Time.Month", "logicalLevel:Sample App.Offices and Channels (M:M Joins).Channel Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Sample App.Offices and Channels (M:M Joins)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Products (Level Based Hier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Products (Ragged SkipLevels Hier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Time",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

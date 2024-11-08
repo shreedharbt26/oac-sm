@@ -1,0 +1,104 @@
+{
+  "physicalTable": {
+    "name": "F11 Rev. (Mago)",
+    "description": "Reveue MonthAgo Fact Alias: Stores the previous month's fact information by joining to the Month_Ago_Wid in the Time dimension table",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_REVENUE_F",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Bill_Mth_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D02 Time Month Grain.Month_Ago_Wid"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Office_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D30 Offices.Office_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Empl_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child.Member_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D60 Customers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D60 Customers.Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Shipto_Addr_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Address_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Order_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.Order_key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D80 Cust LTV (ODM)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D80 Cust LTV (ODM).CUST_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Order_Key"
+      ]
+    ]
+  }
+}

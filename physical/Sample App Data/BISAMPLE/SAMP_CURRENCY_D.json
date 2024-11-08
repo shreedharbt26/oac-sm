@@ -1,0 +1,33 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_CURRENCY_D",
+    "description" : "Currency Dimension table: Stores currency conversion rate information at quarter grain",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "From_Curr",
+      "description" : "From Currency: Stores the 'From Currency' code",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    }, {
+      "name" : "To_Curr",
+      "description" : "To Currency: Stores the 'To currency' code",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    }, {
+      "name" : "Fx_Rate",
+      "description" : "Fx Rate: Stores FX rate as a double",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Qtr_Key",
+      "description" : "Quarter Key: Joins to Qtr_Key of Time dimension table (Qtr grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "From_Curr", "Qtr_Key", "To_Curr" ] ]
+  }
+}

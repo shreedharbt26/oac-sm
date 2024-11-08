@@ -1,0 +1,26 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_EMPL_POSTN_D",
+    "description" : "Employee Position dimension table : Stores employee position attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Postn_Level",
+      "description" : "Position Level: Stores the employee position level information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Postn_Desc",
+      "description" : "Position Description: Stores the employee position description as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Postn_Key",
+      "description" : "Position Key: Surrogate key of the employee position dimension table.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    } ]
+  }
+}

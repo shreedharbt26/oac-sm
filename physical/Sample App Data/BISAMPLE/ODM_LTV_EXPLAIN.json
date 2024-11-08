@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "ODM_LTV_EXPLAIN",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "EXPLANATORY_VALUE",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ATTRIBUTE_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : true
+    } ]
+  }
+}

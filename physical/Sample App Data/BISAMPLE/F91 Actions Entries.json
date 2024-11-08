@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "F91 Actions Entries",
+    "description": "Actions Alias: This alias is primarily used to showcase the Action framework within OBIEE. Some of the SampleApp examples will writeback to this alias using the Action framework.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_ACTIONS",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.F10 Billed Rev",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F91 Actions Entries.Order_Id",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Order_Id"
+      ]
+    ]
+  }
+}

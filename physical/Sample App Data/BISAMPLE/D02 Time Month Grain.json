@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "D02 Time Month Grain",
+    "description": "Time Dimension Alias at month grain. Stores one record for each month.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_TIME_MTH_D",
+    "additionalKeys": [
+      [
+        "Cal_Year"
+      ],
+      [
+        "Julian_Month_Num"
+      ],
+      [
+        "Mth_Key"
+      ],
+      [
+        "Month_Ago_Wid"
+      ]
+    ]
+  }
+}

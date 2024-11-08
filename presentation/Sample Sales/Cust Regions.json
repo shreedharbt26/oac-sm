@@ -1,0 +1,112 @@
+{
+  "presentationTable" : {
+    "name" : "Cust Regions",
+    "description" : "This folder contains additional Office attributes like Office Region, Country, State, City and so on.",
+    "alternateNames" : [ "Cust Region" ],
+    "presentationColumns" : [ {
+      "name" : "C50  Region",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C50  Region",
+      "alternateNames" : [ "Region" ],
+      "localization" : {
+        "localizationKey" : "C50  Region",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C50__Region)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C50__Region)"
+      }
+    }, {
+      "name" : "C51  Area",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C51  Area",
+      "alternateNames" : [ "Area" ],
+      "localization" : {
+        "localizationKey" : "C51  Area",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C51__Area)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C51__Area)"
+      }
+    }, {
+      "name" : "C52  Country Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C52  Country Name",
+      "alternateNames" : [ "Country" ],
+      "localization" : {
+        "localizationKey" : "C52  Country Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C52__Country_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C52__Country_Name)"
+      }
+    }, {
+      "name" : "C53  State Province",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C53  State Province",
+      "localization" : {
+        "localizationKey" : "C53  State Province",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C53__State_Province)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C53__State_Province)"
+      }
+    }, {
+      "name" : "C54  State Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C54  State Code",
+      "localization" : {
+        "localizationKey" : "C54  State Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C54__State_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C54__State_Code)"
+      }
+    }, {
+      "name" : "C55  City",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C55  City",
+      "alternateNames" : [ "City" ],
+      "localization" : {
+        "localizationKey" : "C55  City",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C55__City)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C55__City)"
+      }
+    }, {
+      "name" : "C56  Postal Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C56  Postal Code",
+      "localization" : {
+        "localizationKey" : "C56  Postal Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C56__Postal_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C56__Postal_Code)"
+      }
+    }, {
+      "name" : "C57  Address Line 1",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C57  Address Line 1",
+      "localization" : {
+        "localizationKey" : "C57  Address Line 1",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C57__Address_Line_1)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C57__Address_Line_1)"
+      }
+    }, {
+      "name" : "C58  Address Line 2",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C58  Address Line 2",
+      "localization" : {
+        "localizationKey" : "C58  Address Line 2",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C58__Address_Line_2)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C58__Address_Line_2)"
+      }
+    }, {
+      "name" : "C59  Establishment Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C59  Establishment Name",
+      "localization" : {
+        "localizationKey" : "C59  Establishment Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C59__Establishment_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C59__Establishment_Name)"
+      }
+    }, {
+      "name" : "C60  Full Address",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C60  Full Address",
+      "localization" : {
+        "localizationKey" : "C60  Full Address",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions_C60__Full_Address)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions_C60__Full_Address)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Cust Regions",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Regions)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Regions)"
+    }
+  }
+}

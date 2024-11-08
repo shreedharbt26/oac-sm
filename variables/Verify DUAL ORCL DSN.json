@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "Verify DUAL ORCL DSN",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT '(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=VALUEOF(DB_HOST))(PORT=VALUEOF(DB_PORT))))(CONNECT_DATA=(SERVICE_NAME=VALUEOF(DB_SID))))'\r\nFROM DUAL\r\n"
+    } ],
+    "variables" : [ {
+      "name" : "DSN",
+      "value" : "'(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=pdborcl)))'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

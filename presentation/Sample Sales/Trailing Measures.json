@@ -1,0 +1,114 @@
+{
+  "presentationTable" : {
+    "name" : "Trailing Measures",
+    "description" : "This folder contains several Rolling Months metrics based on Revenue fact.",
+    "presentationColumns" : [ {
+      "name" : "144  ---- Alias Based Modelling -------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.144  ---- Alias Based Modelling -------",
+      "localization" : {
+        "localizationKey" : "144  ---- Alias Based Modelling -------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_144__----_Alias_Based_Modelling_-------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_144__----_Alias_Based_Modelling_-------)"
+      }
+    }, {
+      "name" : "144  Trailing N Mth Rev  (Alias Based)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Rolling 3 months sum as of selected month : sum of current month plus previous two months value. For January, it gives the value of January plus December and November of the previous year",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.144  Trailing N Mth Rev  (Alias Based)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "144  Trailing N Mth Rev  (Alias Based)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_144__Trailing_N_Mth_Rev__(Alias_Based))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_144__Trailing_N_Mth_Rev__(Alias_Based))"
+      }
+    }, {
+      "name" : "145  Trailing N Mth Rev Daily Avg",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Daily average over Rolling 3 months period : Rolling 3 months sum as of selected month divided by number of days in R3M period.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.145  Trailing N Mth Rev Daily Avg",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "145  Trailing N Mth Rev Daily Avg",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_145__Trailing_N_Mth_Rev_Daily_Avg)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_145__Trailing_N_Mth_Rev_Daily_Avg)"
+      }
+    }, {
+      "name" : "146  Trailing N Mth Rev Mthly Avg",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Monthly average over Rolling 3 months period : Rolling 3 months sum as of selected month divided by 3",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.146  Trailing N Mth Rev Mthly Avg",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "146  Trailing N Mth Rev Mthly Avg",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_146__Trailing_N_Mth_Rev_Mthly_Avg)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_146__Trailing_N_Mth_Rev_Mthly_Avg)"
+      }
+    }, {
+      "name" : "147  ---- Dynamic Time Level ----------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.147  ---- Dynamic Time Level ----------",
+      "localization" : {
+        "localizationKey" : "147  ---- Dynamic Time Level ----------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_147__----_Dynamic_Time_Level_----------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_147__----_Dynamic_Time_Level_----------)"
+      }
+    }, {
+      "name" : "147  Trailing 3 Periods Rev  (Dyn Time Level)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.147  Trailing 3 Periods Rev  (Dyn Time Level)",
+      "localization" : {
+        "localizationKey" : "147  Trailing 3 Periods Rev  (Dyn Time Level)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_147__Trailing_3_Periods_Rev__(Dyn_Time_Level))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_147__Trailing_3_Periods_Rev__(Dyn_Time_Level))"
+      }
+    }, {
+      "name" : "148  Unbound Rolling Rev  (Dyn Time Level)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.148  Unbound Rolling Rev  (Dyn Time Level)",
+      "localization" : {
+        "localizationKey" : "148  Unbound Rolling Rev  (Dyn Time Level)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_148__Unbound_Rolling_Rev__(Dyn_Time_Level))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_148__Unbound_Rolling_Rev__(Dyn_Time_Level))"
+      }
+    }, {
+      "name" : "149  Spanning 4 Periods Rev N-2 to +N+1",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.149  Spanning 4 Periods Rev N-2 to +N+1",
+      "alternateNames" : [ "149  Spanning 4 Periods Rev N-2 to +N+1)" ],
+      "localization" : {
+        "localizationKey" : "149  Spanning 4 Periods Rev N-2 to +N+1",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_149__Spanning_4_Periods_Rev_N-2_to_+N+1)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_149__Spanning_4_Periods_Rev_N-2_to_+N+1)"
+      }
+    }, {
+      "name" : "117  Unbound Rolling Rev  (Alias Based)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of current month plus all the periods in history available in the database.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.117  Unbound Rolling Rev  (Alias Based)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "117  Unbound Rolling Rev  (Alias Based)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures_117__Unbound_Rolling_Rev__(Alias_Based))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures_117__Unbound_Rolling_Rev__(Alias_Based))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Trailing Measures",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Trailing_Measures)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Trailing_Measures)"
+    }
+  }
+}

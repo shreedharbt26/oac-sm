@@ -1,0 +1,104 @@
+{
+  "physicalTable": {
+    "name": "F12 Rev. (Rolling)",
+    "description": "Reveue Rolling Months Fact Alias: Stores the rolling month values of the fact. \r\nEg:- Rolling 3 months of Revenue",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_REVENUE_F",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Office_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D30 Offices.Office_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Empl_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child.Member_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D60 Customers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D60 Customers.Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Shipto_Addr_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Address_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Order_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.Order_key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D80 Cust LTV (ODM)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D80 Cust LTV (ODM).CUST_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Bill_Mth_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth.Mth_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Order_Key"
+      ]
+    ]
+  }
+}

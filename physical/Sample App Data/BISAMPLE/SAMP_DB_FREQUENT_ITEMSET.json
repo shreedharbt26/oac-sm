@@ -1,0 +1,40 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_DB_FREQUENT_ITEMSET",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT  SERIES_ID, column_value as PROD_KEY, OCCURS, SERIES_LENGTH, TOTAL_TRANX \r\nfrom (\r\nselect SERIES_ID, column_value, OCCURS, SERIES_LENGTH, TOTAL_TRANX \r\nfrom (\r\nselect rownum as SERIES_ID, ITEMSET AS PROD_KEY, SUPPORT as OCCURS , length as SERIES_LENGTH, TOTAL_TRANX\r\nfrom table(DBMS_FREQUENT_ITEMSET.FI_TRANSACTIONAL(\r\ncursor(select CUST_KEY||'-'||OFFICE_KEY||'-'||ORDER_TYPE, PROD_KEY\r\nfrom SAMP_REVENUE_F\r\nwhere bill_mth_key between valueof(NQ_SESSION.DB_FRQITEM_MTH1) and valueof(NQ_SESSION.DB_FRQITEM_MTH2) \r\n), 0.0 , valueof(NQ_SESSION.DB_FRQITEM_LO), valueof(NQ_SESSION.DB_FRQITEM_HI), null, null)) \r\n) T1, \r\ntable(T1.PROD_KEY)T2) "
+    } ],
+    "physicalColumns" : [ {
+      "name" : "PROD_KEY",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SERIES_LENGTH",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SERIES_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "TOTAL_TRANX",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "OCCURS",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    }
+  }
+}

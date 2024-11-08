@@ -1,0 +1,25 @@
+{
+  "physicalTable": {
+    "name": "D10 Product (Dynamic Table)",
+    "description": "Product Alias: Name of the underlying table is determined by the repository variable called \"DYNAMIC_PRODUCT_TABLE\". Stores product dimension attribute information",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_PRODUCTS_D",
+    "dynamicName": "variable:DUAL Prod Table.DYNAMIC_PRODUCT_TABLE",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D11 Product Images",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D11 Product Images.PRODUCT_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "LOB_Key"
+      ],
+      [
+        "Prod_Key"
+      ]
+    ]
+  }
+}

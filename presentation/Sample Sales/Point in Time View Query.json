@@ -1,0 +1,70 @@
+{
+  "presentationTable" : {
+    "name" : "Point in Time View Query",
+    "alternateNames" : [ "Point in Time Query" ],
+    "presentationColumns" : [ {
+      "name" : "QC0  Customer Number",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC0  Customer Number",
+      "localization" : {
+        "localizationKey" : "QC0  Customer Number",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC0__Customer_Number)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC0__Customer_Number)"
+      }
+    }, {
+      "name" : "QC1  Customer Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC1  Customer Name",
+      "localization" : {
+        "localizationKey" : "QC1  Customer Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC1__Customer_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC1__Customer_Name)"
+      }
+    }, {
+      "name" : "QC4  Start_Time",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC4  Start_Time",
+      "localization" : {
+        "localizationKey" : "QC4  Start_Time",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC4__Start_Time)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC4__Start_Time)"
+      }
+    }, {
+      "name" : "QC5  End_Time",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC5  End_Time",
+      "localization" : {
+        "localizationKey" : "QC5  End_Time",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC5__End_Time)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC5__End_Time)"
+      }
+    }, {
+      "name" : "QC7  Marital Status",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC7  Marital Status",
+      "localization" : {
+        "localizationKey" : "QC7  Marital Status",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC7__Marital_Status)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC7__Marital_Status)"
+      }
+    }, {
+      "name" : "QC7x Changed Marital Status",
+      "description" : "Help : \r\nStores the customer segment ID.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC7x Changed Marital Status",
+      "localization" : {
+        "localizationKey" : "QC7x Changed Marital Status",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC7x_Changed_Marital_Status)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC7x_Changed_Marital_Status)"
+      }
+    }, {
+      "name" : "QC8 Income Level",
+      "description" : "Help : \r\nStores the customer industry description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (SCD ViewQuery).QC8 Income Level",
+      "localization" : {
+        "localizationKey" : "QC8 Income Level",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query_QC8_Income_Level)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query_QC8_Income_Level)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Point in Time View Query",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Point_in_Time_View_Query)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Point_in_Time_View_Query)"
+    }
+  }
+}

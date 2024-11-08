@@ -1,0 +1,56 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_REVENUE_F_DST_QUERY",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT ORDER_KEY, ORDER_DTIME1_DB_TZ,\r\nto_char(SESSIONTIMEZONE) AS DB_TIMEZONE,'valueof(NQ_SESSION.TIMEZONE_VALUE)' AS SELECTED_TZ,\r\ncast(TO_CHAR((ORDER_DTIME1_DB_TZ AT TIME ZONE 'valueof(NQ_SESSION.TIMEZONE_VALUE)'), 'DD-MON-YYYY HH:MI:SS PM') as timestamp) AS ORDER_DTIME1_SELECTED_TZ, \r\ncast(TO_CHAR(ORDER_DTIME2_CUSTOM_TZ, 'DD-MON-YYYY HH:MI:SS PM') as timestamp) AS ORDER_DTIME2_CUSTOM_TZ, ORDER_DTIME2_TIMEZONE,\r\ncast(TO_CHAR((ORDER_DTIME2_CUSTOM_TZ AT LOCAL), 'DD-MON-YYYY HH:MI:SS pm') as timestamp) AS ORDER_DTIME2_AT_DB_TZ,\r\ncast(TO_CHAR((ORDER_DTIME2_CUSTOM_TZ AT TIME ZONE 'valueof(NQ_SESSION.TIMEZONE_VALUE)'), 'DD-MON-YYYY HH:MI:SS PM') as timestamp) AS ORDER_DTIME2_SELECTED_TZ\r\nfrom samp_revenue_f"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "ORDER_DTIME2_CUSTOM_TZ",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "DB_TIMEZONE",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_DTIME1_SELECTED_TZ",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Order_key",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_DTIME1_DB_TZ",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_DTIME2_SELECTED_TZ",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SELECTED_TZ",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_DTIME2_TIMEZONE",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_DTIME2_AT_DB_TZ",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    } ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D52 Sales Rep Position",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_EMPL_POSTN_D",
+    "additionalKeys": [
+      [
+        "Postn_Key"
+      ]
+    ]
+  }
+}

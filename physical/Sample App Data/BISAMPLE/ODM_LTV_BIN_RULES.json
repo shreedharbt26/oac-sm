@@ -1,0 +1,48 @@
+{
+  "physicalTable" : {
+    "name" : "ODM_LTV_BIN_RULES",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "NODE",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "RECORD_COUNT",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "PREDICTION",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "IS_LEAF",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "LOCAL_RULE",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "FULL_RULE",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "LOCAL_SURROGATE",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "PARENT_NODE",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    } ],
+    "additionalKeys" : [ [ "NODE" ] ]
+  }
+}

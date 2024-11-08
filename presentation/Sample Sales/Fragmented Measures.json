@@ -1,0 +1,50 @@
+{
+  "presentationTable" : {
+    "name" : "Fragmented Measures",
+    "description" : "This folder contains Quota and Forecast Amt allocations derived based on Period Ago allocation rules.",
+    "alternateNames" : [ "Federated Measures" ],
+    "presentationColumns" : [ {
+      "name" : "--- Time Based Fragmentation",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.Dummy Object (Used for Pres Headers)",
+      "alternateNames" : [ "Dummy Object (Used for Pres Headers)" ],
+      "localization" : {
+        "localizationKey" : "--- Time Based Fragmentation",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fragmented_Measures_---_Time_Based_Fragmentation)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fragmented_Measures_---_Time_Based_Fragmentation)"
+      }
+    }, {
+      "name" : "--- Dimension Based Fragmentation",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.Dummy Object (Used for Pres Headers)",
+      "alternateNames" : [ "--- Time Based Fragmentation#1" ],
+      "localization" : {
+        "localizationKey" : "--- Dimension Based Fragmentation",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fragmented_Measures_---_Dimension_Based_Fragmentation)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fragmented_Measures_---_Dimension_Based_Fragmentation)"
+      }
+    }, {
+      "name" : "5a  Target Rev  (Source A)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Fragmented Measures Targets.5a  Target Rev  (Source A)",
+      "localization" : {
+        "localizationKey" : "5a  Target Rev  (Source A)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fragmented_Measures_5a__Target_Rev__(Source_A))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fragmented_Measures_5a__Target_Rev__(Source_A))"
+      }
+    }, {
+      "name" : "5c  Total Target Rev  (Fragmented)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Fragmented Measures Targets.5c  Total Target Rev  (Fragmented)",
+      "alternateNames" : [ "5c  Target Rev  (Sum A + B)" ],
+      "localization" : {
+        "localizationKey" : "5c  Total Target Rev  (Fragmented)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fragmented_Measures_5c__Total_Target_Rev__(Fragmented))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fragmented_Measures_5c__Total_Target_Rev__(Fragmented))"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Fragmented Measures",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fragmented_Measures)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fragmented_Measures)"
+    }
+  }
+}

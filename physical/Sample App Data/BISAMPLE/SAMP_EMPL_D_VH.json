@@ -1,0 +1,45 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_EMPL_D_VH",
+    "description" : "Employee Dimension table: Stores employee dimension attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Type",
+      "description" : "Type: Stores employee type information as text",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Mgr_Id",
+      "description" : "Manager Id: Stores manager id as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "Postn_Key",
+      "description" : "Position Key: Joins to Postn_key in employee position dimension table",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Empl_Name",
+      "description" : "Employee Name: Stores employee name as a text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Employee_Key",
+      "description" : "Employee Key: Surrogate key of the employee dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Hire_Dt",
+      "description" : "Hire Date: Stores employee hire date information in date format",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Employee_Key" ] ]
+  }
+}

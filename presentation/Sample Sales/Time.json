@@ -1,0 +1,188 @@
+{
+  "presentationTable" : {
+    "name" : "Time",
+    "description" : "Time dimension attribute objects ",
+    "alternateNames" : [ "T" ],
+    "presentationColumns" : [ {
+      "name" : "T05 Per Name Year",
+      "description" : "Help :\r\nPeriod Name Year. Stores the year information in the format YYYY. Eg :- 2006",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T05 Per Name Year",
+      "alternateNames" : [ "Year" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T05 Per Name Year",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_T05_Per_Name_Year)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_T05_Per_Name_Year)"
+      }
+    }, {
+      "name" : "T00 Calendar Date",
+      "description" : "Help : \r\nStores the date information.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T00 Calendar Date",
+      "alternateNames" : [ "Date" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T00 Calendar Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_T00_Calendar_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_T00_Calendar_Date)"
+      }
+    }, {
+      "name" : "T01 Per Name Week",
+      "description" : "Help : \r\nPeriod Name Week. Stores the week information in the format YYYY Week Number. Eg :- 2006 Week 40",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T01 Per Name Week",
+      "alternateNames" : [ "Week" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T01 Per Name Week",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_T01_Per_Name_Week)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_T01_Per_Name_Week)"
+      }
+    }, {
+      "name" : "T02 Per Name Month",
+      "description" : "Help : \r\nPeriod Name Month. Stores the month information in the format YYYY / MM. Eg :- 2006 / 11",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T02 Per Name Month",
+      "alternateNames" : [ "Month" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T02 Per Name Month",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_T02_Per_Name_Month)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_T02_Per_Name_Month)"
+      }
+    }, {
+      "name" : "T03 Per Name Qtr",
+      "description" : "Help :\r\nPeriod Name Quarter. Stores the Quarter information in the format YYYY QQuarterNumber. Eg :- 2006 Q3",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T03 Per Name Qtr",
+      "alternateNames" : [ "Qtr" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T03 Per Name Qtr",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_T03_Per_Name_Qtr)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_T03_Per_Name_Qtr)"
+      }
+    }, {
+      "name" : "T04 Per Name Half",
+      "description" : "Help : \r\nPeriod Name Half. Stores the Half year information in the format YYYY HYHalfYearNumber. Eg :- 2006 HY2",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T04 Per Name Half",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T04 Per Name Half",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_T04_Per_Name_Half)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_T04_Per_Name_Half)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Fiscal Time Hierarchy",
+      "description" : "Help : \r\nPresentation hierarchy with drill path Total->Day",
+      "sourceLogicalTable" : "logicalTable:Sample App.Time",
+      "localization" : {
+        "localizationKey" : "Fiscal Time Hierarchy",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Fiscal_Time_Hierarchy)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Fiscal_Time_Hierarchy)"
+      },
+      "levels" : [ {
+        "name" : "Total Fiscal Time",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Total Time",
+        "alternateNames" : [ "Total" ],
+        "localization" : {
+          "localizationKey" : "Total Fiscal Time",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Fiscal_Time_Hierarchy_Total_Fiscal_Time)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Fiscal_Time_Hierarchy_Total_Fiscal_Time)"
+        }
+      }, {
+        "name" : "Day",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Day Detail",
+        "displayColumn" : "presentationColumn:Sample Sales.Time.T00 Calendar Date",
+        "localization" : {
+          "localizationKey" : "Day",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Fiscal_Time_Hierarchy_Day)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Fiscal_Time_Hierarchy_Day)"
+        }
+      } ]
+    }, {
+      "name" : "Time Hierarchy",
+      "description" : "Help : \r\nPresentation hierarchy with drill path Total->Year->Half->Quarter->Month->Week->Day",
+      "sourceLogicalTable" : "logicalTable:Sample App.Time",
+      "alternateNames" : [ "Time Levels" ],
+      "localization" : {
+        "localizationKey" : "Time Hierarchy",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Time_Hierarchy)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Time_Hierarchy)"
+      },
+      "levels" : [ {
+        "name" : "Total Time",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Total Time",
+        "alternateNames" : [ "Total" ],
+        "localization" : {
+          "localizationKey" : "Total Time",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Time_Hierarchy_Total_Time)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Time_Hierarchy_Total_Time)"
+        }
+      }, {
+        "name" : "Year",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Year",
+        "displayColumn" : "presentationColumn:Sample Sales.Time.T05 Per Name Year",
+        "localization" : {
+          "localizationKey" : "Year",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Time_Hierarchy_Year)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Time_Hierarchy_Year)"
+        }
+      }, {
+        "name" : "Quarter",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Quarter",
+        "displayColumn" : "presentationColumn:Sample Sales.Time.T03 Per Name Qtr",
+        "localization" : {
+          "localizationKey" : "Quarter",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Time_Hierarchy_Quarter)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Time_Hierarchy_Quarter)"
+        }
+      }, {
+        "name" : "Month",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Month",
+        "displayColumn" : "presentationColumn:Sample Sales.Time.T02 Per Name Month",
+        "localization" : {
+          "localizationKey" : "Month",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Time_Hierarchy_Month)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Time_Hierarchy_Month)"
+        }
+      }, {
+        "name" : "Day",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Time.Day Detail",
+        "displayColumn" : "presentationColumn:Sample Sales.Time.T00 Calendar Date",
+        "localization" : {
+          "localizationKey" : "Day",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Time_Hierarchy_Day)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Time_Hierarchy_Day)"
+        }
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Time",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time)"
+    }
+  }
+}

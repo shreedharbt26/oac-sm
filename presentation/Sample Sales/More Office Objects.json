@@ -1,0 +1,75 @@
+{
+  "presentationTable" : {
+    "name" : "More Office Objects",
+    "description" : "This folder contains additional Office attributes like Office Channel, Channel Attributes and so on.",
+    "presentationColumns" : [ {
+      "name" : "D1k  Office Key",
+      "description" : "Help : \r\nMarket Key is an integer that uniquely identifies each record in the Market dimension table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D1k  Office Key",
+      "localization" : {
+        "localizationKey" : "D1k  Office Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects_D1k__Office_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects_D1k__Office_Key)"
+      }
+    }, {
+      "name" : "D3k  Org Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D3k  Org Key",
+      "localization" : {
+        "localizationKey" : "D3k  Org Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects_D3k__Org_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects_D3k__Org_Key)"
+      }
+    }, {
+      "name" : "D2k  Dept Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D2k  Dept Key",
+      "localization" : {
+        "localizationKey" : "D2k  Dept Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects_D2k__Dept_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects_D2k__Dept_Key)"
+      }
+    }, {
+      "name" : "D4k  Company Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D4k  Company Key",
+      "localization" : {
+        "localizationKey" : "D4k  Company Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects_D4k__Company_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects_D4k__Company_Key)"
+      }
+    }, {
+      "name" : "D8  Office Sequence",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D8  Office Sequence",
+      "permissions" : [ {
+        "accessor" : "role:AuthenticatedUser",
+        "access" : "WRITE"
+      } ],
+      "localization" : {
+        "localizationKey" : "D8  Office Sequence",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects_D8__Office_Sequence)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects_D8__Office_Sequence)"
+      }
+    }, {
+      "name" : "D99  Total Value (Hier)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D99  Total Value (Hier)",
+      "hideIfTrue" : {
+        "expressionTemplate" : "1"
+      },
+      "localization" : {
+        "localizationKey" : "D99  Total Value (Hier)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects_D99__Total_Value_(Hier))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects_D99__Total_Value_(Hier))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "More Office Objects",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Office_Objects)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Office_Objects)"
+    }
+  }
+}

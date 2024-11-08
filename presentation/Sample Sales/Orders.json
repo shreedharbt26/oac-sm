@@ -1,0 +1,208 @@
+{
+  "presentationTable" : {
+    "name" : "Orders",
+    "description" : "Orders dimension attribute objects",
+    "alternateNames" : [ "R" ],
+    "presentationColumns" : [ {
+      "name" : "R1  Order Status",
+      "description" : "Help : \r\nStores the order status description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R1  Order Status",
+      "alternateNames" : [ "OrderStatus" ],
+      "localization" : {
+        "localizationKey" : "R1  Order Status",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_R1__Order_Status)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_R1__Order_Status)"
+      }
+    }, {
+      "name" : "R2  Order Type",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R2  Order Type",
+      "alternateNames" : [ "OrderType" ],
+      "localization" : {
+        "localizationKey" : "R2  Order Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_R2__Order_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_R2__Order_Type)"
+      }
+    }, {
+      "name" : "R3  Order Currency",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R3  Order Currency",
+      "localization" : {
+        "localizationKey" : "R3  Order Currency",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_R3__Order_Currency)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_R3__Order_Currency)"
+      }
+    }, {
+      "name" : "R5  Order Discount Rate",
+      "description" : "Help : \r\nMapped to Order date in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R5  Order Discount Rate",
+      "localization" : {
+        "localizationKey" : "R5  Order Discount Rate",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_R5__Order_Discount_Rate)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_R5__Order_Discount_Rate)"
+      }
+    }, {
+      "name" : "R0  Order Key",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R0  Order Key",
+      "alternateNames" : [ "Order" ],
+      "localization" : {
+        "localizationKey" : "R0  Order Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_R0__Order_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_R0__Order_Key)"
+      }
+    }, {
+      "name" : "R6  Transactional Order Number",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R6  Transactional Order Number",
+      "localization" : {
+        "localizationKey" : "R6  Transactional Order Number",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_R6__Transactional_Order_Number)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_R6__Transactional_Order_Number)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Orders Hierarchy",
+      "description" : "Help : \r\nPresentation hierarchy with drill path \r\nTotal->Order Status->Detail Order",
+      "sourceLogicalTable" : "logicalTable:Sample App.Orders (Facts Attributes)",
+      "localization" : {
+        "localizationKey" : "Orders Hierarchy",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Orders_Hierarchy)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Orders_Hierarchy)"
+      },
+      "levels" : [ {
+        "name" : "Total Orders",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders",
+        "alternateNames" : [ "Total" ],
+        "localization" : {
+          "localizationKey" : "Total Orders",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Orders_Hierarchy_Total_Orders)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Orders_Hierarchy_Total_Orders)"
+        }
+      }, {
+        "name" : "Order Types",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Order Type",
+        "displayColumn" : "presentationColumn:Sample Sales.Orders.R2  Order Type",
+        "localization" : {
+          "localizationKey" : "Order Types",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Orders_Hierarchy_Order_Types)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Orders_Hierarchy_Order_Types)"
+        }
+      }, {
+        "name" : "Order Status",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Order Status",
+        "displayColumn" : "presentationColumn:Sample Sales.Orders.R1  Order Status",
+        "localization" : {
+          "localizationKey" : "Order Status",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Orders_Hierarchy_Order_Status)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Orders_Hierarchy_Order_Status)"
+        }
+      }, {
+        "name" : "Detail Order",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail",
+        "displayColumn" : "presentationColumn:Sample Sales.Orders.R0  Order Key",
+        "localization" : {
+          "localizationKey" : "Detail Order",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Orders_Hierarchy_Detail_Order)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Orders_Hierarchy_Detail_Order)"
+        }
+      } ]
+    }, {
+      "name" : "Ship To Region Hier",
+      "sourceLogicalTable" : "logicalTable:Sample App.Orders (Facts Attributes)",
+      "localization" : {
+        "localizationKey" : "Ship To Region Hier",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier)"
+      },
+      "levels" : [ {
+        "name" : "All Regions",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders",
+        "alternateNames" : [ "Detail Orders" ],
+        "localization" : {
+          "localizationKey" : "All Regions",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_All_Regions)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_All_Regions)"
+        }
+      }, {
+        "name" : "Ship to Region",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A Descriptions",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R50  Region",
+        "alternateNames" : [ "Bill to Region" ],
+        "localization" : {
+          "localizationKey" : "Ship to Region",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_Region)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_Region)"
+        }
+      }, {
+        "name" : "Ship to Area",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A Area",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R51  Area",
+        "alternateNames" : [ "Area" ],
+        "localization" : {
+          "localizationKey" : "Ship to Area",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_Area)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_Area)"
+        }
+      }, {
+        "name" : "Ship to Country",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A Country",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R52  Country Name",
+        "alternateNames" : [ "Bill To Country" ],
+        "localization" : {
+          "localizationKey" : "Ship to Country",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_Country)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_Country)"
+        }
+      }, {
+        "name" : "Ship to State",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A State",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R53  State Province",
+        "alternateNames" : [ "Bill To State" ],
+        "localization" : {
+          "localizationKey" : "Ship to State",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_State)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_State)"
+        }
+      }, {
+        "name" : "Ship to City",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A City",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R55  City",
+        "alternateNames" : [ "Bill To City" ],
+        "localization" : {
+          "localizationKey" : "Ship to City",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_City)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_to_City)"
+        }
+      }, {
+        "name" : "Ship To Zip",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A Postal Code",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R56  Postal Code",
+        "localization" : {
+          "localizationKey" : "Ship To Zip",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_To_Zip)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_To_Zip)"
+        }
+      }, {
+        "name" : "Ship To Estab",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Orders (Facts Attributes).Ship To Geo A Establishment",
+        "displayColumn" : "presentationColumn:Sample Sales.Ship To Regions.R59  Establishment Name",
+        "localization" : {
+          "localizationKey" : "Ship To Estab",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_To_Estab)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Ship_To_Region_Hier_Ship_To_Estab)"
+        }
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Orders",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders)"
+    }
+  }
+}

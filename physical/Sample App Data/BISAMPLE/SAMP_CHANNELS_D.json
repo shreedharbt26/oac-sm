@@ -1,0 +1,32 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_CHANNELS_D",
+    "description" : "Channels Dimension table: Stores channel dimension attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "TOTAL_VALUE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Chnl_Attribute_1",
+      "description" : "Channel Attribute 1: Stores channel attribute 1 as a text",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : true
+    }, {
+      "name" : "Chnl_Key",
+      "description" : "Channel Key: Surrogate key of the channel dimension table.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Chnl_Name",
+      "description" : "Channel Name: Stores channel name as text",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Chnl_Key" ] ]
+  }
+}

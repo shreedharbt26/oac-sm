@@ -1,0 +1,15 @@
+{
+  "physicalTable": {
+    "name": "D58 Sales Rep (Mgr Name)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_EMPL_D_VH",
+    "additionalKeys": [
+      [
+        "Employee_Key"
+      ],
+      [
+        "Mgr_Id"
+      ]
+    ]
+  }
+}

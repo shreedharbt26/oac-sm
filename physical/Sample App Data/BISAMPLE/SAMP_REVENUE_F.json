@@ -1,0 +1,149 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_REVENUE_F",
+    "description" : "Reveue Fact table: Stores the fact information at the lowest grain.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Prod_Key",
+      "description" : "Product Key: Joins to Prod_Key of Products dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Cost_Variable",
+      "description" : "Revenue: Stores revenue information as a double.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Order_Status",
+      "description" : "Order Status: Stores order status values like '1-Booked','2-Fulfilled' and so on.",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Revenue",
+      "description" : "Revenue: Stores revenue information as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Mth_Key",
+      "description" : "Bill Month Key: Joins to Mth_Key of Time dimension table (Mth grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Day_Dt",
+      "description" : "Bill Day Date: Joins to Calendar_date of Time dimension table (Day grain).",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Order_Day_Dt",
+      "description" : "Order Day Date: Stores the information in date format.",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Units",
+      "description" : "Units: Stores units information as an integer.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Src_Order_Number",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Paid_Day_Dt",
+      "description" : "Paid Day Date: Stores the information in date format.",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Discnt_Value",
+      "description" : "Discount Value: Stores discount value as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Order_Key",
+      "description" : "Order Number: Uniquely identifies each record in the fact table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Cust_Key",
+      "description" : "Customer Key: Joins to Cust_Key column of Customers dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Qtr_Key",
+      "description" : "Bill Quarter Key: Joins to Qtr_Key of Time dimension table (Qtr grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_DTIME1_DB_TZ",
+      "description" : "Order Day Date: Stores the information in Timestamp format.",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Order_Type",
+      "description" : "Order Type:Stores order type value like 'Secure','Express' and so on.",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Office_Key",
+      "description" : "Office Key: Joins to Office_Key of Employees dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Shipto_Addr_Key",
+      "description" : "Shipto Address Key: Joins to Address_Key column of Addresses dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Discnt_Rate",
+      "description" : "Discount Rate: Stores discount rate as an integer.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Empl_Key",
+      "description" : "Employee Key: Joins to Empl_Key column of Employees dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Cost_Fixed",
+      "description" : "Revenue: Stores revenue information as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Currency",
+      "description" : "Currency: Stores currency information like AUD, USD, EUR..",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    }, {
+      "name" : "Ship_Day_Dt",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Order_Key" ] ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    }
+  }
+}

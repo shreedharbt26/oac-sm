@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D70 Orders Ship to Addresses",
+    "description": "Orders Ship To Alias: This is an alias of the Addresses dimension table which joins to the Ship_To_Address key in all the fact aliases",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_ADDRESSES_D",
+    "additionalKeys": [
+      [
+        "Address_Key"
+      ]
+    ]
+  }
+}

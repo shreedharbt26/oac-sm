@@ -1,0 +1,75 @@
+{
+  "logicalTable" : {
+    "name" : "Lookups FX",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "LOOKUP",
+    "primaryKey" : [ "From_Curr", "Qtr_Key", "To_Curr" ],
+    "logicalColumns" : [ {
+      "name" : "From_Curr",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS FX Lookups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.L1 Currency FX Lookup.From_Curr" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Fx_Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS FX Lookups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.L1 Currency FX Lookup.Fx_Rate" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qtr_Key",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS FX Lookups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.L1 Currency FX Lookup.Qtr_Key" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "To_Curr",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS FX Lookups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.L1 Currency FX Lookup.To_Curr" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LTS FX Lookups",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.L1 Currency FX Lookup" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_PRODUCTS_DR",
+    "description" : "Products dimension table Ragged: Stores ragged and skipped level data.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Prod_Key",
+      "description" : "Product Key: Surrogate key of the product dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Type",
+      "description" : "Type: Stores the product type information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : true
+    }, {
+      "name" : "Prod_Dsc",
+      "description" : "Product Description: Stores the product description information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : true
+    }, {
+      "name" : "Brand",
+      "description" : "Brand: Stores the product brand information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "LOB",
+      "description" : "LOB: Stores the product LOB information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : true
+    }, {
+      "name" : "TOTAL_VALUE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Prod_Key" ] ]
+  }
+}

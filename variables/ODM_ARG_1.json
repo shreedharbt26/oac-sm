@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "ODM_ARG_1",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 'M_AGE' FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "ODM_ARG_1",
+      "description" : "Used for Datamining interaction examples",
+      "value" : "'M_AGE'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

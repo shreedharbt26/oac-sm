@@ -1,0 +1,67 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_M_SR_HEADER",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "CONNECTION_POOL",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "CREATED_BY",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "DATE_TIME",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : true
+    }, {
+      "name" : "GUID",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "NODE_LABEL",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "NODE_PATH",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "PRIORITY",
+      "dataType" : "DOUBLE",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "SEGMENT_PATH",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "SRS_COUNT",
+      "dataType" : "DOUBLE",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "SR_CUSTOM_LABEL",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "SR_PATH",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_LEVEL",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    } ]
+  }
+}

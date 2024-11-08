@@ -1,0 +1,28 @@
+{
+  "initBlock" : {
+    "name" : "DB_FREQITEM_MTH",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 201012 FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "DB_FRQITEM_MTH1",
+      "description" : "Used for the opaque view Select statement in Database Frequent Itemset Example",
+      "value" : "201412",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    }, {
+      "name" : "DB_FRQITEM_MTH2",
+      "description" : "Used for the opaque view Select statement in Database Frequent Itemset Example",
+      "value" : "201412",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

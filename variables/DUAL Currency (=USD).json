@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "DUAL Currency (=USD)",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "Select 'USD' From Dual"
+    } ],
+    "variables" : [ {
+      "name" : "PREFERRED_CURRENCY",
+      "value" : "'USD'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

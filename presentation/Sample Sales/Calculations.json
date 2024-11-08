@@ -1,0 +1,19 @@
+{
+  "presentationTable" : {
+    "name" : "Calculations",
+    "description" : "Following folders contain various calculated metrics",
+    "alternateNames" : [ "Calculated Facts" ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Calculations",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculations)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculations)"
+    }
+  }
+}

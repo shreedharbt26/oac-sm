@@ -1,0 +1,47 @@
+{
+  "presentationTable" : {
+    "name" : "FX conversion",
+    "description" : "This folder contains simple count metrics like # of Customers, # of Products and so on.",
+    "alternateNames" : [ "CFX conversion", "Counts#1" ],
+    "presentationColumns" : [ {
+      "name" : "R4  Order Line FX Rate (Lookup Pref Curr)",
+      "description" : "Help : \r\nStores the product's color description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R4  Order Line FX Rate (Lookup Pref Curr)",
+      "localization" : {
+        "localizationKey" : "R4  Order Line FX Rate (Lookup Pref Curr)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_FX_conversion_R4__Order_Line_FX_Rate_(Lookup_Pref_Curr))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_FX_conversion_R4__Order_Line_FX_Rate_(Lookup_Pref_Curr))"
+      }
+    }, {
+      "name" : "70  Average FX Rate to Pref Currency",
+      "description" : "Help :\r\nBilled Unit Price is computed as Revenue divided by Billed Quantity",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.70  Average FX Rate to Pref Currency",
+      "localization" : {
+        "localizationKey" : "70  Average FX Rate to Pref Currency",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_FX_conversion_70__Average_FX_Rate_to_Pref_Currency)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_FX_conversion_70__Average_FX_Rate_to_Pref_Currency)"
+      }
+    }, {
+      "name" : "120  Converted Rev  (Indexcol)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.120  Converted Rev  (Indexcol)",
+      "localization" : {
+        "localizationKey" : "120  Converted Rev  (Indexcol)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_FX_conversion_120__Converted_Rev__(Indexcol))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_FX_conversion_120__Converted_Rev__(Indexcol))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "FX conversion",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_FX_conversion)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_FX_conversion)"
+    }
+  }
+}

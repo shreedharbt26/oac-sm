@@ -1,0 +1,32 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_EMPL_PARENT_CHILD_MAP",
+    "description" : "Employee Parent Child Map: Stores the employee parent child information in a specific format that is required to create parent-child hierarchies within OBIEE. For every employee, it stores the complete hierarchical path upto the root node.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Is_Leaf",
+      "description" : "Is Leaf: Flag to indicate if a member is leaf or not. Possible values are 1 or 0.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Ancestor_Key",
+      "description" : "Ancestor Key: Stores the parent information as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Member_Key",
+      "description" : "Member Key: Stores the member key information as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Distance",
+      "description" : "Distance: Stores the distance between the employee and it's ancestor. The ancestor could be the immediate parent or any other parent up in the hierarchy.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "presentationTable" : {
+    "name" : "Time Series",
+    "description" : "This folder contains several Period-To-Date and Period-Ago metrics based on Revenue fact.",
+    "presentationColumns" : [ {
+      "name" : "121  ---- Dynamic Time Level ---------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.121  ---- Dynamic Time Level ---------------------",
+      "localization" : {
+        "localizationKey" : "121  ---- Dynamic Time Level ---------------------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_121__----_Dynamic_Time_Level_---------------------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_121__----_Dynamic_Time_Level_---------------------)"
+      }
+    }, {
+      "name" : "121  Period Ago Rev",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns data as of previous month vs. month selected in the query.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.121  Period Ago Rev",
+      "localization" : {
+        "localizationKey" : "121  Period Ago Rev",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_121__Period_Ago_Rev)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_121__Period_Ago_Rev)"
+      }
+    }, {
+      "name" : "122  Rev Var to Period Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Value change to last month",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.122  Rev Var to Period Ago",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "122  Rev Var to Period Ago",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_122__Rev_Var_to_Period_Ago)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_122__Rev_Var_to_Period_Ago)"
+      }
+    }, {
+      "name" : "123  Rev Pct Var to Period Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Average % change to last month value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.123  Rev Pct Var to Period Ago",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "123  Rev Pct Var to Period Ago",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_123__Rev_Pct_Var_to_Period_Ago)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_123__Rev_Pct_Var_to_Period_Ago)"
+      }
+    }, {
+      "name" : "127  ---- Fixed Time Level ---------------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.127  ---- Fixed Time Level ---------------------------",
+      "localization" : {
+        "localizationKey" : "127  ---- Fixed Time Level ---------------------------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_127__----_Fixed_Time_Level_---------------------------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_127__----_Fixed_Time_Level_---------------------------)"
+      }
+    }, {
+      "name" : "127  Mth Ago Rev  (Fix Time Lvl)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Returns data as of previous month vs. month selected in the query.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.127  Mth Ago Rev  (Fix Time Lvl)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "127  Mth Ago Rev  (Fix Time Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_127__Mth_Ago_Rev__(Fix_Time_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_127__Mth_Ago_Rev__(Fix_Time_Lvl))"
+      }
+    }, {
+      "name" : "128  Qtr Ago Rev  (Fix Time Lvl)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Returns Quarter Ago value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.128  Qtr Ago Rev  (Fix Time Lvl)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "128  Qtr Ago Rev  (Fix Time Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_128__Qtr_Ago_Rev__(Fix_Time_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_128__Qtr_Ago_Rev__(Fix_Time_Lvl))"
+      }
+    }, {
+      "name" : "129  Year Ago Rev  (Fix Time Lvl)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Returns Year Ago value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.129  Year Ago Rev  (Fix Time Lvl)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "129  Year Ago Rev  (Fix Time Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_129__Year_Ago_Rev__(Fix_Time_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_129__Year_Ago_Rev__(Fix_Time_Lvl))"
+      }
+    }, {
+      "name" : "131  Rev Var to Qtr Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Value change to last quarter",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.131  Rev Var to Qtr Ago",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "131  Rev Var to Qtr Ago",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_131__Rev_Var_to_Qtr_Ago)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_131__Rev_Var_to_Qtr_Ago)"
+      }
+    }, {
+      "name" : "132  Rev Pct Var to Qtr Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Difference of the value of the metric in the current period with the value of the metric in the same period the previous quarter / Value of the metric in the same period of the previous quarter",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.132  Rev Pct Var to Qtr Ago",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "132  Rev Pct Var to Qtr Ago",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_132__Rev_Pct_Var_to_Qtr_Ago)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_132__Rev_Pct_Var_to_Qtr_Ago)"
+      }
+    }, {
+      "name" : "133  Rev QAgo Compounded Yrly Gwth",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- % variation to last quarter expressed in a compounded yearly % growth rate.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.133  Rev QAgo Compounded Yrly Gwth",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "133  Rev QAgo Compounded Yrly Gwth",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_133__Rev_QAgo_Compounded_Yrly_Gwth)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_133__Rev_QAgo_Compounded_Yrly_Gwth)"
+      }
+    }, {
+      "name" : "135  Qtr To Dt Rev Sum",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Sums all the values from the first day of the quarter to the current period",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.135  Qtr To Dt Rev Sum",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "135  Qtr To Dt Rev Sum",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_135__Qtr_To_Dt_Rev_Sum)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_135__Qtr_To_Dt_Rev_Sum)"
+      }
+    }, {
+      "name" : "136  Qtr Ago QTD Rev sum",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Quarter Ago Quarter-To-Date Value for the same period. For the same period in the previous quarter, it returns the sum of all the values from the first day of the quarter to that period.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.136  Qtr Ago QTD Rev sum",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "136  Qtr Ago QTD Rev sum",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_136__Qtr_Ago_QTD_Rev_sum)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_136__Qtr_Ago_QTD_Rev_sum)"
+      }
+    }, {
+      "name" : "137  QTD Rev Pct Var to Qago QTD",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Average % change of Quarter to date current value to last Quarter quarter to date value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.137  QTD Rev Pct Var to Qago QTD",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "137  QTD Rev Pct Var to Qago QTD",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_137__QTD_Rev_Pct_Var_to_Qago_QTD)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_137__QTD_Rev_Pct_Var_to_Qago_QTD)"
+      }
+    }, {
+      "name" : "1-41 ---- Alias Based Modelling -------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.Dummy Object (Used for Pres Headers)",
+      "localization" : {
+        "localizationKey" : "1-41 ---- Alias Based Modelling -------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_1-41_----_Alias_Based_Modelling_-------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_1-41_----_Alias_Based_Modelling_-------)"
+      }
+    }, {
+      "name" : "113  Mago Rev (Alias Based)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.113  Mago Rev (Alias Based)",
+      "localization" : {
+        "localizationKey" : "113  Mago Rev (Alias Based)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series_113__Mago_Rev_(Alias_Based))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series_113__Mago_Rev_(Alias_Based))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Time Series",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Time_Series)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Time_Series)"
+    }
+  }
+}

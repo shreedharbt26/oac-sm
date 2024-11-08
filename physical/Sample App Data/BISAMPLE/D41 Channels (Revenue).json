@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D41 Channels (Revenue)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_CHANNELS_D",
+    "additionalKeys": [
+      [
+        "Chnl_Key"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "presentationTable" : {
+    "name" : "Calculated Attributes",
+    "description" : "This folder contains additional Orders Dates attributes like Order Date, Billed Date, Paid Date and so on.",
+    "alternateNames" : [ "Orders Dates#1" ],
+    "presentationColumns" : [ {
+      "name" : "R21  Order to Cash Days",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R21  Order to Cash Days",
+      "localization" : {
+        "localizationKey" : "R21  Order to Cash Days",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R21__Order_to_Cash_Days)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R21__Order_to_Cash_Days)"
+      }
+    }, {
+      "name" : "R24  Order to Ship Days",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R24  Order to Ship Days",
+      "localization" : {
+        "localizationKey" : "R24  Order to Ship Days",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R24__Order_to_Ship_Days)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R24__Order_to_Ship_Days)"
+      }
+    }, {
+      "name" : "R28  Bill to Cash Days",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R28  Bill to Cash Days",
+      "localization" : {
+        "localizationKey" : "R28  Bill to Cash Days",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R28__Bill_to_Cash_Days)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R28__Bill_to_Cash_Days)"
+      }
+    }, {
+      "name" : "R22  Full Cycle Days Bin (Case)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R22  Full Cycle Days Bin (Case)",
+      "localization" : {
+        "localizationKey" : "R22  Full Cycle Days Bin (Case)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R22__Full_Cycle_Days_Bin_(Case))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R22__Full_Cycle_Days_Bin_(Case))"
+      }
+    }, {
+      "name" : "R23  Full Cycle Bucket (Evaluate)",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R23  Full Cycle Bucket (Evaluate)",
+      "localization" : {
+        "localizationKey" : "R23  Full Cycle Bucket (Evaluate)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R23__Full_Cycle_Bucket_(Evaluate))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R23__Full_Cycle_Bucket_(Evaluate))"
+      }
+    }, {
+      "name" : "R25  Ship Cycle Days Bin (Case)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R25  Ship Cycle Days Bin (Case)",
+      "localization" : {
+        "localizationKey" : "R25  Ship Cycle Days Bin (Case)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R25__Ship_Cycle_Days_Bin_(Case))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R25__Ship_Cycle_Days_Bin_(Case))"
+      }
+    }, {
+      "name" : "R26  Ship Cycle Days Bucket (Evaluate)",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R26  Ship Cycle Days Bucket (Evaluate)",
+      "localization" : {
+        "localizationKey" : "R26  Ship Cycle Days Bucket (Evaluate)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R26__Ship_Cycle_Days_Bucket_(Evaluate))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R26__Ship_Cycle_Days_Bucket_(Evaluate))"
+      }
+    }, {
+      "name" : "R29  Collect Cycle Days Bin (Case)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R29  Collect Cycle Days Bin (Case)",
+      "localization" : {
+        "localizationKey" : "R29  Collect Cycle Days Bin (Case)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R29__Collect_Cycle_Days_Bin_(Case))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R29__Collect_Cycle_Days_Bin_(Case))"
+      }
+    }, {
+      "name" : "R30  Collection Cycle Bucket (Evaluate)",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R30  Collection Cycle Bucket (Evaluate)",
+      "localization" : {
+        "localizationKey" : "R30  Collection Cycle Bucket (Evaluate)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R30__Collection_Cycle_Bucket_(Evaluate))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R30__Collection_Cycle_Bucket_(Evaluate))"
+      }
+    }, {
+      "name" : "R27  Early Shipped Mark",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R27  Early Shipped Mark",
+      "localization" : {
+        "localizationKey" : "R27  Early Shipped Mark",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R27__Early_Shipped_Mark)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R27__Early_Shipped_Mark)"
+      }
+    }, {
+      "name" : "R31  Order Size Bin",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R31  Order Size Bin",
+      "localization" : {
+        "localizationKey" : "R31  Order Size Bin",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R31__Order_Size_Bin)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R31__Order_Size_Bin)"
+      }
+    }, {
+      "name" : "R32  Order Size Bin (Orcl Function)",
+      "description" : "WIDTH_BUCKET(credit_limit, 0, 10000, 20) ",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R32  Order Size Bin (Orcl Function)",
+      "localization" : {
+        "localizationKey" : "R32  Order Size Bin (Orcl Function)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes_R32__Order_Size_Bin_(Orcl_Function))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes_R32__Order_Size_Bin_(Orcl_Function))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Calculated Attributes",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Calculated_Attributes)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Calculated_Attributes)"
+    }
+  }
+}

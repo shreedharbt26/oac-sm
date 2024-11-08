@@ -1,0 +1,14 @@
+{
+  "physicalTable": {
+    "name": "L3 Direct Physical Lookups",
+    "description": "Translation Lookups Alias: Stores lookup information in different languages for dimension attributes",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_LOOKUPS_D",
+    "additionalKeys": [
+      [
+        "Language_Key",
+        "Lookup_Key",
+        "Lookup_Type"
+      ]
+    ]
+  }
+}

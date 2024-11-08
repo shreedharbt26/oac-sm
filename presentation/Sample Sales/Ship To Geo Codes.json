@@ -1,0 +1,100 @@
+{
+  "presentationTable" : {
+    "name" : "Ship To Geo Codes",
+    "description" : "This folder contains Office Geographic details like latitude, longitude and so on.",
+    "alternateNames" : [ "Bill To Geo Codes" ],
+    "presentationColumns" : [ {
+      "name" : "R68  Region Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R68  Region Code",
+      "localization" : {
+        "localizationKey" : "R68  Region Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R68__Region_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R68__Region_Code)"
+      }
+    }, {
+      "name" : "R69  Area Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R69  Area Code",
+      "localization" : {
+        "localizationKey" : "R69  Area Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R69__Area_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R69__Area_Code)"
+      }
+    }, {
+      "name" : "R61  Geo Country Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R61  Geo Country Code",
+      "localization" : {
+        "localizationKey" : "R61  Geo Country Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R61__Geo_Country_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R61__Geo_Country_Code)"
+      }
+    }, {
+      "name" : "R62  Geo Ctry State Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R62  Geo Ctry State Name",
+      "localization" : {
+        "localizationKey" : "R62  Geo Ctry State Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R62__Geo_Ctry_State_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R62__Geo_Ctry_State_Name)"
+      }
+    }, {
+      "name" : "R63  Geo Ctry State City Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R63  Geo Ctry State City Name",
+      "localization" : {
+        "localizationKey" : "R63  Geo Ctry State City Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R63__Geo_Ctry_State_City_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R63__Geo_Ctry_State_City_Name)"
+      }
+    }, {
+      "name" : "R64  Latitude",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R64  Latitude",
+      "localization" : {
+        "localizationKey" : "R64  Latitude",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R64__Latitude)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R64__Latitude)"
+      }
+    }, {
+      "name" : "R65  Longitude",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R65  Longitude",
+      "localization" : {
+        "localizationKey" : "R65  Longitude",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R65__Longitude)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R65__Longitude)"
+      }
+    }, {
+      "name" : "R66  Lat_Long",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R66  Lat_Long",
+      "localization" : {
+        "localizationKey" : "R66  Lat_Long",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R66__Lat_Long)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R66__Lat_Long)"
+      }
+    }, {
+      "name" : "R67  Geo Postal Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R67  Geo Postal Code",
+      "localization" : {
+        "localizationKey" : "R67  Geo Postal Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R67__Geo_Postal_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R67__Geo_Postal_Code)"
+      }
+    }, {
+      "name" : "R68  Geo Establisht",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R68  Geo Establisht",
+      "localization" : {
+        "localizationKey" : "R68  Geo Establisht",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes_R68__Geo_Establisht)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes_R68__Geo_Establisht)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Ship To Geo Codes",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Geo_Codes)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Geo_Codes)"
+    }
+  }
+}

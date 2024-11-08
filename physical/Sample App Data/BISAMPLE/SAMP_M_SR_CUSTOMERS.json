@@ -1,0 +1,102 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_M_SR_CUSTOMERS",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "CHANNEL",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "GUID",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "OFFER_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "TAG_01",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_02",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_03",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_04",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_05",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_06",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_07",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_08",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_09",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_10",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_11",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_12",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_13",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_14",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TAG_15",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_LEVEL_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ]
+  }
+}

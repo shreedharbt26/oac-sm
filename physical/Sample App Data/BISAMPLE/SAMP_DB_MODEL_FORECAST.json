@@ -1,0 +1,40 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_DB_MODEL_FORECAST",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT PRODUCT, OFFICE, MONTH, REVENUE,PROJECTED_REV FROM (\r\n SELECT\r\n  PROD_KEY AS PRODUCT, OFFICE_KEY AS OFFICE, \r\n  T.JULIAN_MONTH_NUM AS MONTH,\r\n  SUM(REVENUE) REVENUE\r\nFROM SAMP_REVENUE_F A, SAMP_TIME_MTH_D T\r\nWHERE A.BILL_MTH_KEY=T.MTH_KEY\r\nGROUP BY  PROD_KEY, T.JULIAN_MONTH_NUM, OFFICE_KEY  \r\n )\r\nMODEL \r\n RETURN UPDATED ROWS\r\n DIMENSION BY (PRODUCT, OFFICE, MONTH) \r\n MEASURES ( REVENUE, CAST(NULL AS NUMBER) PROJECTED_REV) \r\nRULES UPSERT ALL\r\n(\r\nPROJECTED_REV [ANY, ANY, FOR MONTH IN (SELECT JULIAN_MONTH_NUM FROM SAMP_TIME_MTH_D WHERE JULIAN_MONTH_NUM BETWEEN 486 AND 556)] \r\n= (FLOOR( \r\n    (PRESENTV(REVENUE [CV(), CV(), CV()-1],REVENUE [CV(), CV(), CV()-1]*(1+valueof(NQ_SESSION.DB_MODEL_ARG)),\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-2],REVENUE [CV(), CV(), CV()-2]*power((1+valueof(NQ_SESSION.DB_MODEL_ARG)),2),\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-3],REVENUE [CV(), CV(), CV()-3]*POWER((1+valueof(NQ_SESSION.DB_MODEL_ARG)),3),\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-4],REVENUE [CV(), CV(), CV()-4]*POWER((1+valueof(NQ_SESSION.DB_MODEL_ARG)),4),\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-5],REVENUE [CV(), CV(), CV()-5]*POWER((1+valueof(NQ_SESSION.DB_MODEL_ARG)),5),\r\n    REVENUE [CV(), CV(), CV()-6]*power((1+valueof(NQ_SESSION.DB_MODEL_ARG)),6)))))))\r\n /  (PRESENTV(REVENUE [CV(), CV(), CV()-1],REVENUE [CV(), CV(), CV()-13],\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-2],REVENUE [CV(), CV(), CV()-14],\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-3],REVENUE [CV(), CV(), CV()-15],\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-4],REVENUE [CV(), CV(), CV()-16],\r\n    PRESENTV(REVENUE [CV(), CV(), CV()-5],REVENUE [CV(), CV(), CV()-17],\r\n    REVENUE [CV(), CV(), CV()-18]))))))\r\n * REVENUE [CV(), CV(), CV()-12]\r\n )))\r\nORDER BY 3 DESC,2,1"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "PRODUCT",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "REVENUE",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "OFFICE",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "MONTH",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PROJECTED_REV",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    }
+  }
+}

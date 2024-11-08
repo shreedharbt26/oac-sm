@@ -1,0 +1,19 @@
+{
+  "presentationTable" : {
+    "name" : "Advanced Calcs",
+    "description" : "Following folders contain various calculated metrics",
+    "alternateNames" : [ "Advanced Calculations", "Calculated Facts#2", "Special Aggs" ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Advanced Calcs",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Advanced_Calcs)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Advanced_Calcs)"
+    }
+  }
+}

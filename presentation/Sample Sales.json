@@ -1,0 +1,137 @@
+{
+  "subjectArea" : {
+    "name" : "Sample Sales",
+    "description" : "Main Subject Area for SampleApp 12c Build 805  Sample\r\n",
+    "tags" : [ "Project:Samp Relational" ],
+    "sourceBusinessModel" : "businessModel:Sample App",
+    "implicitFactColumn" : "logicalColumn:Sample App.Sales Base Measures.1- Revenue",
+    "alternateNames" : [ "A - Sample Sales" ],
+    "tableOrder" : [ {
+      "name" : "presentationTable:Sample Sales.Time",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.More Time Objects"
+      }, {
+        "name" : "presentationTable:Sample Sales.Alternate Calendars",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Julian Cal"
+        }, {
+          "name" : "presentationTable:Sample Sales.Fiscal Cal"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Products",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.Product Ragged Skipped Lvl"
+      }, {
+        "name" : "presentationTable:Sample Sales.Double Column Products"
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Offices",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.More Office Objects"
+      }, {
+        "name" : "presentationTable:Sample Sales.Office Regions",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Office Geo Codes"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Sales Person",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.More Sales Rep Objects"
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Customers",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.More Customer Objects"
+      }, {
+        "name" : "presentationTable:Sample Sales.Cust Regions",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Cust Geo Codes"
+        } ]
+      }, {
+        "name" : "presentationTable:Sample Sales.Customer SCDs",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Point in Time View Query"
+        }, {
+          "name" : "presentationTable:Sample Sales.Point in Time Session"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Orders",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.Ship To Regions",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Ship To Geo Codes"
+        } ]
+      }, {
+        "name" : "presentationTable:Sample Sales.Orders Dates",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Order Time 1 TZ Converted"
+        }, {
+          "name" : "presentationTable:Sample Sales.Order Time 2 TZ Converted"
+        } ]
+      }, {
+        "name" : "presentationTable:Sample Sales.Calculated Attributes"
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Other Objects",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.Actions Entries"
+      }, {
+        "name" : "presentationTable:Sample Sales.Mktg Segmentation"
+      }, {
+        "name" : "presentationTable:Sample Sales.Prompt LOVs"
+      } ]
+    }, {
+      "name" : "presentationTable:Sample Sales.Facts",
+      "children" : [ {
+        "name" : "presentationTable:Sample Sales.Base Facts",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Counts"
+        } ]
+      }, {
+        "name" : "presentationTable:Sample Sales.Calculations",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.Simple Calculations"
+        }, {
+          "name" : "presentationTable:Sample Sales.Time Series"
+        }, {
+          "name" : "presentationTable:Sample Sales.Trailing Measures"
+        }, {
+          "name" : "presentationTable:Sample Sales.Level Based Measures"
+        }, {
+          "name" : "presentationTable:Sample Sales.Time Span Variations"
+        } ]
+      }, {
+        "name" : "presentationTable:Sample Sales.Advanced Calcs",
+        "children" : [ {
+          "name" : "presentationTable:Sample Sales.FX conversion"
+        }, {
+          "name" : "presentationTable:Sample Sales.Hierarchy Calculations"
+        }, {
+          "name" : "presentationTable:Sample Sales.Allocations"
+        }, {
+          "name" : "presentationTable:Sample Sales.Fragmented Measures"
+        }, {
+          "name" : "presentationTable:Sample Sales.Many to Many Weighthing"
+        }, {
+          "name" : "presentationTable:Sample Sales.Preserve Dim Members"
+        }, {
+          "name" : "presentationTable:Sample Sales.Source Navigation"
+        }, {
+          "name" : "presentationTable:Sample Sales.Db Advanced Analytics"
+        } ]
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIConsumer",
+      "access" : "WRITE"
+    } ],
+    "localization" : {
+      "localizationKey" : "Sample Sales",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales)"
+    }
+  }
+}

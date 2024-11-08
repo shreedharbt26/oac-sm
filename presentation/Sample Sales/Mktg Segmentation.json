@@ -1,0 +1,33 @@
+{
+  "presentationTable" : {
+    "name" : "Mktg Segmentation",
+    "description" : "This folder contains additional Customer attribute like Key attributes, Date attributes and so on.",
+    "alternateNames" : [ "More Customer Objects#1" ],
+    "presentationColumns" : [ {
+      "name" : "X20  Cust Key (Segmentation)",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see hyperlink Marketing), and returns the customer key value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.X20  Cust Key (Segmentation)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "X20  Cust Key (Segmentation)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Mktg_Segmentation_X20__Cust_Key_(Segmentation))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Mktg_Segmentation_X20__Cust_Key_(Segmentation))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Mktg Segmentation",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Mktg_Segmentation)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Mktg_Segmentation)"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D31 Offices (Quotas)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_OFFICES_D",
+    "additionalKeys": [
+      [
+        "Office_Key"
+      ]
+    ]
+  }
+}

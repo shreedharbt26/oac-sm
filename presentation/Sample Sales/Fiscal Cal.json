@@ -1,0 +1,85 @@
+{
+  "presentationTable" : {
+    "name" : "Fiscal Cal",
+    "description" : "This folder contains additional time attributes like Calendar time attributes, Fiscal time attributes, Julian period numbers and so on.",
+    "alternateNames" : [ "Alternate Calendars#2" ],
+    "presentationColumns" : [ {
+      "name" : "T41 Fscl Week",
+      "description" : "Help : \r\nStores the Fiscal week number and is a value between 1 and 53.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T41 Fscl Week",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T41 Fscl Week",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fiscal_Cal_T41_Fscl_Week)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fiscal_Cal_T41_Fscl_Week)"
+      }
+    }, {
+      "name" : "T42 Fscl Month",
+      "description" : "Help : \r\nStores the Fiscal month number and is a value between 1 and 12.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T42 Fscl Month",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T42 Fscl Month",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fiscal_Cal_T42_Fscl_Month)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fiscal_Cal_T42_Fscl_Month)"
+      }
+    }, {
+      "name" : "T43 Fscl Qtr",
+      "description" : "Help : \r\nStores the Fiscal quarter number and is a value between 1 and 4.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T43 Fscl Qtr",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T43 Fscl Qtr",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fiscal_Cal_T43_Fscl_Qtr)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fiscal_Cal_T43_Fscl_Qtr)"
+      }
+    }, {
+      "name" : "T44 Fscl Half",
+      "description" : "Help : \r\nStores the Fiscal half year number and is either 1 or 2.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T44 Fscl Half",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T44 Fscl Half",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fiscal_Cal_T44_Fscl_Half)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fiscal_Cal_T44_Fscl_Half)"
+      }
+    }, {
+      "name" : "T45 Fscl Year",
+      "description" : "Help : \r\nStores the Fiscal Year number in the format YYYY.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T45 Fscl Year",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T45 Fscl Year",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fiscal_Cal_T45_Fscl_Year)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fiscal_Cal_T45_Fscl_Year)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Fiscal Cal",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Fiscal_Cal)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Fiscal_Cal)"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_CUST_SEGMENTS_D",
+    "description" : "Customer Segment Dimension table: Stores customer segment attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Segment_Key",
+      "description" : "Segment Key: Surrogate key of the customer segment dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Segment_Desc",
+      "description" : "Segmnent Desc: Stores customer segment description as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Segment_Key" ] ]
+  }
+}

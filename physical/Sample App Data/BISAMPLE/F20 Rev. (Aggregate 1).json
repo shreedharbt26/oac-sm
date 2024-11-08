@@ -1,0 +1,35 @@
+{
+  "physicalTable": {
+    "name": "F20 Rev. (Aggregate 1)",
+    "description": "Reveue Fact Aggregate Alias: Stores the aggregated fact information at Employee and Product grain.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_REVENUE_FA1",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Empl_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child.Member_Key"
+          }
+        ]
+      }
+    ]
+  }
+}

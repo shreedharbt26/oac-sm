@@ -1,0 +1,39 @@
+{
+  "initBlock" : {
+    "name" : "DUAL GENERIC NUM VALUE =3",
+    "description" : "This is a generic Init Block of type Number used by several variables for which init value is not important",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "Select 3 From Dual"
+    } ],
+    "variables" : [ {
+      "name" : "LOGLEVEL",
+      "value" : "3",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    }, {
+      "name" : "N_AGO_PERIODS",
+      "value" : "3",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    }, {
+      "name" : "N_TRAIL_PAST_MTHS",
+      "value" : "3",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    }, {
+      "name" : "OGS_DIST_M",
+      "description" : "Used for Geospatial interaction examples",
+      "value" : "1000",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

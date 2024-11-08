@@ -1,0 +1,48 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_ACTIONS",
+    "description" : "ZZZ - Not yet filled\r\n\r\nActions table: This table is primarily used to showcase the Action framework within OBIEE. Some of the SampleApp examples will writeback to this table using the Action framework.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Flag",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Message",
+      "dataType" : "VARCHAR",
+      "length" : 512,
+      "nullable" : false
+    }, {
+      "name" : "Timestamp",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Status",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Message_Type",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "Order_Id",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Userid",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    } ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "presentationTable" : {
+    "name" : "Double Column Products",
+    "description" : "This folder contains additional Product attributes like Product Sequence, Color, Type and so on.",
+    "alternateNames" : [ "Product Ragged Skipped Lvl#1" ],
+    "presentationColumns" : [ {
+      "name" : "P14  Brand (Dble Column)",
+      "description" : "Help : \r\nBrand: Stores the product brand information as text",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P14  Brand (Dble Column)",
+      "localization" : {
+        "localizationKey" : "P14  Brand (Dble Column)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P14__Brand_(Dble_Column))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P14__Brand_(Dble_Column))"
+      }
+    }, {
+      "name" : "P4k  Brand Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P4k  Brand Key",
+      "localization" : {
+        "localizationKey" : "P4k  Brand Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P4k__Brand_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P4k__Brand_Key)"
+      }
+    }, {
+      "name" : "P10  Product (Dble Column)",
+      "description" : "Help : \r\nProduct: Stores the product description information as text",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P10  Product (Dble Column)",
+      "localization" : {
+        "localizationKey" : "P10  Product (Dble Column)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P10__Product_(Dble_Column))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P10__Product_(Dble_Column))"
+      }
+    }, {
+      "name" : "P12  Product Type (Dble Column)",
+      "description" : "Help : \r\nProduct Type: Stores the product type information as text",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P12  Product Type (Dble Column)",
+      "localization" : {
+        "localizationKey" : "P12  Product Type (Dble Column)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P12__Product_Type_(Dble_Column))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P12__Product_Type_(Dble_Column))"
+      }
+    }, {
+      "name" : "P13  LOB (Dble Column)",
+      "description" : "Help : \r\nLOB: Stores the product LOB information as text",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P13  LOB (Dble Column)",
+      "localization" : {
+        "localizationKey" : "P13  LOB (Dble Column)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P13__LOB_(Dble_Column))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P13__LOB_(Dble_Column))"
+      }
+    }, {
+      "name" : "P7  Product Sequence",
+      "description" : "Help : \r\nStores the product's sequence number.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P7  Product Sequence",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "P7  Product Sequence",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P7__Product_Sequence)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P7__Product_Sequence)"
+      }
+    }, {
+      "name" : "P2k  Product Type Key",
+      "description" : "Help : \r\nStores the product's LOB description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P2k  Product Type Key",
+      "localization" : {
+        "localizationKey" : "P2k  Product Type Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P2k__Product_Type_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P2k__Product_Type_Key)"
+      }
+    }, {
+      "name" : "P3k  LOB Key",
+      "description" : "Help : \r\nStores the product's LOB description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P3k  LOB Key",
+      "localization" : {
+        "localizationKey" : "P3k  LOB Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P3k__LOB_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P3k__LOB_Key)"
+      }
+    }, {
+      "name" : "P99  Total Value (Hier)",
+      "description" : "Help : \r\nLOB: Stores the product LOB information as text",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Level Based Hier).P99  Total Value (Hier)",
+      "hideIfTrue" : {
+        "expressionTemplate" : "1"
+      },
+      "localization" : {
+        "localizationKey" : "P99  Total Value (Hier)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products_P99__Total_Value_(Hier))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products_P99__Total_Value_(Hier))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Double Column Products",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Double_Column_Products)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Double_Column_Products)"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_DUAL Preserve Dim Members",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "Select 'Yes' PreserveDims from DUAL"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "PreserveDims",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    } ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "presentationTable" : {
+    "name" : "Customer SCDs",
+    "presentationColumns" : [ {
+      "name" : "38  # of Cust SCD Table (Cnt Distinct)",
+      "description" : "Help :\r\n# of Customers is calculated by counting the distinct occurences of a customer in the fact table",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.38  # of Cust SCD Table (Cnt Distinct)",
+      "localization" : {
+        "localizationKey" : "38  # of Cust SCD Table (Cnt Distinct)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Customer_SCDs_38__#_of_Cust_SCD_Table_(Cnt_Distinct))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Customer_SCDs_38__#_of_Cust_SCD_Table_(Cnt_Distinct))"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Customer SCDs",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Customer_SCDs)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Customer_SCDs)"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "D82 Cust LTV Dynamic Scoring",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.ODM_SAMP_CUST_LTV_DYNAMIC",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D83 Cust LTV Dynamic Leaf Nodes",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D82 Cust LTV Dynamic Scoring.M_DYN_PRED_LTV_NODE",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D83 Cust LTV Dynamic Leaf Nodes.NODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "CUST_KEY"
+      ]
+    ]
+  }
+}

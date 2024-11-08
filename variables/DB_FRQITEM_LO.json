@@ -1,0 +1,28 @@
+{
+  "initBlock" : {
+    "name" : "DB_FRQITEM_LO",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 2 FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "DB_FRQITEM_LO",
+      "description" : "Used for the opaque view Select statement in Database Frequent Itemset Example",
+      "value" : "2",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    }, {
+      "name" : "DB_FRQITEM_HI",
+      "description" : "Used for the opaque view Select statement in Database Frequent Itemset Example",
+      "value" : "6",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "presentationTable" : {
+    "name" : "Preserve Dim Members",
+    "description" : "This folder contains various Variation metrics on Revenue like Variations to Period Ago and Time span variations.",
+    "alternateNames" : [ "Many to Many Weighthing#1" ],
+    "presentationColumns" : [ {
+      "name" : "121  Preserve Dim Members",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.121  Preserve Dim Members",
+      "alternateNames" : [ "121  Preserve Dimension Members" ],
+      "localization" : {
+        "localizationKey" : "121  Preserve Dim Members",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Preserve_Dim_Members_121__Preserve_Dim_Members)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Preserve_Dim_Members_121__Preserve_Dim_Members)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Preserve Dim Members",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Preserve_Dim_Members)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Preserve_Dim_Members)"
+    }
+  }
+}

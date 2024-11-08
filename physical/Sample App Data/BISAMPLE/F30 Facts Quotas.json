@@ -1,0 +1,50 @@
+{
+  "physicalTable": {
+    "name": "F30 Facts Quotas",
+    "description": "Quotas Fact Alias: Stores the fact information at channel, month and product grain.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_QUOTAS_F",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F30 Facts Quotas.MTH_KEY",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D02 Time Month Grain.Mth_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F30 Facts Quotas.PROD_KEY",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F30 Facts Quotas.PROD_KEY",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D42 Channels (Quotas)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F30 Facts Quotas.CHNL_KEY",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D42 Channels (Quotas).Chnl_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "PROD_KEY",
+        "MTH_KEY",
+        "CHNL_KEY"
+      ]
+    ]
+  }
+}

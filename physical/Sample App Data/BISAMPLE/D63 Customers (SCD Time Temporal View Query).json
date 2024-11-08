@@ -1,0 +1,41 @@
+{
+  "physicalTable": {
+    "name": "D63 Customers (SCD Time Temporal View Query)",
+    "description": "Customer Alias: Alias of the customer dimension table",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_CUSTOMERS_SCD_VIEWQUERY",
+    "caching": {
+      "enable": true
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D61 Customer Segments",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Segment_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D61 Customer Segments.Segment_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D62 Customers Addresses",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Address_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D62 Customers Addresses.Address_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D87 Cust LTV Facts",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Cust_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D87 Cust LTV Facts.CUST_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Cust_Key"
+      ]
+    ]
+  }
+}

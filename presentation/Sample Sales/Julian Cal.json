@@ -1,0 +1,72 @@
+{
+  "presentationTable" : {
+    "name" : "Julian Cal",
+    "description" : "This folder contains additional time attributes like Calendar time attributes, Fiscal time attributes, Julian period numbers and so on.",
+    "alternateNames" : [ "Alternate Calendars#1" ],
+    "presentationColumns" : [ {
+      "name" : "T50 Julian Day Num",
+      "description" : "Help : \r\nStores the Julian Day Number as an integer.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T50 Julian Day Num",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T50 Julian Day Num",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Julian_Cal_T50_Julian_Day_Num)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Julian_Cal_T50_Julian_Day_Num)"
+      }
+    }, {
+      "name" : "T51 Julian Week Num",
+      "description" : "Help : \r\nStores the Julian Week Number as an integer.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T51 Julian Week Num",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T51 Julian Week Num",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Julian_Cal_T51_Julian_Week_Num)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Julian_Cal_T51_Julian_Week_Num)"
+      }
+    }, {
+      "name" : "T52 Julian Month Num",
+      "description" : "Help : \r\nStores the Julian Month Number as an integer.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T52 Julian Month Num",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T52 Julian Month Num",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Julian_Cal_T52_Julian_Month_Num)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Julian_Cal_T52_Julian_Month_Num)"
+      }
+    }, {
+      "name" : "T53 Julian Qtr Num",
+      "description" : "Help : \r\nStores the Julian Quarter Number as an integer.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time.T53 Julian Qtr Num",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "T53 Julian Qtr Num",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Julian_Cal_T53_Julian_Qtr_Num)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Julian_Cal_T53_Julian_Qtr_Num)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Julian Cal",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Julian_Cal)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Julian_Cal)"
+    }
+  }
+}

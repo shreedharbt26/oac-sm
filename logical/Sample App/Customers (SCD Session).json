@@ -1,0 +1,181 @@
+{
+  "logicalTable" : {
+    "name" : "Customers (SCD Session)",
+    "description" : "This logical table maps to the physical Customer Dimension table with various attributes like Customer Name, Status, Type and so on.\r\nIt maps to 3 LTS and showcases snowflake dimension modelling.\r\nLTS1 Customers - Maps to the lowest grain of information.\r\nLTS2 Customer Segments - Maps to higher grain of information. Every customer belongs to a customer segment.\r\nLTS3 Customer Adresses - Maps to higher grain of information.\r\n",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "DIMENSION",
+    "primaryKey" : [ "SC0  Customer Number" ],
+    "logicalColumns" : [ {
+      "name" : "SC0  Customer Number",
+      "description" : "Help : \r\nCustomer Key is an integer that uniquely identifies each record in the Customer dimension table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Cust_Key" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Customers Detail"
+    }, {
+      "name" : "SC1  Customer Name",
+      "description" : "Help : \r\nCustomer Name stores the first name followed by the last name.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Name" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Customers Detail"
+    }, {
+      "name" : "SC5  End_Time",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).End_Time" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SC5  Start_Time",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Start_Time" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SC6  Credit Rate",
+      "description" : "Help : \r\nStores the Customer credit rate desription.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Crdt_Rate" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SC7  Marital Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Marital_St" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SC7x Changed Marital Status",
+      "description" : "Help : \r\nStores the customer segment ID.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Segment_Key" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SC8  Income Level",
+      "description" : "Help : \r\nStores the customer industry description.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Income_Lvl" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SC9  Cust Status Key",
+      "description" : "Help : \r\nStores the status of the customer.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Customers",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Status_Key" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LTS1 Customers",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Customers (SCD Session).Customers Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Customers Total",
+      "ragged" : false,
+      "skipped" : true,
+      "logicalLevels" : [ {
+        "name" : "Customers Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Customers Detail",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "SC0  Customer Number" ],
+        "displayKey" : "SC1  Customer Name",
+        "additionalKeys" : [ [ "SC1  Customer Name" ] ],
+        "preferredDrillPath" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Order Status" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customers (SCD Session)",
+        "description" : "Customer Dimension:\r\nType - Skipped Levels\r\nIncludes 4 drill paths\r\n1) Segment->Detail\r\n2) Region->Area->Country->State->City->Postal Code->Detail\r\n3) Geo Country->Geo State->Geo City->Geo Coordinates->Detail\r\n4) Type->Status->Detail\r\n\r\n",
+        "levels" : [ "Customers Total", "Customers Detail" ]
+      } ]
+    }
+  }
+}

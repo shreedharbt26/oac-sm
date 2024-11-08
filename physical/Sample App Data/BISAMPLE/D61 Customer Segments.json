@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D61 Customer Segments",
+    "description": "Customer Segment Dimension Alias: ",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_CUST_SEGMENTS_D",
+    "additionalKeys": [
+      [
+        "Segment_Key"
+      ]
+    ]
+  }
+}

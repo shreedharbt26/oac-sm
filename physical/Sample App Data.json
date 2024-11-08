@@ -1,0 +1,105 @@
+{
+  "database" : {
+    "name" : "Sample App Data",
+    "description" : "This datasource represents actual sales, booking and inventory data.",
+    "databaseType" : "ORACLE_DATABASE",
+    "connectionPools" : [ {
+      "name" : "Sample Relational Connection",
+      "description" : "Connection pool for Sample relational db source.\r\nInstead of editing connectivity parameters in each connection pool, update the RPD and Session variables that hold that information (Manage > Variables)\r\n\r\nYou can also replace the \r\n\"VALUEOF(NQ_SESSION.DSN)\" \r\nby the full string below :\r\n(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=VALUEOF(DB_HOST))(PORT=VALUEOF(DB_PORT))))(CONNECT_DATA=(SID=VALUEOF(DB_SID))))",
+      "connection" : "'system'.'BISAMPLE'",
+      "remoteConnection" : false,
+      "maxConnections" : 10,
+      "requiresFullyQualifedTableNames" : true,
+      "connectionTimeoutUnit" : "WHEN_QUERY_COMPLETES",
+      "multithreaded" : false,
+      "supportParams" : true,
+      "writeBackConfig" : {
+        "dbSupportsUnicode" : false,
+        "bulkInsertBufferSize" : 10240,
+        "transactionBoundary" : 0
+      }
+    }, {
+      "name" : "Sample Relational Connection Init Block",
+      "description" : "Connection pool for Sample relational db source.\r\nInstead of editing connectivity parameters in each connection pool, update the RPD and Session variables that hold that information (Manage > Variables)\r\n\r\nYou can also replace the \r\n\"VALUEOF(NQ_SESSION.DSN)\" \r\nby the full string below :\r\n(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=VALUEOF(DB_HOST))(PORT=VALUEOF(DB_PORT))))(CONNECT_DATA=(SID=VALUEOF(DB_SID))))",
+      "connection" : "'system'.'BISAMPLE'",
+      "remoteConnection" : false,
+      "maxConnections" : 10,
+      "requiresFullyQualifedTableNames" : true,
+      "connectionTimeoutUnit" : "WHEN_QUERY_COMPLETES",
+      "multithreaded" : false,
+      "supportParams" : true,
+      "writeBackConfig" : {
+        "dbSupportsUnicode" : false,
+        "bulkInsertBufferSize" : 10240,
+        "transactionBoundary" : 0
+      }
+    }, {
+      "name" : "SampleApp Init Blocks",
+      "connection" : "'system'.'BISAMPLE'",
+      "remoteConnection" : false,
+      "maxConnections" : 10,
+      "requiresFullyQualifedTableNames" : false,
+      "connectionTimeoutUnit" : "NEVER",
+      "multithreaded" : true,
+      "supportParams" : true,
+      "writeBackConfig" : {
+        "dbSupportsUnicode" : false,
+        "bulkInsertBufferSize" : 10240,
+        "transactionBoundary" : 1000,
+        "tempTablePrefix" : "TT"
+      }
+    } ],
+    "featureOverrides" : [ {
+      "name" : "GEOMETRY_AREA_SUPPORTED",
+      "value" : false
+    }, {
+      "name" : "GEOMETRY_AS_TEXT_SUPPORTED",
+      "value" : false
+    }, {
+      "name" : "GEOMETRY_DISTANCE_SUPPORTED",
+      "value" : false
+    }, {
+      "name" : "GEOMETRY_LENGTH_SUPPORTED",
+      "value" : false
+    }, {
+      "name" : "GEOMETRY_WITHIN_SUPPORTED",
+      "value" : false
+    }, {
+      "name" : "GEOMETRY_WITHIN_DISTANCE_SUPPORTED",
+      "value" : false
+    } ],
+    "virtualPrivateDatabase" : false,
+    "crmMetadataTables" : false,
+    "allowDirectDatabaseRequests" : false,
+    "allowPopulateQueries" : false,
+    "queryLimits" : [ {
+      "accessor" : "role:BIAdministrator",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 600,
+      "directDatabaseRequests" : "ALLOW"
+    }, {
+      "accessor" : "role:BIAuthor",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 600,
+      "directDatabaseRequests" : "ALLOW"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 600,
+      "directDatabaseRequests" : "ALLOW"
+    }, {
+      "accessor" : "role:BISystem",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 600,
+      "directDatabaseRequests" : "INHERIT"
+    } ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "presentationTable" : {
+    "name" : "Office Geo Codes",
+    "description" : "This folder contains Office Geographic details like latitude, longitude and so on.",
+    "alternateNames" : [ "Cust Geo Codes#1" ],
+    "presentationColumns" : [ {
+      "name" : "D61  Iso Country code3",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D61  Iso Country code3",
+      "localization" : {
+        "localizationKey" : "D61  Iso Country code3",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes_D61__Iso_Country_code3)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes_D61__Iso_Country_code3)"
+      }
+    }, {
+      "name" : "C62  Ctry Cd3 State Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.C62  Ctry Cd3 State Name",
+      "localization" : {
+        "localizationKey" : "C62  Ctry Cd3 State Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes_C62__Ctry_Cd3_State_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes_C62__Ctry_Cd3_State_Name)"
+      }
+    }, {
+      "name" : "C63  Ctry Cd3 State Name City",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.C63  Ctry Cd3 State Name City",
+      "localization" : {
+        "localizationKey" : "C63  Ctry Cd3 State Name City",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes_C63__Ctry_Cd3_State_Name_City)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes_C63__Ctry_Cd3_State_Name_City)"
+      }
+    }, {
+      "name" : "D64  Latitude",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D64  Latitude",
+      "localization" : {
+        "localizationKey" : "D64  Latitude",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes_D64__Latitude)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes_D64__Latitude)"
+      }
+    }, {
+      "name" : "D65  Longitude",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D65  Longitude",
+      "localization" : {
+        "localizationKey" : "D65  Longitude",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes_D65__Longitude)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes_D65__Longitude)"
+      }
+    }, {
+      "name" : "D67  Geo Postal Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D67  Geo Postal Code",
+      "localization" : {
+        "localizationKey" : "D67  Geo Postal Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes_D67__Geo_Postal_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes_D67__Geo_Postal_Code)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Office Geo Codes",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Geo_Codes)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Geo_Codes)"
+    }
+  }
+}

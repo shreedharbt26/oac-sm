@@ -1,0 +1,110 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_CUSTOMERS_D",
+    "description" : "Customers Dimension table: Stores customer dimension attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Gender",
+      "description" : "Income level: Stores the information in text",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Lst_Order_Dt",
+      "description" : "Last Order Date: Stores the information in date format",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Address_Key",
+      "description" : "Address Key: Joins to Address_Key of Addresses dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Marital_St",
+      "description" : "Marital Status: Stores the information in text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Cust_Key",
+      "description" : "Cust Key: Surrogate key of the customer dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Segment_Key",
+      "description" : "Segment Key: Joins to segment_key in customer segments dimension table",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Fst_Contact_Dt",
+      "description" : "First Contact Date: Stores the information in date format",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Type_Key",
+      "description" : "Type Key: Stores the information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Birth_Dt",
+      "description" : "Birth Date: Stores the information in date format",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Prev_Marital_St",
+      "description" : "Prev Marital Status: Stores the information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Income_Lvl",
+      "description" : "Income level: Stores the information in text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "TOTAL_VALUE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Name",
+      "description" : "Name: Stores the customer name in text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Crdt_Rate",
+      "description" : "Credit Rate: Stores customer credit rate information as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Status_Key",
+      "description" : "Status Key: Stores customer status as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Prev_Marital_St_Dt",
+      "description" : "Prev Marital Status Date: Stores the information in date format",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Num_Attribute",
+      "description" : "Credit Rate: Stores customer credit rate information as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Cust_Key" ] ]
+  }
+}

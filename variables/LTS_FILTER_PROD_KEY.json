@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "LTS_FILTER_PROD_KEY",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 10 FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "LTS_FILTER_PROD_KEY",
+      "value" : "10",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

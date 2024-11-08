@@ -1,0 +1,81 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_PRODUCTS_D",
+    "description" : "Products dimension table : Stores product dimension attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "LOB_Key",
+      "description" : "LOB Key: Stores product LOB key as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Type_Key",
+      "description" : "Type Key: Stores product type key as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "TOTAL_VALUE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Prod_Dsc",
+      "description" : "Product Description: Stores the product description information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Attribute_1",
+      "description" : "Attribute 1: Stores product attribute1 information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Type",
+      "description" : "Type: Stores the product type information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "LOB",
+      "description" : "LOB: Stores the product LOB information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Sequence",
+      "description" : "Sequence: Stores product sequence as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Prod_Key",
+      "description" : "Product Key: Surrogate key of the product dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Brand_Key",
+      "description" : "Brand Key: Stores product brand key as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Attribute_2",
+      "description" : "Attribute 2: Stores product attribute2 information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Brand",
+      "description" : "Brand: Stores the product brand information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Prod_Key" ] ],
+    "dynamicName" : "variable:DUAL Prod Table.DYNAMIC_PRODUCT_TABLE"
+  }
+}

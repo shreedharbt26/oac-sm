@@ -1,0 +1,148 @@
+{
+  "presentationTable" : {
+    "name" : "Base Facts",
+    "description" : "This folder contains all the base facts like Revenue, Quantity, Target, Headcount and so on. All the metrics in this folder have the aggregation type as Sum unless explicitly specified.",
+    "alternateNames" : [ "F" ],
+    "presentationColumns" : [ {
+      "name" : "1- Revenue",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.1- Revenue",
+      "alternateNames" : [ "Revenue" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "1- Revenue",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_1-_Revenue)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_1-_Revenue)"
+      }
+    }, {
+      "name" : "2- Billed Quantity",
+      "description" : "Help :\r\nBilled Quantity data. Sources from Units physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimension",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.2- Billed Quantity",
+      "alternateNames" : [ "Qty" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "2- Billed Quantity",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_2-_Billed_Quantity)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_2-_Billed_Quantity)"
+      }
+    }, {
+      "name" : "3- Discount Amount",
+      "description" : "Help :\r\nDiscount Amount data. Sources from Discount Value physical column in 'Sample Revenue Fact' table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimension",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.3- Discount Amount",
+      "localization" : {
+        "localizationKey" : "3- Discount Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_3-_Discount_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_3-_Discount_Amount)"
+      }
+    }, {
+      "name" : "4- Paid Amount",
+      "description" : "Help :\r\nPaid Amount data. Sources from Revenue column in 'Sample Revenue Fact' table joining to time using Paid time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.4- Paid Amount",
+      "alternateNames" : [ "Collections" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "4- Paid Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_4-_Paid_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_4-_Paid_Amount)"
+      }
+    }, {
+      "name" : "7- Shipped Amount",
+      "description" : "Help :\r\nBooked Amount data. Sources from Dollars column in FactsRev table joining to time using Booked time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.7- Shipped Amount",
+      "alternateNames" : [ "Shipments" ],
+      "localization" : {
+        "localizationKey" : "7- Shipped Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_7-_Shipped_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_7-_Shipped_Amount)"
+      }
+    }, {
+      "name" : "8- Booked Amount",
+      "description" : "Help :\r\nBooked Amount data. Sources from Dollars column in FactsRev table joining to time using Booked time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.8- Booked Amount",
+      "alternateNames" : [ "Bookings" ],
+      "localization" : {
+        "localizationKey" : "8- Booked Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_8-_Booked_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_8-_Booked_Amount)"
+      }
+    }, {
+      "name" : "9- Full Time Empl  (Beg Period)",
+      "description" : "Help :\r\nHeadcount (First of Time) data. Sources from Headcount column in 'Sample Headcount Fact' view. Heacount grain is Month, Office.\r\n\r\n- Returns First on Time over Time dimension and Sum of data over any other dimension.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (Beg Period)",
+      "alternateNames" : [ "09- Full Time Empl  (Beg Period)" ],
+      "localization" : {
+        "localizationKey" : "9- Full Time Empl  (Beg Period)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_9-_Full_Time_Empl__(Beg_Period))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_9-_Full_Time_Empl__(Beg_Period))"
+      }
+    }, {
+      "name" : "9- Full Time Empl  (End Period)",
+      "description" : "Help :\r\nHeadcount (Last of Time) data. Sources from Headcount column in 'Sample Headcount Fact' view. Heacount grain is Month, Office.\r\n\r\n- Returns Last on Time over Time dimension and Sum of data over any other dimension.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (End Period)",
+      "alternateNames" : [ "09- Full Time Empl  (End Period)" ],
+      "localization" : {
+        "localizationKey" : "9- Full Time Empl  (End Period)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_9-_Full_Time_Empl__(End_Period))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_9-_Full_Time_Empl__(End_Period))"
+      }
+    }, {
+      "name" : "10- Variable Costs",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.10- Variable Costs",
+      "alternateNames" : [ "Var Costs" ],
+      "localization" : {
+        "localizationKey" : "10- Variable Costs",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_10-_Variable_Costs)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_10-_Variable_Costs)"
+      }
+    }, {
+      "name" : "11- Fixed Costs",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.11- Fixed Costs",
+      "alternateNames" : [ "Fix Costs" ],
+      "localization" : {
+        "localizationKey" : "11- Fixed Costs",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_11-_Fixed_Costs)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_11-_Fixed_Costs)"
+      }
+    }, {
+      "name" : "5- Target Revenue",
+      "description" : "Help :\r\nTarget Revenue data. Sources from Revenue physical column in 'Sample Targets Fact' table joining to time using Billed time.  Target Revenue is available at the Month level grain.\r\n\r\n- Returns sum of data over any selected dimension",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Fragmented Measures Targets.5- Target Revenue",
+      "alternateNames" : [ "Target" ],
+      "localization" : {
+        "localizationKey" : "5- Target Revenue",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_5-_Target_Revenue)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_5-_Target_Revenue)"
+      }
+    }, {
+      "name" : "6- Target Quantity",
+      "description" : "Help :\r\nTarget Quantity data. Sources from Units physical column in 'Sample Targets Fact' table joining to time using Billed time.  Target Quantity is available at the Month level grain.\r\n\r\n- Returns sum of data over any selected dimension",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Fragmented Measures Targets.6- Target Quantity",
+      "localization" : {
+        "localizationKey" : "6- Target Quantity",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts_6-_Target_Quantity)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts_6-_Target_Quantity)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Base Facts",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Base_Facts)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Base_Facts)"
+    }
+  }
+}

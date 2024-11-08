@@ -1,0 +1,35 @@
+{
+  "physicalTable": {
+    "name": "F21 Rev. (Aggregate 2)",
+    "description": "Reveue Fact Aggregate Alias: Stores the aggregated fact information at Qtr and Product grain.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_REVENUE_FA2",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D03 Time Quarter Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Bill_Qtr_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D03 Time Quarter Grain.QTR_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      }
+    ]
+  }
+}

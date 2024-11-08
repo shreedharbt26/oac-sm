@@ -1,0 +1,34 @@
+{
+  "physicalTable": {
+    "name": "D04 Time Rolling Mth",
+    "description": "Time Rolling Month Alias: This is specifically used to join to the Fact Rolling alias, to derive Rolling month facts.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_TIME_MTH_D",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth",
+        "joinExpression": {
+          "expressionTemplate": "%1 >= %2",
+          "expressionObjects": [
+            "physicalColumn:Sample App Data.BISAMPLE.D04 Time Rolling Mth.Mth_Key",
+            "physicalColumn:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth.Mth_Key"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D04 Time Rolling Mth.Mth_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D02 Time Month Grain.Mth_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Mth_Key"
+      ]
+    ]
+  }
+}

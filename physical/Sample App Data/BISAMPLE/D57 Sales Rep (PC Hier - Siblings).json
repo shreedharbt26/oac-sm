@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "D57 Sales Rep (PC Hier - Siblings)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_EMPL_D_VH",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D50 Sales Rep (Parent Child Hierarchy)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D57 Sales Rep (PC Hier - Siblings).Mgr_Id",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D50 Sales Rep (Parent Child Hierarchy).Mgr_Id"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Employee_Key"
+      ],
+      [
+        "Mgr_Id"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "physicalTable": {
+    "name": "L1 Currency FX Lookup",
+    "description": "Currency Lookup Alias: Stores currency conversion rate information at quarter grain",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_CURRENCY_D"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "D80 Cust LTV (ODM)",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.ODM_SAMP_CUSTOMERS_LTV",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D81 Cust LTV Leaf Nodes",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D80 Cust LTV (ODM).M_PRED_LTV_NODE",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D81 Cust LTV Leaf Nodes.NODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D82 Cust LTV Dynamic Scoring",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D80 Cust LTV (ODM).CUST_KEY",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D82 Cust LTV Dynamic Scoring.CUST_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D86 Closure Table Cust LTV Nodes",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D80 Cust LTV (ODM).M_PRED_LTV_NODE",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D86 Closure Table Cust LTV Nodes.MEMBER_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "M_PRED_LTV_NODE"
+      ],
+      [
+        "CUST_KEY"
+      ]
+    ]
+  }
+}

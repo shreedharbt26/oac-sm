@@ -1,0 +1,16 @@
+{
+  "physicalTable": {
+    "name": "D88 DBMS Explain LTV Tabe",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.ODM_LTV_EXPLAIN",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D87 Cust LTV Facts",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      }
+    ]
+  }
+}

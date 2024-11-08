@@ -1,0 +1,11 @@
+{
+  "physicalTable": {
+    "name": "D11 Product Images",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_PROD_IMG_D",
+    "additionalKeys": [
+      [
+        "PRODUCT_ID"
+      ]
+    ]
+  }
+}

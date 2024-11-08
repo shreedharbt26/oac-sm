@@ -1,0 +1,28 @@
+{
+  "physicalTable" : {
+    "name" : "ODM_LTV_PARENT_CHILD_MAP",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "ANCESTOR_KEY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "IS_LEAF",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "MEMBER_KEY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "DISTANCE",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "MEMBER_KEY" ] ]
+  }
+}

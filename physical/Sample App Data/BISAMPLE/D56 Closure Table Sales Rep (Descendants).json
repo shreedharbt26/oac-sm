@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "D56 Closure Table Sales Rep (Descendants)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_EMPL_PARENT_CHILD_MAP",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D50 Sales Rep (Parent Child Hierarchy)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D56 Closure Table Sales Rep (Descendants).Ancestor_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D50 Sales Rep (Parent Child Hierarchy).Employee_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Member_Key"
+      ]
+    ]
+  }
+}

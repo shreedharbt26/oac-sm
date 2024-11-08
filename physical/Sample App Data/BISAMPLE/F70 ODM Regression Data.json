@@ -1,0 +1,15 @@
+{
+  "physicalTable": {
+    "name": "F70 ODM Regression Data",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.ODM_REVENUE_F_EXT",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.F10 Billed Rev",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F70 ODM Regression Data.ORDER_KEY",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Key"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "physicalTable": {
+    "name": "D54 Closure Table Sales Rep (Team Agg)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_EMPL_PARENT_CHILD_MAP",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr)",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 AND %3 > 0",
+          "expressionObjects": [
+            "physicalColumn:Sample App Data.BISAMPLE.D54 Closure Table Sales Rep (Team Agg).Member_Key",
+            "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Empl_Key",
+            "physicalColumn:Sample App Data.BISAMPLE.D54 Closure Table Sales Rep (Team Agg).Distance"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D53 Sales Rep (PC Hier - Team Agg)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D54 Closure Table Sales Rep (Team Agg).Ancestor_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D53 Sales Rep (PC Hier - Team Agg).Mgr_Id"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Member_Key"
+      ]
+    ]
+  }
+}

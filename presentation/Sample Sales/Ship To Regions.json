@@ -1,0 +1,113 @@
+{
+  "presentationTable" : {
+    "name" : "Ship To Regions",
+    "description" : "This folder contains additional Office attributes like Office Region, Country, State, City and so on.",
+    "alternateNames" : [ "Ship" ],
+    "presentationColumns" : [ {
+      "name" : "R50  Region",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R50  Region",
+      "alternateNames" : [ "Region" ],
+      "localization" : {
+        "localizationKey" : "R50  Region",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R50__Region)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R50__Region)"
+      }
+    }, {
+      "name" : "R51  Area",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R51  Area",
+      "localization" : {
+        "localizationKey" : "R51  Area",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R51__Area)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R51__Area)"
+      }
+    }, {
+      "name" : "R52  Country Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R52  Country Name",
+      "alternateNames" : [ "Country" ],
+      "localization" : {
+        "localizationKey" : "R52  Country Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R52__Country_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R52__Country_Name)"
+      }
+    }, {
+      "name" : "R53  State Province",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R53  State Province",
+      "alternateNames" : [ "State" ],
+      "localization" : {
+        "localizationKey" : "R53  State Province",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R53__State_Province)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R53__State_Province)"
+      }
+    }, {
+      "name" : "R54  State Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R54  State Code",
+      "localization" : {
+        "localizationKey" : "R54  State Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R54__State_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R54__State_Code)"
+      }
+    }, {
+      "name" : "R55  City",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R55  City",
+      "alternateNames" : [ "City" ],
+      "localization" : {
+        "localizationKey" : "R55  City",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R55__City)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R55__City)"
+      }
+    }, {
+      "name" : "R56  Postal Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R56  Postal Code",
+      "localization" : {
+        "localizationKey" : "R56  Postal Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R56__Postal_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R56__Postal_Code)"
+      }
+    }, {
+      "name" : "R57  Address 1",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R57  Address 1",
+      "localization" : {
+        "localizationKey" : "R57  Address 1",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R57__Address_1)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R57__Address_1)"
+      }
+    }, {
+      "name" : "R58  Address 2",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R58  Address 2",
+      "localization" : {
+        "localizationKey" : "R58  Address 2",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R58__Address_2)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R58__Address_2)"
+      }
+    }, {
+      "name" : "R59  Establishment Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R59  Establishment Name",
+      "localization" : {
+        "localizationKey" : "R59  Establishment Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R59__Establishment_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R59__Establishment_Name)"
+      }
+    }, {
+      "name" : "R60  Address_Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R60  Address_Key",
+      "alternateNames" : [ "Location" ],
+      "localization" : {
+        "localizationKey" : "R60  Address_Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions_R60__Address_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions_R60__Address_Key)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Ship To Regions",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Ship_To_Regions)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Ship_To_Regions)"
+    }
+  }
+}

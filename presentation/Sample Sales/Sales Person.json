@@ -1,0 +1,128 @@
+{
+  "presentationTable" : {
+    "name" : "Sales Person",
+    "description" : "Employee dimension attribute objects",
+    "alternateNames" : [ "E" ],
+    "presentationColumns" : [ {
+      "name" : "E0  Sales Rep Number",
+      "description" : "Help : \r\nStores the employee number.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E0  Sales Rep Number",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "E0  Sales Rep Number",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E0__Sales_Rep_Number)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E0__Sales_Rep_Number)"
+      }
+    }, {
+      "name" : "E1  Sales Rep Name",
+      "description" : "Help : \r\nStores the employee name as first name + last name.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E1  Sales Rep Name",
+      "alternateNames" : [ "SalesRep" ],
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "E1  Sales Rep Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E1__Sales_Rep_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E1__Sales_Rep_Name)"
+      }
+    }, {
+      "name" : "E2  Sales Rep Type",
+      "description" : "Help : \r\nStores the employee type description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E2  Sales Rep Type",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "E2  Sales Rep Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E2__Sales_Rep_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E2__Sales_Rep_Type)"
+      }
+    }, {
+      "name" : "E4  Position",
+      "description" : "Help : \r\nStores the position description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E4  Position",
+      "localization" : {
+        "localizationKey" : "E4  Position",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E4__Position)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E4__Position)"
+      }
+    }, {
+      "name" : "E6  Position Level",
+      "description" : "Help : \r\nStores the position level description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E6  Position Level",
+      "localization" : {
+        "localizationKey" : "E6  Position Level",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E6__Position_Level)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E6__Position_Level)"
+      }
+    }, {
+      "name" : "E7  Hire Date",
+      "description" : "Help : \r\nStores the employee hire date in the format MM/DD/YYYY.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E7  Hire Date",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "E7  Hire Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E7__Hire_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E7__Hire_Date)"
+      }
+    }, {
+      "name" : "E8  Manager Number",
+      "description" : "Help : \r\nStores the employee's manager number.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E8  Manager Number",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "E8  Manager Number",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E8__Manager_Number)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E8__Manager_Number)"
+      }
+    }, {
+      "name" : "E9  Manager Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E9  Manager Name",
+      "localization" : {
+        "localizationKey" : "E9  Manager Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E9__Manager_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E9__Manager_Name)"
+      }
+    }, {
+      "name" : "E10 Length Of Service",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E10 Length Of Service",
+      "localization" : {
+        "localizationKey" : "E10 Length Of Service",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_E10_Length_Of_Service)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_E10_Length_Of_Service)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Sales Rep Hierarchy",
+      "description" : "Help : \r\nPresentation hierarchy of type Parent-Child.",
+      "sourceLogicalTable" : "logicalTable:Sample App.Sales Rep (Parent Child Hier)",
+      "displayColumn" : "presentationColumn:Sample Sales.Sales Person.E1  Sales Rep Name",
+      "localization" : {
+        "localizationKey" : "Sales Rep Hierarchy",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person_Sales_Rep_Hierarchy)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person_Sales_Rep_Hierarchy)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Sales Person",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Sales_Person)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Sales_Person)"
+    }
+  }
+}

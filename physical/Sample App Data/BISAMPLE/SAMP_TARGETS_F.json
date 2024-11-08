@@ -1,0 +1,44 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_TARGETS_F",
+    "description" : "Targets fact table. Stores the target facts information at Month, Office and Product grain.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Revenue",
+      "description" : "Revenue: Stores the target revenue information as a double.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Prod_Key",
+      "description" : "Product Key: Joins to Prod_Key of Products dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Office_Key",
+      "description" : "Office Key: Joins to te Office_Key of Offices dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Units",
+      "description" : "Units: Stores the target units information as an integer.",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Qtr_Key",
+      "description" : "Bill Quarter Key: Joins to Qtr_Key of Time dimension table (Qtr grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Bill_Mth_Key",
+      "description" : "Bill Month Key: Joins the Mth_Key of Time dimension table (Mth grain).",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ]
+  }
+}

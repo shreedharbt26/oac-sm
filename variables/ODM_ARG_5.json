@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "ODM_ARG_5",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 'M_INCOME_LVL' FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "ODM_ARG_5",
+      "description" : "Used for Datamining interaction examples",
+      "value" : "'M_INCOME_LVL'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

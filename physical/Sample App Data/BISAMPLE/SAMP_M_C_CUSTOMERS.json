@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_M_C_CUSTOMERS",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "GUID",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "QUALIFIED_ID",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : false
+    } ]
+  }
+}

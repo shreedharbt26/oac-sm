@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "TIME_TEMPORAL_EXAMPLE",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT '01-JAN-13' FROM DUAL"
+    } ],
+    "variables" : [ {
+      "name" : "TIME_TEMPORAL_ASOF",
+      "value" : "'01-JAN-16'",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

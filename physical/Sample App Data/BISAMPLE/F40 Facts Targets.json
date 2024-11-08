@@ -1,0 +1,62 @@
+{
+  "physicalTable": {
+    "name": "F40 Facts Targets",
+    "description": "Targets fact Alias. Stores the target facts information at Month, Office and Product grain.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_TARGETS_F",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F40 Facts Targets.Bill_Mth_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D02 Time Month Grain.Mth_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D03 Time Quarter Grain",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F40 Facts Targets.Bill_Qtr_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D03 Time Quarter Grain.QTR_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F40 Facts Targets.Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D10 Product (Dynamic Table).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D20 Product (Ragged Hier)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F40 Facts Targets.Prod_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D20 Product (Ragged Hier).Prod_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.F40 Facts Targets.Office_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D30 Offices.Office_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Prod_Key"
+      ],
+      [
+        "Bill_Qtr_Key"
+      ],
+      [
+        "Bill_Mth_Key"
+      ],
+      [
+        "Office_Key"
+      ]
+    ]
+  }
+}

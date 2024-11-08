@@ -1,0 +1,1473 @@
+{
+  "logicalTable" : {
+    "name" : "Sales Base Measures",
+    "description" : "This logical table contains metrics like Revenue, Billed Qty, Booked Amt and Booked Qty with different types of aggregation like Sum, First on Time , Last on Time and Count Distinct. \r\nAll the metrics in this table are physically mapped to columns in the Revenue fact table.\r\n",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "1 ==== Revenue Base Metrics ========",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "1- Revenue",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Revenue" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Revenue" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Revenue" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS13 Revenue (Bridged to Channels)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F22 Rev\\. (Bridged to Channels).Revenue" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "2- Billed Quantity",
+      "description" : "Help :\r\nBilled Quantity data. Sources from Units column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Units" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Units" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Units" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Units" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "3- Discount Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Discnt_Value" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Discnt_Value" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "4- Paid Amount",
+      "description" : "Help :\r\nBooked Amount data. Sources from Dollars column in FactsRev table joining to time using Booked time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "7- Shipped Amount",
+      "description" : "Help :\r\nBooked Amount data. Sources from Dollars column in FactsRev table joining to time using Booked time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "7- Shipped Quantity",
+      "description" : "Help :\r\nBilled Quantity data. Sources from Units column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Units" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "8- Booked Amount",
+      "description" : "Help :\r\nBooked Amount data. Sources from Dollars column in FactsRev table joining to time using Booked time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "8- Booked Quantity",
+      "description" : "Help :\r\nBilled Quantity data. Sources from Units column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Units" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "10- Variable Costs",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cost_Variable" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cost_Variable" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "11- Fixed Costs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cost_Fixed" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cost_Fixed" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "2 ==== Other Base Metrics ===========",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "48 LTS Filtered Revenue",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS14 Revenue (Filtered LTS)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "71  Bridge Weighted Revenue (M:M)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS13 Revenue (Bridged to Channels)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * %2 / 100",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F22 Rev\\. (Bridged to Channels).Revenue", "physicalColumn:Sample App Data.BISAMPLE.D43 Chnls Offs Bridge (Rev).Chnl_Weighting" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "113  Mago Rev (Alias Based)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS08 Rev. (Mago Billed Dt Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F11 Rev\\. (Mago).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "114  Individual Contrib (Flat Rev Agg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS02 Revenue (Billed Dt Individual Contrib.)",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 0 THEN %2 WHEN %1 IS NULL  THEN %2 END ",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child.Distance", "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "115  Peers Rev  (Sum Siblings)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS09 Team Rev. (Billed Dt Siblings Aggr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "116  Team Rev  (Sum All)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS10 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "117  Unbound Rolling Rev  (Alias Based)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric values starting the current period to all the periods in history available in the database.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS07 Rolling Rev. (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling).Revenue" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "120  Converted Rev  (Indexcol)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS06 Converted Revenue (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " INDEXCOL( CASE  VALUEOF(NQ_SESSION.%1) WHEN 'USD' THEN 0 WHEN 'EUR' THEN 1 WHEN 'AUD' THEN 2 END , %2, %3, %4)",
+            "expressionObjects" : [ "variable:DUAL Currency (=USD).PREFERRED_CURRENCY", "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Revenue_Usd", "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Revenue_Eur", "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Revenue_Aud" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "121  Preserve Dim Members",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS15 Preserve Dim Members Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "'Y'"
+          }
+        }, {
+          "logicalTableSource" : "LTS16 Preserve Dim Members Agg",
+          "physicalExpression" : {
+            "expressionTemplate" : "'Y'"
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "30 ==== Counts ============",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "31  # of Orders  (Cnt Distinct)",
+      "description" : "Help :\r\n# of Orders is calculated by counting the distinct occurences of an order in the fact table",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "1"
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "countDistinctOverrides" : [ {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "rule" : "SUM"
+        } ],
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "32  # of Cust with Orders  (Cnt Distinct)",
+      "description" : "Help :\r\n# of Customers is calculated by counting the distinct occurences of a customer in the fact table",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "33  # of Empl with Orders  (Cnt Distinct)",
+      "description" : "Help :\r\n# of Employees is calculated by counting the distinct occurences of an employee in the fact table",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Empl_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Empl_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Empl_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Empl_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Empl_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Empl_Key" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "34  # of Offices with Orders  (Cnt Distinct)",
+      "description" : "Help :\r\n# of Markets is calculated by counting the distinct occurences of a market in the fact table",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Office_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Office_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Office_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Office_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Office_Key" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "35  # of Products with Orders  (Cnt Distinct)",
+      "description" : "Help :\r\n# of Products is calculated by counting the distinct occurences of a product in the fact table",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Prod_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Prod_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Prod_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Prod_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1).Prod_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Prod_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Prod_Key" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "38  # of Cust SCD Table (Cnt Distinct)",
+      "description" : "Help :\r\n# of Customers is calculated by counting the distinct occurences of a customer in the fact table",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "39  Order to Ship Days (Sum)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Day_Dt", "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Day_Dt", "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Order_Day_Dt", "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Order_Day_Dt", "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Day_Dt", "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Ship_Day_Dt" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "dataIsDense" : false
+      }
+    }, {
+      "name" : "== Internal Columns ========",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "Dummy Object (Used for Pres Headers)",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "X10  Dim Julian Mth Number",
+      "description" : "Help :\r\nDim Month Number data. Sources from Julian Month Number in Time dimension table. It is internally used in Rolling Period calculations.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS07 Rolling Rev. (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D04 Time Rolling Mth.Julian_Month_Num" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "X11  Fact Julian Mth Number",
+      "description" : "Help :\r\nFact Month Number data. Sources from Julian Month Number in Time dimension table. It is internally used in Rolling Period calculations.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS07 Rolling Rev. (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth.Julian_Month_Num" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "X12  Fact Mth Key",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Mth_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Mth_Key" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "X13  Fact Qtr Key",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Qtr_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS06 Converted Revenue (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Bill_Qtr_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2).Bill_Qtr_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Qtr_Key" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "X20  Cust Key (Segmentation)",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Cust_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Cust_Key" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "X03  Physical Fact Table Hit",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS02 Revenue (Billed Dt Individual Contrib.)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS06 Converted Revenue (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_CURR_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS07 Rolling Rev. (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS08 Rev. (Mago Billed Dt Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS09 Team Rev. (Billed Dt Siblings Aggr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS10 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_FA1'"
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_FA2'"
+          }
+        }, {
+          "logicalTableSource" : "LTS13 Revenue (Bridged to Channels)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS14 Revenue (Filtered LTS)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        }, {
+          "logicalTableSource" : "LTS15 Preserve Dim Members Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "'DUAL'"
+          }
+        }, {
+          "logicalTableSource" : "LTS16 Preserve Dim Members Agg",
+          "physicalExpression" : {
+            "expressionTemplate" : "'DUAL'"
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'SAMP_REVENUE_F'"
+          }
+        } ]
+      }
+    }, {
+      "name" : "X01  LTS Selected",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS01 Revenue (Billed Time Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS02 Revenue (Billed Dt Individual Contrib.)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS02 Revenue (Billed Dt Individual Contrib.)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS03 Revenue (Paid Time Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS04 Revenue (Ship Time Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS05 Revenue (Order Time Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS06 Converted Revenue (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS06 Converted Revenue (Billed Date Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS07 Rolling Rev. (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS07 Rolling Rev. (Billed Time Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS08 Rev. (Mago Billed Dt Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS08 Rev. (Mago Billed Dt Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS09 Team Rev. (Billed Dt Siblings Aggr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS09 Team Rev. (Billed Dt Siblings Aggr)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS10 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS10 Team Rev. (Billed Dt Team Agg)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS11 Rev. Aggr 1 (Prod x SalesRep)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS12 Rev. Aggr 2 (Prod x Qtr)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS13 Revenue (Bridged to Channels)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS13 Revenue (Bridged to Channels)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS14 Revenue (Filtered LTS)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS14 Revenue (Filtered LTS)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS15 Preserve Dim Members Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS15 Preserve Dim Members Detail'"
+          }
+        }, {
+          "logicalTableSource" : "LTS16 Preserve Dim Members Agg",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS16 Preserve Dim Members Agg'"
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'LTS01 Revenue (Billed Time Join)'"
+          }
+        } ]
+      }
+    }, {
+      "name" : "X02  Physical Fact Alias Hit",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS01 Revenue (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F10 Billed Rev'"
+          }
+        }, {
+          "logicalTableSource" : "LTS02 Revenue (Billed Dt Individual Contrib.)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F18 Billed Rev'"
+          }
+        }, {
+          "logicalTableSource" : "LTS03 Revenue (Paid Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F15 Rev. (Paid Dt Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS04 Revenue (Ship Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F14 Rev. (Ship Dt Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS05 Revenue (Order Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F13 Rev. (Order Dt Join)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS06 Converted Revenue (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F19 Rev. (Converted)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS07 Rolling Rev. (Billed Time Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F12 Rev. (Rolling)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS08 Rev. (Mago Billed Dt Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F12 Rev. (Mago)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS09 Team Rev. (Billed Dt Siblings Aggr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F17 Rev. (Siblings Aggr)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS10 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F16 Rev. (Team Aggr)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F20 Rev. (Aggregate 1)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F21 Rev. (Aggregate 2)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS13 Revenue (Bridged to Channels)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F22 Rev. (Bridged to Channels)'"
+          }
+        }, {
+          "logicalTableSource" : "LTS14 Revenue (Filtered LTS)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F10 Billed Rev'"
+          }
+        }, {
+          "logicalTableSource" : "LTS15 Preserve Dim Members Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F23 Preserve Dim Members Details'"
+          }
+        }, {
+          "logicalTableSource" : "LTS16 Preserve Dim Members Agg",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F24 Preserve Dim Members Agg'"
+          }
+        }, {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'F10 Billed Rev'"
+          }
+        } ]
+      }
+    }, {
+      "name" : "LTS forcing Orders Count as a Sum",
+      "description" : "Help :\r\n# of Orders is calculated by counting the distinct occurences of an order in the fact table",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS17 Revenue (Additive Orders Count)",
+          "physicalExpression" : {
+            "expressionTemplate" : "'# or Orders as Sum(1)'"
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LTS01 Revenue (Billed Time Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F10 Billed Rev" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS02 Revenue (Billed Dt Individual Contrib.)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child", "physicalTable:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib)" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib)",
+          "rightTable" : "physicalTable:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS03 Revenue (Paid Time Join)",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS04 Revenue (Ship Time Join)",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS05 Revenue (Order Time Join)",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS06 Converted Revenue (Billed Date Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F19 Rev\\. (Converted)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS07 Rolling Rev. (Billed Time Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.D04 Time Rolling Mth", "physicalTable:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling)", "physicalTable:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Sample App Data.BISAMPLE.D04 Time Rolling Mth",
+          "rightTable" : "physicalTable:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth",
+          "joinType" : "INNER",
+          "disable" : false
+        }, {
+          "leftTable" : "physicalTable:Sample App Data.BISAMPLE.F12 Rev\\. (Rolling)",
+          "rightTable" : "physicalTable:Sample App Data.BISAMPLE.F90 Facts Rolling Time Mth",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : true,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS08 Rev. (Mago Billed Dt Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F11 Rev\\. (Mago)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS09 Team Rev. (Billed Dt Siblings Aggr)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS10 Team Rev. (Billed Dt Team Agg)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS11 Rev. Aggr 1 (Prod x SalesRep)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F20 Rev\\. (Aggregate 1)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Time.Total Time", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Total", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail", "logicalLevel:Sample App.Offices and Channels (M:M Joins).Off and Chnl Total", "logicalLevel:Sample App.Offices.Offices Total", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Total", "logicalLevel:Sample App.Customers (SCD Session).Customers Total", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Total" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS12 Rev. Aggr 2 (Prod x Qtr)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F21 Rev\\. (Aggregate 2)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Total", "logicalLevel:Sample App.Offices and Channels (M:M Joins).Off and Chnl Total", "logicalLevel:Sample App.Offices.Offices Total", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Total", "logicalLevel:Sample App.Time.Quarter", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Total", "logicalLevel:Sample App.Customers (SCD Session).Customers Total", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Total" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS13 Revenue (Bridged to Channels)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.D30 Offices", "physicalTable:Sample App Data.BISAMPLE.D43 Chnls Offs Bridge (Rev)", "physicalTable:Sample App Data.BISAMPLE.F22 Rev\\. (Bridged to Channels)" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Sample App Data.BISAMPLE.D43 Chnls Offs Bridge (Rev)",
+          "rightTable" : "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+          "joinType" : "INNER",
+          "disable" : false
+        }, {
+          "leftTable" : "physicalTable:Sample App Data.BISAMPLE.F22 Rev\\. (Bridged to Channels)",
+          "rightTable" : "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Detail", "logicalLevel:Sample App.Offices and Channels (M:M Joins).Channel Detail", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS14 Revenue (Filtered LTS)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F10 Billed Rev" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 <  VALUEOF(NQ_SESSION.%2)",
+        "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Prod_Key", "variable:LTS_FILTER_PROD_KEY.LTS_FILTER_PROD_KEY" ]
+      },
+      "distinctValues" : false
+    }, {
+      "name" : "LTS15 Preserve Dim Members Detail",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F23 Preserve Dim Members Detail" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS16 Preserve Dim Members Agg",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F24 Preserve Dim Members Agg" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Time.Month", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS17 Revenue (Additive Orders Count)",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F10 Billed Rev" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Detail", "logicalLevel:Sample App.Customers (Snowflakes).Customers Detail", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Detail", "logicalLevel:Sample App.Customers (SCD Session).Customers Detail", "logicalLevel:Sample App.Time.Day Detail", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Detail", "logicalLevel:Sample App.Offices.Offices Detail", "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail", "logicalLevel:Sample App.Products (Level Based Hier).Products Detail", "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Sample App.Customers (SCD Session)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Customers (SCD ViewQuery)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Customers (Snowflakes)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Offices and Channels (M:M Joins)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Offices",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Orders (Facts Attributes)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Orders (TimeZone Converted)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Products (Level Based Hier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE",
+      "drivingTable" : "logicalTable:Sample App.Products (Level Based Hier)"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Products (Ragged SkipLevels Hier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Sales Rep (Parent Child Hier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Sample App.Time",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "presentationTable" : {
+    "name" : "Source Navigation",
+    "description" : "This folder contains various Variation metrics on Revenue like Variations to Period Ago and Time span variations.",
+    "alternateNames" : [ "Preserve Dim Members#1" ],
+    "presentationColumns" : [ {
+      "name" : "X03  Physical Fact Table Hit",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.X03  Physical Fact Table Hit",
+      "localization" : {
+        "localizationKey" : "X03  Physical Fact Table Hit",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Source_Navigation_X03__Physical_Fact_Table_Hit)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Source_Navigation_X03__Physical_Fact_Table_Hit)"
+      }
+    }, {
+      "name" : "X01  LTS Selected",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.X01  LTS Selected",
+      "localization" : {
+        "localizationKey" : "X01  LTS Selected",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Source_Navigation_X01__LTS_Selected)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Source_Navigation_X01__LTS_Selected)"
+      }
+    }, {
+      "name" : "X02  Physical Fact Alias Hit",
+      "description" : "Help :\r\nThis object should not be used in reports queries, it is used for segmentation metadata purposes (see answers hyperlink More Products->Marketing), and returns the customer key value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.X02  Physical Fact Alias Hit",
+      "localization" : {
+        "localizationKey" : "X02  Physical Fact Alias Hit",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Source_Navigation_X02__Physical_Fact_Alias_Hit)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Source_Navigation_X02__Physical_Fact_Alias_Hit)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Source Navigation",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Source_Navigation)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Source_Navigation)"
+    }
+  }
+}

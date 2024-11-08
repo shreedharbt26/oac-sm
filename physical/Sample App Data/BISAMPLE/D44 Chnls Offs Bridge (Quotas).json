@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "D44 Chnls Offs Bridge (Quotas)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_BRIDGE_TABLE",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D31 Offices (Quotas)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D44 Chnls Offs Bridge (Quotas).Office_key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D31 Offices (Quotas).Office_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D42 Channels (Quotas)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D44 Chnls Offs Bridge (Quotas).Chnl_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D42 Channels (Quotas).Chnl_Key"
+          }
+        ]
+      }
+    ]
+  }
+}

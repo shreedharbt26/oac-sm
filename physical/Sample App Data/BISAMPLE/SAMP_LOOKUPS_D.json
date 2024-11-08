@@ -1,0 +1,32 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_LOOKUPS_D",
+    "description" : "Lookups dimension table : Stores lookup information for various dimension attributes in different languages",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Lookup_Dsc",
+      "description" : "Lookup Description: Stores the description of a dimension attribute in a specific language",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Lookup_Type",
+      "description" : "Lookup Type: Stores the name of the dimension attribute. Some possible values are 'Marital Status', 'Customer Type' and so on.",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Language_Key",
+      "description" : "Language Key: Stores the language information in short form like 'en', 'fr', 'es' and so on.",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Lookup_Key",
+      "description" : "Lookup Key: Stores the key value of a dimension attribute in a specific language",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    } ]
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "presentationTable" : {
+    "name" : "Level Based Measures",
+    "description" : "This folder contains Revenue at a specific level of a dimension like Revenue at Month, Revenue at Year, Revenue for All Products and so on.",
+    "presentationColumns" : [ {
+      "name" : "150  ---- Time Level Based ---------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.150  ---- Time Level Based ---------",
+      "localization" : {
+        "localizationKey" : "150  ---- Time Level Based ---------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_150__----_Time_Level_Based_---------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_150__----_Time_Level_Based_---------)"
+      }
+    }, {
+      "name" : "150  Rev  (Full Mth Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric value for the full month. This aggregation is always calculated at the month level.. For example, when viewed against Week level, it shows the same total month's value for all the weeks in that month",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.150  Rev  (Full Mth Sum)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "150  Rev  (Full Mth Sum)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_150__Rev__(Full_Mth_Sum))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_150__Rev__(Full_Mth_Sum))"
+      }
+    }, {
+      "name" : "151  Rev  (Full Qtr Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric value for the full quarter. This aggregation is always calculated at the quarter level. When viewed against Month or Week level, it shows the quarter's value for all the weeks and months in that quarter.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.151  Rev  (Full Qtr Sum)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "151  Rev  (Full Qtr Sum)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_151__Rev__(Full_Qtr_Sum))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_151__Rev__(Full_Qtr_Sum))"
+      }
+    }, {
+      "name" : "152  Rev  (Full Year Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric value for the full year. This aggregation is always calculated at the year level. When viewed against quarter, month or week level, it shows the year's value for all the quarters, month, and weeks in that year.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.152  Rev  (Full Year Sum)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "152  Rev  (Full Year Sum)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_152__Rev__(Full_Year_Sum))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_152__Rev__(Full_Year_Sum))"
+      }
+    }, {
+      "name" : "153  Rev  (Mago Full Mth Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Full month's value of the metric for the previous month. This aggregation is always calculated at the month level. For example, when viewed against Week level, it shows the same total month's value for all the weeks in that month.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.153  Rev  (Mago Full Mth Sum)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "153  Rev  (Mago Full Mth Sum)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_153__Rev__(Mago_Full_Mth_Sum))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_153__Rev__(Mago_Full_Mth_Sum))"
+      }
+    }, {
+      "name" : "154  Rev  (Yago Full Mth Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Full month's value of the metric for the same month in the previous year. This aggregation is always calculated at the year level. For example, when viewed against Week level, it shows the same total month's value for all the weeks in that month.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.154  Rev  (Yago Full Mth Sum)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "154  Rev  (Yago Full Mth Sum)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_154__Rev__(Yago_Full_Mth_Sum))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_154__Rev__(Yago_Full_Mth_Sum))"
+      }
+    }, {
+      "name" : "155  Rev  (Yago Full Year Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Full year's value of the metric for the previous year. This aggregation is always calculated at the year level",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.155  Rev  (Yago Full Year Sum)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "155  Rev  (Yago Full Year Sum)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_155__Rev__(Yago_Full_Year_Sum))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_155__Rev__(Yago_Full_Year_Sum))"
+      }
+    }, {
+      "name" : "160  ---- Other Dims Level Based ---------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.160  ---- Other Dims Level Based ---------",
+      "localization" : {
+        "localizationKey" : "160  ---- Other Dims Level Based ---------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_160__----_Other_Dims_Level_Based_---------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_160__----_Other_Dims_Level_Based_---------)"
+      }
+    }, {
+      "name" : "160  Rev  (Sum for All Customers)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric for all the Customers. It always returns the value at Total level irrespective of the level within the Customer dimension that is used in the query.\r\n",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.160  Rev  (Sum for All Customers)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "160  Rev  (Sum for All Customers)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_160__Rev__(Sum_for_All_Customers))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_160__Rev__(Sum_for_All_Customers))"
+      }
+    }, {
+      "name" : "161  Rev  (Sum for All Offices)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric for all the Offices. It always returns the value at Total level irrespective of the level within the Office dimension that is used in the query.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.161  Rev  (Sum for All Offices)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "161  Rev  (Sum for All Offices)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_161__Rev__(Sum_for_All_Offices))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_161__Rev__(Sum_for_All_Offices))"
+      }
+    }, {
+      "name" : "162  Rev  (Sum for All Products)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric for all the Products. It always returns the value at Total level irrespective of the level within the Product dimension that is used in the query.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.162  Rev  (Sum for All Products)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "162  Rev  (Sum for All Products)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_162__Rev__(Sum_for_All_Products))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_162__Rev__(Sum_for_All_Products))"
+      }
+    }, {
+      "name" : "163  Rev  (Sum for All Employees)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric for all the Employees. It always returns the value at Total level irrespective of the level within the Employee dimension that is used in the query.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.163  Rev  (Sum for All Employees)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "163  Rev  (Sum for All Employees)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_163__Rev__(Sum_for_All_Employees))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_163__Rev__(Sum_for_All_Employees))"
+      }
+    }, {
+      "name" : "164  Rev  (Sum for All Orders)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the Customers. It always returns the value at Total level irrespective of the level within the Customer dimension that is used in the query",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.164  Rev  (Sum for All Orders)",
+      "localization" : {
+        "localizationKey" : "164  Rev  (Sum for All Orders)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_164__Rev__(Sum_for_All_Orders))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_164__Rev__(Sum_for_All_Orders))"
+      }
+    }, {
+      "name" : "165  Rev  (Sum for All Dims But Time)",
+      "description" : "Help :\r\nRevenue data. Sources from Revenue physical column in 'Sample Revenue Fact' table joining to time using Billed time. \r\n\r\n- Sum of the metric for all the dimensions except Time. It always returns the value at the Total level when viewed against all the dimensions except time.  When viewed against Time, it returns the value at that level.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Time Series and Level Based Examples.165  Rev  (Sum for All Dims But Time)",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "165  Rev  (Sum for All Dims But Time)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures_165__Rev__(Sum_for_All_Dims_But_Time))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures_165__Rev__(Sum_for_All_Dims_But_Time))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Level Based Measures",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Level_Based_Measures)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Level_Based_Measures)"
+    }
+  }
+}

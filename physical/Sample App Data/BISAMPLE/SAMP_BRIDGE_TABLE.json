@@ -1,0 +1,24 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_BRIDGE_TABLE",
+    "description" : "ZZZ - Not yet filled",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Chnl_Weighting",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Office_key",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Chnl_Key",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Chnl_Key", "Office_key" ] ]
+  }
+}

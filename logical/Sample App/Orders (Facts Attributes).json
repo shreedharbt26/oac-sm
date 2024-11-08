@@ -1,0 +1,1364 @@
+{
+  "logicalTable" : {
+    "name" : "Orders (Facts Attributes)",
+    "description" : "This logical table contains the attribute columns that are present in the fact table which are not measure columns but can be used as attributes in the report. \r\nAll the metrics in this table are physically mapped to columns in the Revenue fact table.",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "DIMENSION",
+    "primaryKey" : [ "R0  Order Key" ],
+    "logicalColumns" : [ {
+      "name" : "R0  Order Key",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS3 Facts Converted Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Order_Key" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Order_Key" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Orders Detail"
+    }, {
+      "name" : "R1  Order Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Status" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Status" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Order_Status" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Order_Status" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Order_Status" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Order_Status" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Order_Status" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Order Status"
+    }, {
+      "name" : "R2  Order Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Type" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Type" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Order_Type" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Order_Type" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Order_Type" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Order_Type" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Order_Type" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Order Type"
+    }, {
+      "name" : "R3  Order Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Currency" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Currency" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS3 Facts Converted Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Currency" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Currency" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Currency" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Currency" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R4  Order Line FX Rate (Lookup Pref Curr)",
+      "description" : "Help : \r\nStores the product's color description.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2, %3,  VALUEOF(NQ_SESSION.%4))",
+          "expressionObjects" : [ "logicalColumn:Sample App.Lookups FX.Fx_Rate", "logicalColumn:Sample App.Orders (Facts Attributes).R3  Order Currency", "logicalColumn:Sample App.Sales Base Measures.X13  Fact Qtr Key", "variable:DUAL Currency (=USD).PREFERRED_CURRENCY" ]
+        }
+      }
+    }, {
+      "name" : "R5  Order Discount Rate",
+      "description" : "Help : \r\nMapped to Order date in the fact table.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Discnt_Rate" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Discnt_Rate" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Discnt_Rate" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Discnt_Rate" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Discnt_Rate" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Discnt_Rate" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R6  Transactional Order Number",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Src_Order_Number" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Src_Order_Number" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Src_Order_Number" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Src_Order_Number" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Src_Order_Number" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Src_Order_Number" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Src_Order_Number" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Orders Detail"
+    }, {
+      "name" : "R11 === Date Objects ============",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "R11  Order Date-Time",
+      "description" : "Help : \r\nMapped to Order date in the fact table.",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Order_Day_Dt" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R12  Order Month",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " EXTRACT( MONTH  FROM %1)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " EXTRACT( MONTH  FROM %1)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Day_Dt" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R13  Order Year",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " EXTRACT( YEAR  FROM %1)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " EXTRACT( YEAR  FROM %1)",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Day_Dt" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R14  Billed Date",
+      "description" : "Help : \r\nMapped to Bill date in the fact table.",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS3 Facts Converted Revenue",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F19 Rev\\. (Converted).Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Bill_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Bill_Day_Dt" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R15  Billed Month",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EXTRACT( MONTH  FROM %1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R14  Billed Date" ]
+        }
+      }
+    }, {
+      "name" : "R16  Billed Year",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EXTRACT( YEAR  FROM %1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R14  Billed Date" ]
+        }
+      }
+    }, {
+      "name" : "R17  Paid Date",
+      "description" : "Help : \r\nMapped to Order date in the fact table.",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Paid_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Order_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Paid_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Paid_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Paid_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Paid_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Paid_Day_Dt" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R18  Paid Month",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  THEN  EXTRACT( MONTH  FROM %1) END ",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R17  Paid Date" ]
+        }
+      }
+    }, {
+      "name" : "R19  Paid Year",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  THEN  EXTRACT( YEAR  FROM %1) END ",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R17  Paid Date" ]
+        }
+      }
+    }, {
+      "name" : "R20  Shipped Date",
+      "description" : "Help : \r\nMapped to Bill date in the fact table.",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS4 Revenue Facts (Order Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS5 Revenue Facts (Ship Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr).Ship_Day_Dt" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS9 Revenue Facts (Individual Contrib)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib).Ship_Day_Dt" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R21 === Calculated Attributes =======",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "R21  Order to Cash Days",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R11  Order Date-Time", "logicalColumn:Sample App.Orders (Facts Attributes).R17  Paid Date" ]
+        }
+      }
+    }, {
+      "name" : "R22  Full Cycle Days Bin (Case)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 < 10 THEN 'Below 10' WHEN %1 < 15 THEN 'Between 10 and 15' WHEN %1 < 20 THEN 'Between 15 and 20' ELSE 'Over 20' END ",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R21  Order to Cash Days" ]
+        }
+      }
+    }, {
+      "name" : "R23  Full Cycle Bucket (Evaluate)",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EVALUATE('WIDTH_BUCKET(\\%1, 0, 50, 10)', %1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R28  Bill to Cash Days" ]
+        }
+      }
+    }, {
+      "name" : "R24  Order to Ship Days",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R11  Order Date-Time", "logicalColumn:Sample App.Orders (Facts Attributes).R20  Shipped Date" ]
+        }
+      }
+    }, {
+      "name" : "R25  Ship Cycle Days Bin (Case)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 < 10 THEN 'Below 10' WHEN %1 < 15 THEN 'Between 10 and 15' WHEN %1 < 20 THEN 'Between 15 and 20' ELSE 'Over 20' END ",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R24  Order to Ship Days" ]
+        }
+      }
+    }, {
+      "name" : "R26  Ship Cycle Days Bucket (Evaluate)",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EVALUATE('WIDTH_BUCKET(\\%1, 0, 30, 10)', %1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R24  Order to Ship Days" ]
+        }
+      }
+    }, {
+      "name" : "R27  Early Shipped Mark",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 < 3 THEN 'Y' END ",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R26  Ship Cycle Days Bucket (Evaluate)" ]
+        }
+      }
+    }, {
+      "name" : "R28  Bill to Cash Days",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R14  Billed Date", "logicalColumn:Sample App.Orders (Facts Attributes).R17  Paid Date" ]
+        }
+      }
+    }, {
+      "name" : "R29  Collect Cycle Days Bin (Case)",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 < 5 THEN 'Below 5' WHEN %1 < 15 THEN 'Between 05 and 15' WHEN %1 < 30 THEN 'Between 15 and 30' WHEN %1 < 45 THEN 'Between 30 and 45' WHEN %1 < 60 THEN 'Between 45 and 60' ELSE 'Over 60' END ",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R28  Bill to Cash Days" ]
+        }
+      }
+    }, {
+      "name" : "R30  Collection Cycle Bucket (Evaluate)",
+      "description" : "WIDTH_BUCKET(credit_limit, 100, 5000, 10) ",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EVALUATE('WIDTH_BUCKET(\\%1, 0, 50, 10)', %1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R28  Bill to Cash Days" ]
+        }
+      }
+    }, {
+      "name" : "R31  Order Size Bin",
+      "description" : "Help : \r\nThis maps to the order key in the fact table.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS1 Revenue Facts (Billed Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 < 1000 THEN 'Below 1k' WHEN %1 < 2000 THEN 'Between 1k and 2k' WHEN %1 < 3000 THEN 'Between 2k and 3k' WHEN %1 < 5000 THEN 'Between 3k and 5k' ELSE 'Over 5k' END ",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F10 Billed Rev.Revenue" ]
+          }
+        }, {
+          "logicalTableSource" : "LTS2 Revenue Facts (Paid Date Join)",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 < 1000 THEN 'Below 1k' WHEN %1 < 2000 THEN 'Between 1k and 2k' WHEN %1 < 3000 THEN 'Between 2k and 3k' WHEN %1 < 5000 THEN 'Between 3k and 5k' ELSE 'Over 5k' END ",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join).Revenue" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R32  Order Size Bin (Orcl Function)",
+      "description" : "WIDTH_BUCKET(credit_limit, 0, 10000, 20) ",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EVALUATE('WIDTH_BUCKET(\\%1, 0,10000, 20)', %1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      }
+    }, {
+      "name" : "R50  === Ship To Region Objects =====",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "R50  Region",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Region" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A Descriptions"
+    }, {
+      "name" : "R51  Area",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Area" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A Area"
+    }, {
+      "name" : "R52  Country Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Country_Name" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A Country"
+    }, {
+      "name" : "R53  State Province",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.State_Province" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A State"
+    }, {
+      "name" : "R54  State Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.State_Province_Abbrv" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R55  City",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.City" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A City"
+    }, {
+      "name" : "R56  Postal Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Postal_Code" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A Postal Code"
+    }, {
+      "name" : "R57  Address 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Address1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R58  Address 2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Address2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R59  Establishment Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Estab_Name" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo A Establishment"
+    }, {
+      "name" : "R60  Address_Key",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Address_Key" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R61 === Ship To Geo Codes =====",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "R61  Geo Country Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Iso_Country_code3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Country"
+    }, {
+      "name" : "R62  Geo Ctry State Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Ctry_Cd3_State_Name" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B State"
+    }, {
+      "name" : "R63  Geo Ctry State City Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Ctry_Cd3_State_Name_City" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B City"
+    }, {
+      "name" : "R64  Latitude",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Latitude" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Coordinates"
+    }, {
+      "name" : "R65  Longitude",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Longitude" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Coordinates"
+    }, {
+      "name" : "R66  Lat_Long",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CAST ( ROUND(%1, 7) AS VARCHAR ( 15 )) || '_' ||  CAST ( ROUND(%2, 7) AS VARCHAR ( 15 ))",
+          "expressionObjects" : [ "logicalColumn:Sample App.Orders (Facts Attributes).R64  Latitude", "logicalColumn:Sample App.Orders (Facts Attributes).R65  Longitude" ]
+        }
+      },
+      "logicalLevel" : "Ship To Geo B Coordinates"
+    }, {
+      "name" : "R68  Geo Establisht",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Estab_Name" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Coordinates"
+    }, {
+      "name" : "R67  Geo Postal Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Postal_Code" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Zipcode"
+    }, {
+      "name" : "R68  Region Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Region" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Codes (Mapvw)"
+    }, {
+      "name" : "R69  Area Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LTS6 Orders Ship To Address",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses.Area" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Ship To Geo B Area"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LTS1 Revenue Facts (Billed Date Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F10 Billed Rev" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS2 Revenue Facts (Paid Date Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F15 Rev\\. (Paid Dt Join)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS3 Facts Converted Revenue",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F19 Rev\\. (Converted)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS4 Revenue Facts (Order Date Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F13 Rev\\. (Order Dt Join)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS5 Revenue Facts (Ship Date Join)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F14 Rev\\. (Ship Dt Join)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS6 Orders Ship To Address",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.D70 Orders Ship to Addresses" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS7 Team Rev. (Billed Dt Team Agg)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F16 Rev\\. (Team Agg)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS8 Team Rev. (Billed Dt Flat Team Agg)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F17 Rev\\. (Siblings Aggr)" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "LTS9 Revenue Facts (Individual Contrib)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.F18 Rev\\. (Individual Contrib)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total Orders",
+      "ragged" : false,
+      "skipped" : true,
+      "logicalLevels" : [ {
+        "name" : "Total Orders",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Order Type",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R2  Order Type" ],
+        "displayKey" : "R2  Order Type"
+      }, {
+        "name" : "Order Status",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R1  Order Status", "R2  Order Type" ],
+        "displayKey" : "R1  Order Status",
+        "preferredDrillPath" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Orders Detail" ]
+      }, {
+        "name" : "Orders Detail",
+        "numberOfElements" : 72000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R0  Order Key" ],
+        "displayKey" : "R0  Order Key"
+      }, {
+        "name" : "Ship To Geo A Descriptions",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R50  Region" ],
+        "displayKey" : "R50  Region"
+      }, {
+        "name" : "Ship To Geo A Area",
+        "numberOfElements" : 50,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R51  Area" ],
+        "displayKey" : "R51  Area"
+      }, {
+        "name" : "Ship To Geo A Country",
+        "numberOfElements" : 100,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R52  Country Name" ],
+        "displayKey" : "R52  Country Name"
+      }, {
+        "name" : "Ship To Geo A State",
+        "numberOfElements" : 150,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R52  Country Name", "R53  State Province" ],
+        "displayKey" : "R53  State Province",
+        "additionalKeys" : [ [ "R53  State Province" ] ]
+      }, {
+        "name" : "Ship To Geo A City",
+        "numberOfElements" : 500,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R53  State Province", "R55  City" ],
+        "displayKey" : "R55  City",
+        "additionalKeys" : [ [ "R55  City" ] ]
+      }, {
+        "name" : "Ship To Geo A Postal Code",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R50  Region", "R51  Area", "R52  Country Name", "R53  State Province", "R55  City", "R56  Postal Code" ],
+        "displayKey" : "R56  Postal Code",
+        "additionalKeys" : [ [ "R56  Postal Code" ] ]
+      }, {
+        "name" : "Ship To Geo A Establishment",
+        "numberOfElements" : 2000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R50  Region", "R51  Area", "R52  Country Name", "R53  State Province", "R55  City", "R56  Postal Code" ],
+        "displayKey" : "R59  Establishment Name",
+        "additionalKeys" : [ [ "R59  Establishment Name" ] ]
+      }, {
+        "name" : "Ship To Geo B Codes (Mapvw)",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R68  Region Code" ],
+        "displayKey" : "R68  Region Code"
+      }, {
+        "name" : "Ship To Geo B Area",
+        "numberOfElements" : 20,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R69  Area Code" ],
+        "displayKey" : "R69  Area Code"
+      }, {
+        "name" : "Ship To Geo B Country",
+        "numberOfElements" : 50,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R61  Geo Country Code" ],
+        "displayKey" : "R61  Geo Country Code"
+      }, {
+        "name" : "Ship To Geo B State",
+        "numberOfElements" : 100,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R62  Geo Ctry State Name" ],
+        "displayKey" : "R62  Geo Ctry State Name"
+      }, {
+        "name" : "Ship To Geo B City",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R63  Geo Ctry State City Name" ],
+        "displayKey" : "R63  Geo Ctry State City Name"
+      }, {
+        "name" : "Ship To Geo B Zipcode",
+        "numberOfElements" : 2000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R67  Geo Postal Code" ],
+        "displayKey" : "R67  Geo Postal Code",
+        "additionalKeys" : [ [ "R61  Geo Country Code", "R62  Geo Ctry State Name", "R63  Geo Ctry State City Name", "R67  Geo Postal Code" ] ]
+      }, {
+        "name" : "Ship To Geo B Coordinates",
+        "numberOfElements" : 3000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "R61  Geo Country Code", "R62  Geo Ctry State Name", "R63  Geo Ctry State City Name", "R64  Latitude", "R65  Longitude", "R68  Geo Establisht", "R67  Geo Postal Code", "R68  Region Code", "R69  Area Code" ],
+        "displayKey" : "R68  Geo Establisht",
+        "additionalKeys" : [ [ "R68  Geo Establisht" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Orders (Facts Attributes)",
+        "description" : "Order Dimension:\r\nType - Skipped Levels\r\nIncludes three Drill Paths\r\n1) Type->Status->Detail\r\n2) Geo Country->Geo State->Geo City->Geo Coordinates->Detail\r\n3) Region->Area->Country->State->City->Zipcode->Detail",
+        "levels" : [ "Total Orders", "Order Type", "Order Status", "Orders Detail" ]
+      }, {
+        "name" : "Orders (Facts Attributes)-1",
+        "description" : "Order Dimension:\r\nType - Skipped Levels\r\nIncludes three Drill Paths\r\n1) Type->Status->Detail\r\n2) Geo Country->Geo State->Geo City->Geo Coordinates->Detail\r\n3) Region->Area->Country->State->City->Zipcode->Detail",
+        "levels" : [ "Total Orders", "Ship To Geo A Descriptions", "Ship To Geo A Area", "Ship To Geo A Country", "Ship To Geo A State", "Ship To Geo A City", "Ship To Geo A Postal Code", "Ship To Geo A Establishment", "Orders Detail" ]
+      }, {
+        "name" : "Orders (Facts Attributes)-2",
+        "description" : "Order Dimension:\r\nType - Skipped Levels\r\nIncludes three Drill Paths\r\n1) Type->Status->Detail\r\n2) Geo Country->Geo State->Geo City->Geo Coordinates->Detail\r\n3) Region->Area->Country->State->City->Zipcode->Detail",
+        "levels" : [ "Total Orders", "Ship To Geo B Codes (Mapvw)", "Ship To Geo B Area", "Ship To Geo B Country", "Ship To Geo B State", "Ship To Geo B City", "Ship To Geo B Zipcode", "Ship To Geo B Coordinates", "Orders Detail" ]
+      } ]
+    }
+  }
+}

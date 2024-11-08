@@ -1,0 +1,116 @@
+{
+  "presentationTable" : {
+    "name" : "Orders Dates",
+    "description" : "This folder contains additional Orders Dates attributes like Order Date, Billed Date, Paid Date and so on.",
+    "presentationColumns" : [ {
+      "name" : "R11  Order Date-Time",
+      "description" : "Help : \r\nMapped to Order date in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R11  Order Date-Time",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "R11  Order Date-Time",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R11__Order_Date-Time)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R11__Order_Date-Time)"
+      }
+    }, {
+      "name" : "R12  Order Month",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R12  Order Month",
+      "localization" : {
+        "localizationKey" : "R12  Order Month",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R12__Order_Month)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R12__Order_Month)"
+      }
+    }, {
+      "name" : "R13  Order Year",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R13  Order Year",
+      "localization" : {
+        "localizationKey" : "R13  Order Year",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R13__Order_Year)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R13__Order_Year)"
+      }
+    }, {
+      "name" : "R14  Billed Date",
+      "description" : "Help : \r\nMapped to Bill date in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R14  Billed Date",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "R14  Billed Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R14__Billed_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R14__Billed_Date)"
+      }
+    }, {
+      "name" : "R15  Billed Month",
+      "description" : "Help : \r\nStores the Billed Month as a number and can be any value between 1 and 12.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R15  Billed Month",
+      "localization" : {
+        "localizationKey" : "R15  Billed Month",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R15__Billed_Month)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R15__Billed_Month)"
+      }
+    }, {
+      "name" : "R16  Billed Year",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R16  Billed Year",
+      "localization" : {
+        "localizationKey" : "R16  Billed Year",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R16__Billed_Year)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R16__Billed_Year)"
+      }
+    }, {
+      "name" : "R17  Paid Date",
+      "description" : "Help : \r\nMapped to Order date in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R17  Paid Date",
+      "localization" : {
+        "localizationKey" : "R17  Paid Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R17__Paid_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R17__Paid_Date)"
+      }
+    }, {
+      "name" : "R18  Paid Month",
+      "description" : "Help : \r\nStores the Paid Month as a number and can be any value between 1 and 12.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R18  Paid Month",
+      "localization" : {
+        "localizationKey" : "R18  Paid Month",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R18__Paid_Month)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R18__Paid_Month)"
+      }
+    }, {
+      "name" : "R19  Paid Year",
+      "description" : "Help : \r\nMapped to Order month in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R19  Paid Year",
+      "localization" : {
+        "localizationKey" : "R19  Paid Year",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R19__Paid_Year)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R19__Paid_Year)"
+      }
+    }, {
+      "name" : "R20  Shipped Date",
+      "description" : "Help : \r\nMapped to Bill date in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (Facts Attributes).R20  Shipped Date",
+      "localization" : {
+        "localizationKey" : "R20  Shipped Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates_R20__Shipped_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates_R20__Shipped_Date)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Orders Dates",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Orders_Dates)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Orders_Dates)"
+    }
+  }
+}

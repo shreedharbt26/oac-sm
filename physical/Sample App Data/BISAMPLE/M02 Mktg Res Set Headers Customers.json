@@ -1,0 +1,11 @@
+{
+  "physicalTable": {
+    "name": "M02 Mktg Res Set Headers Customers",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_M_SR_HEADER",
+    "additionalKeys": [
+      [
+        "GUID"
+      ]
+    ]
+  }
+}

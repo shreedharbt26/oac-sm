@@ -1,0 +1,93 @@
+{
+  "presentationTable" : {
+    "name" : "Cust Geo Codes",
+    "description" : "This folder contains Office Geographic details like latitude, longitude and so on.",
+    "presentationColumns" : [ {
+      "name" : "C61  Geo Country Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C61  Geo Country Code",
+      "localization" : {
+        "localizationKey" : "C61  Geo Country Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C61__Geo_Country_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C61__Geo_Country_Code)"
+      }
+    }, {
+      "name" : "C62  Geo Ctry State Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C62  Geo Ctry State Name",
+      "localization" : {
+        "localizationKey" : "C62  Geo Ctry State Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C62__Geo_Ctry_State_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C62__Geo_Ctry_State_Name)"
+      }
+    }, {
+      "name" : "C63  Geo Ctry State City Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C63  Geo Ctry State City Name",
+      "localization" : {
+        "localizationKey" : "C63  Geo Ctry State City Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C63__Geo_Ctry_State_City_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C63__Geo_Ctry_State_City_Name)"
+      }
+    }, {
+      "name" : "C64  Latitude",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C64  Latitude",
+      "localization" : {
+        "localizationKey" : "C64  Latitude",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C64__Latitude)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C64__Latitude)"
+      }
+    }, {
+      "name" : "C65  Longitude",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C65  Longitude",
+      "localization" : {
+        "localizationKey" : "C65  Longitude",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C65__Longitude)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C65__Longitude)"
+      }
+    }, {
+      "name" : "C66  Lat_Long",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C66  Lat_Long",
+      "localization" : {
+        "localizationKey" : "C66  Lat_Long",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C66__Lat_Long)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C66__Lat_Long)"
+      }
+    }, {
+      "name" : "C67  Geo Postal Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C67  Geo Postal Code",
+      "alternateNames" : [ "C66  Geo Postal Code" ],
+      "localization" : {
+        "localizationKey" : "C67  Geo Postal Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C67__Geo_Postal_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C67__Geo_Postal_Code)"
+      }
+    }, {
+      "name" : "C68  Region Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C68  Region Code",
+      "alternateNames" : [ "aC68  Region Code" ],
+      "localization" : {
+        "localizationKey" : "C68  Region Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C68__Region_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C68__Region_Code)"
+      }
+    }, {
+      "name" : "C69  Area Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C69  Area Code",
+      "localization" : {
+        "localizationKey" : "C69  Area Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes_C69__Area_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes_C69__Area_Code)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Cust Geo Codes",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Cust_Geo_Codes)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Cust_Geo_Codes)"
+    }
+  }
+}

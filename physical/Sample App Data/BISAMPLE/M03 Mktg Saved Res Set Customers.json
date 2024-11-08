@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "M03 Mktg Saved Res Set Customers",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_M_SR_CUSTOMERS",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D60 Customers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M03 Mktg Saved Res Set Customers.TARGET_LEVEL_ID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D60 Customers.Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M03 Mktg Saved Res Set Customers.TARGET_LEVEL_ID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M03 Mktg Saved Res Set Customers.TARGET_LEVEL_ID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.M02 Mktg Res Set Headers Customers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M03 Mktg Saved Res Set Customers.GUID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.M02 Mktg Res Set Headers Customers.GUID"
+          }
+        ]
+      }
+    ]
+  }
+}

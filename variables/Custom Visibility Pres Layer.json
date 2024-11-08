@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "Custom Visibility Pres Layer",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT\r\ncase when 'GKENDAL'=upper(':USER') THEN 1 ELSE 0 END FROM  DUAL\r\n"
+    } ],
+    "variables" : [ {
+      "name" : "VISIBILITY_PRES_LAYER",
+      "value" : "0",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : true
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

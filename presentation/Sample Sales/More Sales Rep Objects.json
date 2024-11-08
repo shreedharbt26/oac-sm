@@ -1,0 +1,40 @@
+{
+  "presentationTable" : {
+    "name" : "More Sales Rep Objects",
+    "description" : "This folder contains addition Employee attributes like Position Key and Closure Distance.",
+    "presentationColumns" : [ {
+      "name" : "E4k  Position Key",
+      "description" : "Help : \r\nStores the employee position key.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E4k  Position Key",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "E4k  Position Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Sales_Rep_Objects_E4k__Position_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Sales_Rep_Objects_E4k__Position_Key)"
+      }
+    }, {
+      "name" : "E99  Closure Distance",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Rep (Parent Child Hier).E99  Closure Distance",
+      "localization" : {
+        "localizationKey" : "E99  Closure Distance",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Sales_Rep_Objects_E99__Closure_Distance)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Sales_Rep_Objects_E99__Closure_Distance)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "More Sales Rep Objects",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Sales_Rep_Objects)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Sales_Rep_Objects)"
+    }
+  }
+}

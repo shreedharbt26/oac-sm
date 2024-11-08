@@ -1,0 +1,61 @@
+{
+  "physicalTable": {
+    "name": "F23 Preserve Dim Members Detail",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_DUAL Preserve Dim Members",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D01 Time Day Grain",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D51 Closure Table Sales Rep Parent Child",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D60 Customers",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      }
+    ]
+  }
+}

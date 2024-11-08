@@ -1,0 +1,76 @@
+{
+  "presentationTable" : {
+    "name" : "Actions Entries",
+    "alternateNames" : [ "Actions Entries (WIP)" ],
+    "presentationColumns" : [ {
+      "name" : "ID",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.ID",
+      "localization" : {
+        "localizationKey" : "ID",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_ID)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_ID)"
+      }
+    }, {
+      "name" : "Flag",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Flag",
+      "localization" : {
+        "localizationKey" : "Flag",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Flag)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Flag)"
+      }
+    }, {
+      "name" : "Message",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Message",
+      "localization" : {
+        "localizationKey" : "Message",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Message)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Message)"
+      }
+    }, {
+      "name" : "Message Type",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Message Type",
+      "localization" : {
+        "localizationKey" : "Message Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Message_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Message_Type)"
+      }
+    }, {
+      "name" : "Order Id",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Order Id",
+      "localization" : {
+        "localizationKey" : "Order Id",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Order_Id)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Order_Id)"
+      }
+    }, {
+      "name" : "Status",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Status",
+      "localization" : {
+        "localizationKey" : "Status",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Status)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Status)"
+      }
+    }, {
+      "name" : "Timestamp",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Timestamp",
+      "localization" : {
+        "localizationKey" : "Timestamp",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Timestamp)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Timestamp)"
+      }
+    }, {
+      "name" : "Userid",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Actions Entries.Userid",
+      "localization" : {
+        "localizationKey" : "Userid",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries_Userid)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries_Userid)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Actions Entries",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Actions_Entries)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Actions_Entries)"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "presentationTable" : {
+    "name" : "More Customer Objects",
+    "description" : "This folder contains additional Customer attribute like Key attributes, Date attributes and so on.",
+    "presentationColumns" : [ {
+      "name" : "C2k  Cust Status Key",
+      "description" : "Help : \r\nStores the customer status description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C2k  Cust Status Key",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "C2k  Cust Status Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C2k__Cust_Status_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C2k__Cust_Status_Key)"
+      }
+    }, {
+      "name" : "C3k  Cust Type Key",
+      "description" : "Help : \r\nStores the customer type description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C3k  Cust Type Key",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "C3k  Cust Type Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C3k__Cust_Type_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C3k__Cust_Type_Key)"
+      }
+    }, {
+      "name" : "C4k  Cust Segment Key",
+      "description" : "Help : \r\nStores the customer segment key.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C4k  Cust Segment Key",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "C4k  Cust Segment Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C4k__Cust_Segment_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C4k__Cust_Segment_Key)"
+      }
+    }, {
+      "name" : "C5k  Income Level Key",
+      "description" : "Help : \r\nStores the customer industry description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C5k  Income Level Key",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "C5k  Income Level Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C5k__Income_Level_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C5k__Income_Level_Key)"
+      }
+    }, {
+      "name" : "C7k  Marital Status Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C7k  Marital Status Key",
+      "localization" : {
+        "localizationKey" : "C7k  Marital Status Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C7k__Marital_Status_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C7k__Marital_Status_Key)"
+      }
+    }, {
+      "name" : "C8  Prev Marital St",
+      "description" : "Help : \r\nStores the customer's previous marital status description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C8  Prev Marital St",
+      "localization" : {
+        "localizationKey" : "C8  Prev Marital St",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C8__Prev_Marital_St)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C8__Prev_Marital_St)"
+      }
+    }, {
+      "name" : "C10  Prev Marital St Date",
+      "description" : "Help : \r\nStores the customer's previous marital status date.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C10  Prev Marital St Date",
+      "localization" : {
+        "localizationKey" : "C10  Prev Marital St Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C10__Prev_Marital_St_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C10__Prev_Marital_St_Date)"
+      }
+    }, {
+      "name" : "C12  First Contact Date",
+      "description" : "Help : \r\nStores the first contact date in the format mm/dd/yyyy.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C12  First Contact Date",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "C12  First Contact Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C12__First_Contact_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C12__First_Contact_Date)"
+      }
+    }, {
+      "name" : "C13  Last Order Date-Time",
+      "description" : "Help : \r\nStores the date when the last order was made by the customer in the format mm/dd/yyyy.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C13  Last Order Date-Time",
+      "permissions" : [ {
+        "accessor" : "role:BIAdministrator",
+        "access" : "READ"
+      } ],
+      "localization" : {
+        "localizationKey" : "C13  Last Order Date-Time",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C13__Last_Order_Date-Time)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C13__Last_Order_Date-Time)"
+      }
+    }, {
+      "name" : "C14  Birth Date",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C14  Birth Date",
+      "localization" : {
+        "localizationKey" : "C14  Birth Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C14__Birth_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C14__Birth_Date)"
+      }
+    }, {
+      "name" : "C18  Numerical Attribute",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C18  Numerical Attribute",
+      "localization" : {
+        "localizationKey" : "C18  Numerical Attribute",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C18__Numerical_Attribute)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C18__Numerical_Attribute)"
+      }
+    }, {
+      "name" : "C99  Total Value (Hier)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C99  Total Value (Hier)",
+      "hideIfTrue" : {
+        "expressionTemplate" : "1"
+      },
+      "localization" : {
+        "localizationKey" : "C99  Total Value (Hier)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects_C99__Total_Value_(Hier))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects_C99__Total_Value_(Hier))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "More Customer Objects",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_More_Customer_Objects)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_More_Customer_Objects)"
+    }
+  }
+}

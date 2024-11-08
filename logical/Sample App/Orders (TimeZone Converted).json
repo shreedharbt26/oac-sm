@@ -1,0 +1,170 @@
+{
+  "logicalTable" : {
+    "name" : "Orders (TimeZone Converted)",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Order Key" ],
+    "logicalColumns" : [ {
+      "name" : "Order Key",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.Order_key" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D7b Orders TimeZone Converted Detail"
+    }, {
+      "name" : "R70 Db Timezone",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.DB_TIMEZONE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R71 Selected Timezone",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.SELECTED_TZ" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R72 Order Dtime1 Db Tz",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.ORDER_DTIME1_DB_TZ" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R74 Order Dtime1 Selected Tz",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.ORDER_DTIME1_SELECTED_TZ" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R80 Order Dtime2 Timezone",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.ORDER_DTIME2_TIMEZONE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R81 Order Dtime2 Custom Tz",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.ORDER_DTIME2_CUSTOM_TZ" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R82 Order Dtime2 At Db Tz",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.ORDER_DTIME2_AT_DB_TZ" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "R83 Order Dtime2 Selected Tz",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D71 Orders TimeZone Converted",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted.ORDER_DTIME2_SELECTED_TZ" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D71 Orders TimeZone Converted",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Sample App Data.BISAMPLE.D71 Orders TimeZone Converted" ]
+      },
+      "dataGranularity" : [ "logicalLevel:Sample App.Orders (TimeZone Converted).D7b Orders TimeZone Converted Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "D7b Orders TimeZone Converted Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "D7b Orders TimeZone Converted Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "D7b Orders TimeZone Converted Detail",
+        "numberOfElements" : 71000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Order Key" ],
+        "displayKey" : "Order Key"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Orders (TimeZone Converted)",
+        "levels" : [ "D7b Orders TimeZone Converted Total", "D7b Orders TimeZone Converted Detail" ]
+      } ]
+    }
+  }
+}

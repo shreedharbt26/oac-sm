@@ -1,0 +1,31 @@
+{
+  "physicalTable": {
+    "name": "M01 Mktg Cache Customers",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_M_C_CUSTOMERS",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D60 Customers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M01 Mktg Cache Customers.QUALIFIED_ID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D60 Customers.Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M01 Mktg Cache Customers.QUALIFIED_ID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D63 Customers (SCD Time Temporal View Query).Cust_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.M01 Mktg Cache Customers.QUALIFIED_ID",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D64 Customers (SCD Time Temporal Session).Cust_Key"
+          }
+        ]
+      }
+    ]
+  }
+}

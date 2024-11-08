@@ -1,0 +1,11 @@
+{
+  "physicalTable": {
+    "name": "D85 Cust LTV Nodes (PC Hierarchy)",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.ODM_LTV_BIN_RULES",
+    "additionalKeys": [
+      [
+        "NODE"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_OFFICES_D",
+    "description" : "Offices dimension table : Stores office dimension attribute information",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Office_Key",
+      "description" : "Office Key: Surrogate key of the office dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Organization",
+      "description" : "Organization: Stores the Organization information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Company",
+      "description" : "Company: Stores the company information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Address_Key",
+      "description" : "Address Key: Joins to Address_Key of Addresses dimension table.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Company_Key",
+      "description" : "Company Key: Stores company key as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Office_Dsc",
+      "description" : "Office Description: Stores the office description as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "Department",
+      "description" : "Department: Stores the department information as text",
+      "dataType" : "VARCHAR",
+      "length" : 255,
+      "nullable" : false
+    }, {
+      "name" : "TOTAL_VALUE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "Sequence",
+      "description" : "Sequence: Stores sequence as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Org_Key",
+      "description" : "Organization Key: Stores Organization key as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Dept_Key",
+      "description" : "Department Key: Stores department key as an integer",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "Office_Key" ] ]
+  }
+}

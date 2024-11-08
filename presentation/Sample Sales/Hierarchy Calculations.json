@@ -1,0 +1,158 @@
+{
+  "presentationTable" : {
+    "name" : "Hierarchy Calculations",
+    "description" : "This folder contains simple calculations where each metric is defined as a division of two base facts. Eg:- Unit Price, Avg Order Size and so on\r\n",
+    "presentationColumns" : [ {
+      "name" : "E4 ---- Team  Count Metrics -------------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.SalesRep Facts.E4 ---- Team  Count Metrics -------------------------",
+      "localization" : {
+        "localizationKey" : "E4 ---- Team  Count Metrics -------------------------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_E4_----_Team__Count_Metrics_-------------------------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_E4_----_Team__Count_Metrics_-------------------------)"
+      }
+    }, {
+      "name" : "E40  # of Peers",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.SalesRep Facts.E40  # of Peers",
+      "localization" : {
+        "localizationKey" : "E40  # of Peers",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_E40__#_of_Peers)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_E40__#_of_Peers)"
+      }
+    }, {
+      "name" : "E41  Full Team Population",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.SalesRep Facts.E41  Full Team Population",
+      "localization" : {
+        "localizationKey" : "E41  Full Team Population",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_E41__Full_Team_Population)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_E41__Full_Team_Population)"
+      }
+    }, {
+      "name" : "E42  # of Direct Reports",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.SalesRep Facts.E42  # of Direct Reports",
+      "localization" : {
+        "localizationKey" : "E42  # of Direct Reports",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_E42__#_of_Direct_Reports)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_E42__#_of_Direct_Reports)"
+      }
+    }, {
+      "name" : "E43  # of Descendants",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.SalesRep Facts.E43  # of Descendants",
+      "localization" : {
+        "localizationKey" : "E43  # of Descendants",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_E43__#_of_Descendants)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_E43__#_of_Descendants)"
+      }
+    }, {
+      "name" : "50  ---- Perf to Peers Metrics -------------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.50  ---- Perf to Peers Metrics -------------------------",
+      "localization" : {
+        "localizationKey" : "50  ---- Perf to Peers Metrics -------------------------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_50__----_Perf_to_Peers_Metrics_-------------------------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_50__----_Perf_to_Peers_Metrics_-------------------------)"
+      }
+    }, {
+      "name" : "50  Percent to Peers Revenue",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.50  Percent to Peers Revenue",
+      "alternateNames" : [ "45  Percent to Peers Revenue" ],
+      "localization" : {
+        "localizationKey" : "50  Percent to Peers Revenue",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_50__Percent_to_Peers_Revenue)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_50__Percent_to_Peers_Revenue)"
+      }
+    }, {
+      "name" : "51  Peers Avg Revenue",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.51  Peers Avg Revenue",
+      "alternateNames" : [ "46  Peers Avg Revenue" ],
+      "localization" : {
+        "localizationKey" : "51  Peers Avg Revenue",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_51__Peers_Avg_Revenue)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_51__Peers_Avg_Revenue)"
+      }
+    }, {
+      "name" : "52  Index to Peers Avg",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.52  Index to Peers Avg",
+      "alternateNames" : [ "47  Index to Peers Avg" ],
+      "localization" : {
+        "localizationKey" : "52  Index to Peers Avg",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_52__Index_to_Peers_Avg)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_52__Index_to_Peers_Avg)"
+      }
+    }, {
+      "name" : "55  ---- Hier Functions -------------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.55  ---- Hier Functions -------------------------",
+      "localization" : {
+        "localizationKey" : "55  ---- Hier Functions -------------------------",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_55__----_Hier_Functions_-------------------------)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_55__----_Hier_Functions_-------------------------)"
+      }
+    }, {
+      "name" : "55  My Descendants Rev",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.55  My Descendants Rev",
+      "alternateNames" : [ "60  Hier Function", "60  My Descendants Rev" ],
+      "localization" : {
+        "localizationKey" : "55  My Descendants Rev",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_55__My_Descendants_Rev)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_55__My_Descendants_Rev)"
+      }
+    }, {
+      "name" : "56  My Ancestors Rev",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.56  My Ancestors Rev",
+      "alternateNames" : [ "60  My Ancestors Rev" ],
+      "localization" : {
+        "localizationKey" : "56  My Ancestors Rev",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_56__My_Ancestors_Rev)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_56__My_Ancestors_Rev)"
+      }
+    }, {
+      "name" : "57  My Direct Reports Rev",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.57  My Direct Reports Rev",
+      "alternateNames" : [ "60  My Direct Reports Rev" ],
+      "localization" : {
+        "localizationKey" : "57  My Direct Reports Rev",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_57__My_Direct_Reports_Rev)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_57__My_Direct_Reports_Rev)"
+      }
+    }, {
+      "name" : "114  Individual Contrib (Flat Rev Agg)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.114  Individual Contrib (Flat Rev Agg)",
+      "localization" : {
+        "localizationKey" : "114  Individual Contrib (Flat Rev Agg)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_114__Individual_Contrib_(Flat_Rev_Agg))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_114__Individual_Contrib_(Flat_Rev_Agg))"
+      }
+    }, {
+      "name" : "115  Peers Rev  (Sum Siblings)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.115  Peers Rev  (Sum Siblings)",
+      "localization" : {
+        "localizationKey" : "115  Peers Rev  (Sum Siblings)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_115__Peers_Rev__(Sum_Siblings))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_115__Peers_Rev__(Sum_Siblings))"
+      }
+    }, {
+      "name" : "116  Team Rev  (Sum All)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.116  Team Rev  (Sum All)",
+      "localization" : {
+        "localizationKey" : "116  Team Rev  (Sum All)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations_116__Team_Rev__(Sum_All))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations_116__Team_Rev__(Sum_All))"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Hierarchy Calculations",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Hierarchy_Calculations)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Hierarchy_Calculations)"
+    }
+  }
+}

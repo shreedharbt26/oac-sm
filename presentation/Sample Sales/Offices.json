@@ -1,0 +1,171 @@
+{
+  "presentationTable" : {
+    "name" : "Offices",
+    "description" : "Offices dimension attribute objects",
+    "alternateNames" : [ "D" ],
+    "presentationColumns" : [ {
+      "name" : "D1  Office",
+      "description" : "Help : \r\nStores the Market description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D1  Office",
+      "alternateNames" : [ "Office" ],
+      "localization" : {
+        "localizationKey" : "D1  Office",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_D1__Office)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_D1__Office)"
+      }
+    }, {
+      "name" : "D2  Department",
+      "description" : "Help : \r\nStores the market area description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D2  Department",
+      "alternateNames" : [ "Department", "Dept" ],
+      "localization" : {
+        "localizationKey" : "D2  Department",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_D2__Department)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_D2__Department)"
+      }
+    }, {
+      "name" : "D3  Organization",
+      "description" : "Help : \r\nStores the market district description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D3  Organization",
+      "alternateNames" : [ "Organization" ],
+      "localization" : {
+        "localizationKey" : "D3  Organization",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_D3__Organization)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_D3__Organization)"
+      }
+    }, {
+      "name" : "D4  Company",
+      "description" : "Help : \r\nStores the market region description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D4  Company",
+      "alternateNames" : [ "Company" ],
+      "localization" : {
+        "localizationKey" : "D4  Company",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_D4__Company)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_D4__Company)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Offices Hierarchy",
+      "sourceLogicalTable" : "logicalTable:Sample App.Offices",
+      "localization" : {
+        "localizationKey" : "Offices Hierarchy",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Hierarchy)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Hierarchy)"
+      },
+      "levels" : [ {
+        "name" : "Corporate Total",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Offices Total",
+        "displayColumn" : "presentationColumn:Sample Sales.More Office Objects.D99  Total Value (Hier)",
+        "alternateNames" : [ "Offices Total", "Total Corporate", "Total Eden Corp" ],
+        "localization" : {
+          "localizationKey" : "Corporate Total",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Hierarchy_Corporate_Total)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Hierarchy_Corporate_Total)"
+        }
+      }, {
+        "name" : "Company",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Offices Company",
+        "displayColumn" : "presentationColumn:Sample Sales.Offices.D4  Company",
+        "localization" : {
+          "localizationKey" : "Company",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Hierarchy_Company)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Hierarchy_Company)"
+        }
+      }, {
+        "name" : "Organization",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Offices Organization",
+        "displayColumn" : "presentationColumn:Sample Sales.Offices.D3  Organization",
+        "localization" : {
+          "localizationKey" : "Organization",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Hierarchy_Organization)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Hierarchy_Organization)"
+        }
+      }, {
+        "name" : "Department",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Offices Department",
+        "displayColumn" : "presentationColumn:Sample Sales.Offices.D2  Department",
+        "localization" : {
+          "localizationKey" : "Department",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Hierarchy_Department)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Hierarchy_Department)"
+        }
+      }, {
+        "name" : "Offices",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Offices Detail",
+        "displayColumn" : "presentationColumn:Sample Sales.Offices.D1  Office",
+        "localization" : {
+          "localizationKey" : "Offices",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Hierarchy_Offices)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Hierarchy_Offices)"
+        }
+      } ]
+    }, {
+      "name" : "Offices Region Hier",
+      "sourceLogicalTable" : "logicalTable:Sample App.Offices",
+      "alternateNames" : [ "H3 Offices" ],
+      "localization" : {
+        "localizationKey" : "Offices Region Hier",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Region_Hier)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Region_Hier)"
+      },
+      "levels" : [ {
+        "name" : "Office Region",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Office Region",
+        "displayColumn" : "presentationColumn:Sample Sales.Office Regions.D50  Region",
+        "localization" : {
+          "localizationKey" : "Office Region",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Region_Hier_Office_Region)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Region_Hier_Office_Region)"
+        }
+      }, {
+        "name" : "Office Area",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Office Area",
+        "displayColumn" : "presentationColumn:Sample Sales.Office Regions.D51  Area",
+        "localization" : {
+          "localizationKey" : "Office Area",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Region_Hier_Office_Area)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Region_Hier_Office_Area)"
+        }
+      }, {
+        "name" : "Office Country",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Office Country",
+        "displayColumn" : "presentationColumn:Sample Sales.Office Regions.D52  Country Name",
+        "localization" : {
+          "localizationKey" : "Office Country",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Region_Hier_Office_Country)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Region_Hier_Office_Country)"
+        }
+      }, {
+        "name" : "Office City",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Office City",
+        "displayColumn" : "presentationColumn:Sample Sales.Office Regions.D55  City",
+        "localization" : {
+          "localizationKey" : "Office City",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Region_Hier_Office_City)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Region_Hier_Office_City)"
+        }
+      }, {
+        "name" : "Offices Detail",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Offices.Offices Detail",
+        "displayColumn" : "presentationColumn:Sample Sales.Offices.D1  Office",
+        "localization" : {
+          "localizationKey" : "Offices Detail",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices_Offices_Region_Hier_Offices_Detail)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices_Offices_Region_Hier_Offices_Detail)"
+        }
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Offices",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Offices)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Offices)"
+    }
+  }
+}

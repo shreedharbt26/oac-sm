@@ -1,0 +1,17 @@
+{
+  "physicalTable": {
+    "name": "L2 Other Lookups",
+    "description": "Other Lookups Alias: Stores various description lookup information for dimension attributes",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_LOOKUPS_D",
+    "additionalKeys": [
+      [
+        "Language_Key",
+        "Lookup_Key",
+        "Lookup_Type"
+      ],
+      [
+        "Lookup_Key"
+      ]
+    ]
+  }
+}

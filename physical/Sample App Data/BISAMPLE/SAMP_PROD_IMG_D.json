@@ -1,0 +1,27 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_PROD_IMG_D",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select IMAGE, PRODUCT_ID, PRODUCT_IMAGE_ID from BISAMPLE.SAMP_PROD_IMG_D"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "PRODUCT_IMAGE_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "IMAGE",
+      "dataType" : "LONGVARBINARY",
+      "length" : 96000,
+      "nullable" : false
+    }, {
+      "name" : "PRODUCT_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "PRODUCT_ID" ] ]
+  }
+}

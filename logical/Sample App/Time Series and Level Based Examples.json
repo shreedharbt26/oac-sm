@@ -1,0 +1,581 @@
+{
+  "logicalTable" : {
+    "name" : "Time Series and Level Based Examples",
+    "description" : "This logical table contains metrics that always return value at a particular level within a dimension. Eg:- Revenue at Month level, Billed Qtry at Year level, Booked Amt for all Products etc.\r\nAll metrics in this table are logical calculations based on physically mapped metrics from F0 Rev Base Measures and F1 Inv Base Measures.",
+    "tags" : [ "Project:Samp Relational" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "121  ---- Dynamic Time Level ---------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "121  Period Ago Rev",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns data as of previous month vs. month selected in the query.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " AGO(%1, 1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      }
+    }, {
+      "name" : "122  Rev Var to Period Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Value change to last month",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 - %2",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalColumn:Sample App.Time Series and Level Based Examples.121  Period Ago Rev" ]
+        }
+      }
+    }, {
+      "name" : "123  Rev Pct Var to Period Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Average % change to last month value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 / %2 * 100",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.122  Rev Var to Period Ago", "logicalColumn:Sample App.Time Series and Level Based Examples.121  Period Ago Rev" ]
+        }
+      }
+    }, {
+      "name" : "127  ---- Fixed Time Level ---------------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "127  Mth Ago Rev  (Fix Time Lvl)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns data as of previous month vs. month selected in the query.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " AGO(%1, %2, 1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalLevel:Sample App.Time.Month" ]
+        }
+      }
+    }, {
+      "name" : "128  Qtr Ago Rev  (Fix Time Lvl)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Quarter Ago value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " AGO(%1, %2, 1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalLevel:Sample App.Time.Quarter" ]
+        }
+      }
+    }, {
+      "name" : "129  Year Ago Rev  (Fix Time Lvl)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns data as of previous year vs. year selected in the query.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " AGO(%1, %2, 1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalLevel:Sample App.Time.Year" ]
+        }
+      }
+    }, {
+      "name" : "131  Rev Var to Qtr Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Value change to last quarter",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 - %2",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalColumn:Sample App.Time Series and Level Based Examples.128  Qtr Ago Rev  (Fix Time Lvl)" ]
+        }
+      }
+    }, {
+      "name" : "132  Rev Pct Var to Qtr Ago",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Percent difference of the value of the metric in the current period with the value of the metric in the same period the previous quarter / Value of the metric in the same period of the previous quarter",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 / %2 * 100",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.131  Rev Var to Qtr Ago", "logicalColumn:Sample App.Time Series and Level Based Examples.128  Qtr Ago Rev  (Fix Time Lvl)" ]
+        }
+      }
+    }, {
+      "name" : "133  Rev QAgo Compounded Yrly Gwth",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- % variation to last quarter expressed in a compounded yearly % growth rate.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "( POWER(%1 / %2, 4) - 1) * 100",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalColumn:Sample App.Time Series and Level Based Examples.128  Qtr Ago Rev  (Fix Time Lvl)" ]
+        }
+      }
+    }, {
+      "name" : "135  Qtr To Dt Rev Sum",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sums all the values from the first day of the quarter to the current period",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TODATE(%1, %2)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalLevel:Sample App.Time.Quarter" ]
+        }
+      }
+    }, {
+      "name" : "136  Qtr Ago QTD Rev sum",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Quarter Ago Quarter-To-Date Value for the same period. For the same period in the previous quarter, it returns the sum of all the values from the first day of the quarter to that period.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TODATE(%1, %2)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.128  Qtr Ago Rev  (Fix Time Lvl)", "logicalLevel:Sample App.Time.Quarter" ]
+        }
+      }
+    }, {
+      "name" : "137  QTD Rev Pct Var to Qago QTD",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Average % change of Quarter to date current value to last Quarter quarter to date value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "(%1 / %2 - 1) * 100",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.135  Qtr To Dt Rev Sum", "logicalColumn:Sample App.Time Series and Level Based Examples.136  Qtr Ago QTD Rev sum" ]
+        }
+      }
+    }, {
+      "name" : "144   ======== Rolling Measures ========",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "144  ---- Alias Based Modelling -------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "144  Trailing N Mth Rev  (Alias Based)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Rolling 3 months sum as of selected month : sum of current month plus previous two months value. For January, it gives the value of January plus December and November of the previous year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 - %3 <  VALUEOF(NQ_SESSION.%4))",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.117  Unbound Rolling Rev  (Alias Based)", "logicalColumn:Sample App.Sales Base Measures.X10  Dim Julian Mth Number", "logicalColumn:Sample App.Sales Base Measures.X11  Fact Julian Mth Number", "variable:DUAL GENERIC NUM VALUE =3.N_TRAIL_PAST_MTHS" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "145  Trailing N Mth Rev Daily Avg",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Daily average over Rolling 3 months period : Rolling 3 months sum as of selected month divided by number of days in R3M period.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 / ( VALUEOF(NQ_SESSION.%2) * 30.4d)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.144  Trailing N Mth Rev  (Alias Based)", "variable:DUAL GENERIC NUM VALUE =3.N_TRAIL_PAST_MTHS" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "146  Trailing N Mth Rev Mthly Avg",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Monthly average over Rolling 3 months period : Rolling 3 months sum as of selected month divided by 3",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 /  VALUEOF(NQ_SESSION.%2)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.144  Trailing N Mth Rev  (Alias Based)", "variable:DUAL GENERIC NUM VALUE =3.N_TRAIL_PAST_MTHS" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "147  ---- Dynamic Time Level ----------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "147  Trailing 3 Periods Rev  (Dyn Time Level)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -(2), 0)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      }
+    }, {
+      "name" : "148  Unbound Rolling Rev  (Dyn Time Level)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -UNBOUND, 0)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      }
+    }, {
+      "name" : "149  Spanning 4 Periods Rev N-2 to +N+1",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -(2), 1)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      }
+    }, {
+      "name" : "150   ======== Level Based Measures ========",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "150  ---- Time Level Based ---------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "150  Rev  (Full Mth Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric value for the full month. This aggregation is always calculated at the month level.. For example, when viewed against Week level, it shows the same total month's value for all the weeks in that month.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "151  Rev  (Full Qtr Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric value for the full quarter. This aggregation is always calculated at the quarter level. When viewed against Month or Week level, it shows the quarter's value for all the weeks and months in that quarter.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Quarter" ]
+      }
+    }, {
+      "name" : "152  Rev  (Full Year Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric value for the full year. This aggregation is always calculated at the year level. When viewed against quarter, month or week level, it shows the year's value for all the quarters, month, and weeks in that year.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Year" ]
+      }
+    }, {
+      "name" : "153  Rev  (Mago Full Mth Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Full month's value of the metric for the previous month. This aggregation is always calculated at the month level. For example, when viewed against Week level, it shows the same total month's value for all the weeks in that month.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.127  Mth Ago Rev  (Fix Time Lvl)" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "154  Rev  (Yago Full Mth Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Full month's value of the metric for the same month in the previous year. This aggregation is always calculated at the year level. For example, when viewed against Week level, it shows the same total month's value for all the weeks in that month.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " AGO(%1, %2, 12)",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue", "logicalLevel:Sample App.Time.Month" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Month" ]
+      }
+    }, {
+      "name" : "155  Rev  (Yago Full Year Sum)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Full year's value of the metric for the previous year. This aggregation is always calculated at the year level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Time Series and Level Based Examples.129  Year Ago Rev  (Fix Time Lvl)" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Time.Year" ]
+      }
+    }, {
+      "name" : "160  ---- Other Dims Level Based ---------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "160  Rev  (Sum for All Customers)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the Customers. It always returns the value at Total level irrespective of the level within the Customer dimension that is used in the query",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Customers (SCD Session).Customers Total", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Total", "logicalLevel:Sample App.Customers (Snowflakes).Customers Total" ]
+      }
+    }, {
+      "name" : "161  Rev  (Sum for All Offices)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the Markets. It always returns the value at Total level irrespective of the level within the Market dimension that is used in the query",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Offices and Channels (M:M Joins).Off and Chnl Total", "logicalLevel:Sample App.Offices.Offices Total" ]
+      }
+    }, {
+      "name" : "162  Rev  (Sum for All Products)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the Products. It always returns the value at Total level irrespective of the level within the Product dimension that is used in the query",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Products (Level Based Hier).Products Total", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Total" ]
+      }
+    }, {
+      "name" : "163  Rev  (Sum for All Employees)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the Employees. It always returns the value at Total level irrespective of the level within the Employee dimension that is used in the query",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Total" ]
+      }
+    }, {
+      "name" : "164  Rev  (Sum for All Orders)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the Customers. It always returns the value at Total level irrespective of the level within the Customer dimension that is used in the query",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders" ]
+      }
+    }, {
+      "name" : "165  Rev  (Sum for All Dims But Time)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Sum of the metric for all the dimensions except Time. It always the value at the Total level when viewed against all the dimensions except time.  When viewed against Time, it returns the value at that level.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Sample App.Sales Base Measures.1- Revenue" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "dataIsDense" : false,
+        "aggregateByLevels" : [ "logicalLevel:Sample App.Products (Level Based Hier).Products Total", "logicalLevel:Sample App.Offices and Channels (M:M Joins).Off and Chnl Total", "logicalLevel:Sample App.Orders (Facts Attributes).Total Orders", "logicalLevel:Sample App.Offices.Offices Total", "logicalLevel:Sample App.Customers (SCD Session).Customers Total", "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Total", "logicalLevel:Sample App.Sales Rep (Parent Child Hier).Sales Reps Total", "logicalLevel:Sample App.Customers (SCD ViewQuery).Customers Total", "logicalLevel:Sample App.Customers (Snowflakes).Customers Total" ]
+      }
+    }, {
+      "name" : "954  ---- Time Spans Var---------------------",
+      "description" : "Help :\r\nHeader object, dummy not to be used in any queries",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "1"
+        }
+      }
+    }, {
+      "name" : "954  FTE Headcount  (Value Var)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- For any time interval specified in the query row, this aggregation returns the difference between value at beginning of the interval and value at end of the interval. The values at beginning and end date that make up the variation can be displayed by adding aggregation objects Fst oT and Last oT. Info about beginning date and end date for each row are available with time facts objects : First Time Day Dt and Last Time Day Dt. For example, if a query is filtered for a quarter, this will show the value variation between first and last day of the quarter. If the query objects are at week level, This aggregation will returns for each row (week level) the value of the last day of each week minus value of the first day in that week.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 - %2",
+          "expressionObjects" : [ "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (End Period)", "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (Beg Period)" ]
+        }
+      }
+    }, {
+      "name" : "955  FTE Headcount  (Pct Var)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- This aggregation converts the Value Var aggregation metric into a percentage variation to first value (Value Var / initial value *100)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "(%1 - %2) / %2 * 100",
+          "expressionObjects" : [ "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (End Period)", "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (Beg Period)" ]
+        }
+      }
+    }, {
+      "name" : "956  FTE Headcount  (Cmpd Yrly Gwth)",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- For any time interval specified in the query row, this aggregation returns the difference between value at beginning of the interval and value at end of the interval. The values at beginning and end date that make up the variation can be displayed by adding aggregation objects Fst oT and Last oT. Info about beginning date and end date for each row are available with time facts objects : First Time Day Dt and Last Time Day Dt. For example, if a query is filtered for a quarter, this will show the value variation between first and last day of the quarter. If the query objects are at week level, This aggregation will returns for each row (week level) the value of the last day of each week minus value of the first day in that week.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "( POWER(%1 / %2, 12 / %3) - 1) * 100",
+          "expressionObjects" : [ "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (End Period)", "logicalColumn:Sample App.Headcount Base Measures.9- Full Time Empl  (Beg Period)", "logicalColumn:Sample App.Time Facts.T64  # of Months" ]
+        }
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Sample App.Orders (Facts Attributes)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

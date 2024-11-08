@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "D30 Offices",
+    "description": "Offices dimension Alias: Stores office dimension attribute information",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_OFFICES_D",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D32 Offices Addresses",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D30 Offices.Address_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D32 Offices Addresses.Address_Key"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "Office_Key"
+      ]
+    ]
+  }
+}

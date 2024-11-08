@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "USER_HIER_ID",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT\r\nIDS\r\nFROM SAMP_USERS_VIS\r\nWHERE upper(USERID)=upper(':USER')\r\nAND TYPE = 'USERID'"
+    } ],
+    "variables" : [ {
+      "name" : "USER_HIER_ID",
+      "value" : "26",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

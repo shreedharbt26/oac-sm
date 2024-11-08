@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "Verify DUAL Cube Name (=BISAMPLE)",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "Select 'BISAMPLE' From Dual"
+    } ],
+    "variables" : [ {
+      "name" : "CUBE_NAME",
+      "value" : "'BISAMPLE'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

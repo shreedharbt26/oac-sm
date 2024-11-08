@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "D43 Chnls Offs Bridge (Rev)",
+    "description": "ZZZ - Not yet filled",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_BRIDGE_TABLE",
+    "joins": [      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D43 Chnls Offs Bridge (Rev).Office_key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D30 Offices.Office_Key"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D41 Channels (Revenue)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Sample App Data.BISAMPLE.D43 Chnls Offs Bridge (Rev).Chnl_Key",
+            "rightColumn": "physicalColumn:Sample App Data.BISAMPLE.D41 Channels (Revenue).Chnl_Key"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "physicalTable": {
+    "name": "D81 Cust LTV Leaf Nodes",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.ODM_LTV_BIN_RULES",
+    "additionalKeys": [
+      [
+        "NODE"
+      ]
+    ]
+  }
+}

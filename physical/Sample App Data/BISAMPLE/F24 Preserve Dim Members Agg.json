@@ -1,0 +1,43 @@
+{
+  "physicalTable": {
+    "name": "F24 Preserve Dim Members Agg",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_DUAL Preserve Dim Members",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D02 Time Month Grain",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D10 Product (Dynamic Table)",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D30 Offices",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Sample App Data.BISAMPLE.D61 Customer Segments",
+        "joinExpression": {
+          "expressionTemplate": "1 = 1"
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      }
+    ]
+  }
+}

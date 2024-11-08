@@ -1,0 +1,86 @@
+{
+  "physicalTable" : {
+    "name" : "SAMP_TIME_QTR_D",
+    "description" : "Time dimension table at quarter grain. Stores one record for each quarter.",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "CAL_HALF",
+      "description" : "Calendar Half: Stores value 1 or 2",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "CAL_QTR",
+      "description" : "Calendar Quarter: Stores value 1,2,3 or 4",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "FSCL_QTR",
+      "description" : "Fiscal Quarter : Stores the value 1, 2, 3 or 4",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "DAYS_IN_QTR",
+      "description" : "Days in Quarter : Stores value 90, 91 or 92",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "JULIAN_QTR_NUM",
+      "description" : "Julian Quarter Number : Stores the quarter number in the Julian Calendar format. \r\nEg:- 151, 152 and so on.",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "FSCL_YEAR",
+      "description" : "Fiscal Year : Stores the fiscal year in the format YYYY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "QTR_KEY",
+      "description" : "Quarter Key: Surrogate key of the table. Stores the quarter information in the format YYYY0Quarternumber.\r\nEg:- 200901",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PER_NAME_YEAR",
+      "description" : "Period Name Year: Stores the year information in the format YYYY.\r\nEg:- 2009",
+      "dataType" : "VARCHAR",
+      "length" : 4,
+      "nullable" : false
+    }, {
+      "name" : "FSCL_HALF",
+      "description" : "Fiscal Half : Stores the value 1 or 2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "CAL_YEAR",
+      "description" : "Calendar Year: Stores value in the format YYYY",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PER_NAME_HALF",
+      "description" : "Period Name Half: Stores the Half year information in the format YYYY HYHalfYearNumber.\r\nEg:- 2009 HY1",
+      "dataType" : "VARCHAR",
+      "length" : 8,
+      "nullable" : false
+    }, {
+      "name" : "PER_NAME_QTR",
+      "description" : "Period Name Quarter: Stores the quarter information in the format YYYY QQuarterNumber.\r\nEg:- 2009 Q1",
+      "dataType" : "VARCHAR",
+      "length" : 7,
+      "nullable" : false
+    }, {
+      "name" : "TOTAL_VALUE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "QTR_KEY" ] ]
+  }
+}

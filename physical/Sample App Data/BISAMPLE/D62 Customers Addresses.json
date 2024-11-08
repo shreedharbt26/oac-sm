@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D62 Customers Addresses",
+    "description": "Customer Addresses Alias: This is an alias of the addresses dimension table and joins to the address_key in customer dimension",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_ADDRESSES_D",
+    "additionalKeys": [
+      [
+        "Address_Key"
+      ]
+    ]
+  }
+}

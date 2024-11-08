@@ -1,0 +1,36 @@
+{
+  "presentationTable" : {
+    "name" : "Prompt LOVs",
+    "alternateNames" : [ "L2 Lookups Other" ],
+    "presentationColumns" : [ {
+      "name" : "Lookup_Type",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Lookups Other.Lookup_Type",
+      "localization" : {
+        "localizationKey" : "Lookup_Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Prompt_LOVs_Lookup_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Prompt_LOVs_Lookup_Type)"
+      }
+    }, {
+      "name" : "Lookup_Dsc",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Lookups Other.Lookup_Dsc",
+      "localization" : {
+        "localizationKey" : "Lookup_Dsc",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Prompt_LOVs_Lookup_Dsc)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Prompt_LOVs_Lookup_Dsc)"
+      }
+    }, {
+      "name" : "Language_Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Lookups Other.Language_Key",
+      "localization" : {
+        "localizationKey" : "Language_Key",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Prompt_LOVs_Language_Key)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Prompt_LOVs_Language_Key)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Prompt LOVs",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Prompt_LOVs)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Prompt_LOVs)"
+    }
+  }
+}

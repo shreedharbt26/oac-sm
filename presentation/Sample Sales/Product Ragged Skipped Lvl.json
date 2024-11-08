@@ -1,0 +1,142 @@
+{
+  "presentationTable" : {
+    "name" : "Product Ragged Skipped Lvl",
+    "description" : "This folder contains additional Product attributes like Product Sequence, Color, Type and so on.",
+    "presentationColumns" : [ {
+      "name" : "P10  Product Number (Rgd Sk Lvl)",
+      "description" : "Help : \r\nProduct Key is an integer that uniquely identifies each record in the Product dimension table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P10  Product Number (Rgd Sk Lvl)",
+      "localization" : {
+        "localizationKey" : "P10  Product Number (Rgd Sk Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P10__Product_Number_(Rgd_Sk_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P10__Product_Number_(Rgd_Sk_Lvl))"
+      }
+    }, {
+      "name" : "P11  Product (Rgd Sk Lvl)",
+      "description" : "Help : \r\nStores the product description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P11  Product (Rgd Sk Lvl)",
+      "localization" : {
+        "localizationKey" : "P11  Product (Rgd Sk Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P11__Product_(Rgd_Sk_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P11__Product_(Rgd_Sk_Lvl))"
+      }
+    }, {
+      "name" : "P12  Product Type (Rgd Sk Lvl)",
+      "description" : "Help : \r\nStores the product type description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P12  Product Type (Rgd Sk Lvl)",
+      "localization" : {
+        "localizationKey" : "P12  Product Type (Rgd Sk Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P12__Product_Type_(Rgd_Sk_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P12__Product_Type_(Rgd_Sk_Lvl))"
+      }
+    }, {
+      "name" : "P13  LOB (Rgd Sk Lvl)",
+      "description" : "Help : \r\nStores the product's LOB description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P13  LOB (Rgd Sk Lvl)",
+      "localization" : {
+        "localizationKey" : "P13  LOB (Rgd Sk Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P13__LOB_(Rgd_Sk_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P13__LOB_(Rgd_Sk_Lvl))"
+      }
+    }, {
+      "name" : "P14  Brand (Rgd Sk Lvl)",
+      "description" : "Help : \r\nStores the product's brand description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P14  Brand (Rgd Sk Lvl)",
+      "localization" : {
+        "localizationKey" : "P14  Brand (Rgd Sk Lvl)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P14__Brand_(Rgd_Sk_Lvl))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P14__Brand_(Rgd_Sk_Lvl))"
+      }
+    }, {
+      "name" : "P15  Total",
+      "description" : "Help : \r\nStores the product description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P15  Total",
+      "alternateNames" : [ "P14  Total" ],
+      "localization" : {
+        "localizationKey" : "P15  Total",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P15__Total)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P15__Total)"
+      }
+    }, {
+      "name" : "P99  Total Value Rgd Skp (Hier)",
+      "description" : "Help : \r\nStores the product description.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Products (Ragged SkipLevels Hier).P99  Total Value Rgd Skp (Hier)",
+      "hideIfTrue" : {
+        "expressionTemplate" : "1"
+      },
+      "localization" : {
+        "localizationKey" : "P99  Total Value Rgd Skp (Hier)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_P99__Total_Value_Rgd_Skp_(Hier))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_P99__Total_Value_Rgd_Skp_(Hier))"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Products Ragged Skip Lvl Hier",
+      "sourceLogicalTable" : "logicalTable:Sample App.Products (Ragged SkipLevels Hier)",
+      "alternateNames" : [ "H2 Products Ragged SkipLevels" ],
+      "localization" : {
+        "localizationKey" : "Products Ragged Skip Lvl Hier",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier)"
+      },
+      "levels" : [ {
+        "name" : "Product (Rgd Sk Lvl) Total",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Total",
+        "displayColumn" : "presentationColumn:Sample Sales.Product Ragged Skipped Lvl.P99  Total Value Rgd Skp (Hier)",
+        "localization" : {
+          "localizationKey" : "Product (Rgd Sk Lvl) Total",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Total)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Total)"
+        }
+      }, {
+        "name" : "Product (Rgd Sk Lvl) Brand",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Brand",
+        "displayColumn" : "presentationColumn:Sample Sales.Product Ragged Skipped Lvl.P14  Brand (Rgd Sk Lvl)",
+        "localization" : {
+          "localizationKey" : "Product (Rgd Sk Lvl) Brand",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Brand)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Brand)"
+        }
+      }, {
+        "name" : "Product (Rgd Sk Lvl) LOB",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) LOB",
+        "displayColumn" : "presentationColumn:Sample Sales.Product Ragged Skipped Lvl.P13  LOB (Rgd Sk Lvl)",
+        "localization" : {
+          "localizationKey" : "Product (Rgd Sk Lvl) LOB",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_LOB)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_LOB)"
+        }
+      }, {
+        "name" : "Product (Rgd Sk Lvl) Type",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Type",
+        "displayColumn" : "presentationColumn:Sample Sales.Product Ragged Skipped Lvl.P12  Product Type (Rgd Sk Lvl)",
+        "localization" : {
+          "localizationKey" : "Product (Rgd Sk Lvl) Type",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Type)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Type)"
+        }
+      }, {
+        "name" : "Product (Rgd Sk Lvl) Product",
+        "sourceLogicalLevel" : "logicalLevel:Sample App.Products (Ragged SkipLevels Hier).Product (Rgd Sk Lvl) Product",
+        "displayColumn" : "presentationColumn:Sample Sales.Product Ragged Skipped Lvl.P11  Product (Rgd Sk Lvl)",
+        "localization" : {
+          "localizationKey" : "Product (Rgd Sk Lvl) Product",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Product)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl_Products_Ragged_Skip_Lvl_Hier_Product_(Rgd_Sk_Lvl)_Product)"
+        }
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Product Ragged Skipped Lvl",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Product_Ragged_Skipped_Lvl)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Product_Ragged_Skipped_Lvl)"
+    }
+  }
+}

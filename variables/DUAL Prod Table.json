@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "DUAL Prod Table",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Sample App Data.SampleApp Init Blocks",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "Select 'SAMP_PRODUCTS_D' From Dual"
+    } ],
+    "variables" : [ {
+      "name" : "DYNAMIC_PRODUCT_TABLE",
+      "description" : "Used to identify the SAMP_PRODUCT_D source table",
+      "value" : "'SAMP_PRODUCTS_D'",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

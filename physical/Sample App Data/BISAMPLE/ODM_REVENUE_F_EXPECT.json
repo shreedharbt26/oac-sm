@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "ODM_REVENUE_F_EXPECT",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "M_REVENUE_EXPECT",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "ORDER_KEY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    } ]
+  }
+}

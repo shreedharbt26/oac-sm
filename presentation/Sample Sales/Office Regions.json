@@ -1,0 +1,100 @@
+{
+  "presentationTable" : {
+    "name" : "Office Regions",
+    "description" : "This folder contains additional Office attributes like Office Region, Country, State, City and so on.",
+    "alternateNames" : [ "Cust Regions#1", "Offices Regions" ],
+    "presentationColumns" : [ {
+      "name" : "D50  Region",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D50  Region",
+      "localization" : {
+        "localizationKey" : "D50  Region",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D50__Region)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D50__Region)"
+      }
+    }, {
+      "name" : "D51  Area",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D51  Area",
+      "localization" : {
+        "localizationKey" : "D51  Area",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D51__Area)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D51__Area)"
+      }
+    }, {
+      "name" : "D52  Country Name",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D52  Country Name",
+      "localization" : {
+        "localizationKey" : "D52  Country Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D52__Country_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D52__Country_Name)"
+      }
+    }, {
+      "name" : "D53  State Province",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D53  State Province",
+      "localization" : {
+        "localizationKey" : "D53  State Province",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D53__State_Province)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D53__State_Province)"
+      }
+    }, {
+      "name" : "D54  State Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D54  State Code",
+      "localization" : {
+        "localizationKey" : "D54  State Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D54__State_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D54__State_Code)"
+      }
+    }, {
+      "name" : "D55  City",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D55  City",
+      "localization" : {
+        "localizationKey" : "D55  City",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D55__City)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D55__City)"
+      }
+    }, {
+      "name" : "D56  Postal Code",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D56  Postal Code",
+      "localization" : {
+        "localizationKey" : "D56  Postal Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D56__Postal_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D56__Postal_Code)"
+      }
+    }, {
+      "name" : "D57  Address Line 1",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D57  Address Line 1",
+      "localization" : {
+        "localizationKey" : "D57  Address Line 1",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D57__Address_Line_1)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D57__Address_Line_1)"
+      }
+    }, {
+      "name" : "D58  Address Line 2",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D58  Address Line 2",
+      "localization" : {
+        "localizationKey" : "D58  Address Line 2",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D58__Address_Line_2)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D58__Address_Line_2)"
+      }
+    }, {
+      "name" : "D60 Full Address",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Offices.D60 Full Address",
+      "localization" : {
+        "localizationKey" : "D60 Full Address",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions_D60_Full_Address)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions_D60_Full_Address)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Office Regions",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Office_Regions)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Office_Regions)"
+    }
+  }
+}

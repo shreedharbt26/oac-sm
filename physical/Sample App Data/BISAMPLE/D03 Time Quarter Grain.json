@@ -1,0 +1,12 @@
+{
+  "physicalTable": {
+    "name": "D03 Time Quarter Grain",
+    "description": "Time Dimension Alias at quarter grain. Stores one record for each quarter.",
+    "sourceTable": "physicalTable:Sample App Data.BISAMPLE.SAMP_TIME_QTR_D",
+    "additionalKeys": [
+      [
+        "QTR_KEY"
+      ]
+    ]
+  }
+}

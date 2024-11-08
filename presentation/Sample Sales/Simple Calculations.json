@@ -1,0 +1,201 @@
+{
+  "presentationTable" : {
+    "name" : "Simple Calculations",
+    "description" : "This folder contains simple calculations where each metric is defined as a division of two base facts. Eg:- Unit Price, Avg Order Size and so on\r\n",
+    "alternateNames" : [ "Calcs" ],
+    "presentationColumns" : [ {
+      "name" : "17  Net Costs",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.17  Net Costs",
+      "alternateNames" : [ "12  Total Costs", "17 - Net Costs", "Cost" ],
+      "localization" : {
+        "localizationKey" : "17  Net Costs",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_17__Net_Costs)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_17__Net_Costs)"
+      }
+    }, {
+      "name" : "20  Actual Unit Price",
+      "description" : "Help :\r\nUnit Price is computed as Revenue divided by Billed Quantity",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.20  Actual Unit Price",
+      "alternateNames" : [ "Unit Price", "UnitPrice" ],
+      "localization" : {
+        "localizationKey" : "20  Actual Unit Price",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_20__Actual_Unit_Price)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_20__Actual_Unit_Price)"
+      }
+    }, {
+      "name" : "21  Target Unit Price",
+      "description" : "Help :\r\nTarget Unit Price is computed as Target Revenue divided by Target Quantity",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.21  Target Unit Price",
+      "localization" : {
+        "localizationKey" : "21  Target Unit Price",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_21__Target_Unit_Price)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_21__Target_Unit_Price)"
+      }
+    }, {
+      "name" : "22  Discount Rate",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.22  Discount Rate",
+      "alternateNames" : [ "Discount Rt" ],
+      "localization" : {
+        "localizationKey" : "22  Discount Rate",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_22__Discount_Rate)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_22__Discount_Rate)"
+      }
+    }, {
+      "name" : "23  Avg # of Orders by Customer",
+      "description" : "Help :\r\n# of Orders by Customer is computed as Number of Distinct Orders divided by Number of Distinct Customers in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.23  Avg # of Orders by Customer",
+      "localization" : {
+        "localizationKey" : "23  Avg # of Orders by Customer",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_23__Avg_#_of_Orders_by_Customer)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_23__Avg_#_of_Orders_by_Customer)"
+      }
+    }, {
+      "name" : "24  Avg # of Orders by Sales Rep",
+      "description" : "Help :\r\n# of Orders by Employee is computed as Number of Distinct Orders divided by Number of Distinct Employees in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.24  Avg # of Orders by Sales Rep",
+      "localization" : {
+        "localizationKey" : "24  Avg # of Orders by Sales Rep",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_24__Avg_#_of_Orders_by_Sales_Rep)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_24__Avg_#_of_Orders_by_Sales_Rep)"
+      }
+    }, {
+      "name" : "25  Avg Order Size",
+      "description" : "Help :\r\nAverage Order Size is computed as Revenue divided by Number of Distinct Orders in the fact table.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.25  Avg Order Size",
+      "alternateNames" : [ "OrderSize" ],
+      "localization" : {
+        "localizationKey" : "25  Avg Order Size",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_25__Avg_Order_Size)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_25__Avg_Order_Size)"
+      }
+    }, {
+      "name" : "26  Target Completion  (Rev Pct)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.26  Target Completion  (Rev Pct)",
+      "localization" : {
+        "localizationKey" : "26  Target Completion  (Rev Pct)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_26__Target_Completion__(Rev_Pct))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_26__Target_Completion__(Rev_Pct))"
+      }
+    }, {
+      "name" : "27  Avg Monthly Revenue",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.27  Avg Monthly Revenue",
+      "localization" : {
+        "localizationKey" : "27  Avg Monthly Revenue",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_27__Avg_Monthly_Revenue)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_27__Avg_Monthly_Revenue)"
+      }
+    }, {
+      "name" : "28  # of Customers by Sales Rep",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.28  # of Customers by Sales Rep",
+      "localization" : {
+        "localizationKey" : "28  # of Customers by Sales Rep",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_28__#_of_Customers_by_Sales_Rep)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_28__#_of_Customers_by_Sales_Rep)"
+      }
+    }, {
+      "name" : "29  Collect to Bill Ratio",
+      "description" : "Help :\r\nCollect to Bill Ratio is computed as Paid Amount divided by Revenue.",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.29  Collect to Bill Ratio",
+      "localization" : {
+        "localizationKey" : "29  Collect to Bill Ratio",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_29__Collect_to_Bill_Ratio)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_29__Collect_to_Bill_Ratio)"
+      }
+    }, {
+      "name" : "30  Profit Margin",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.30  Profit Margin",
+      "localization" : {
+        "localizationKey" : "30  Profit Margin",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_30__Profit_Margin)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_30__Profit_Margin)"
+      }
+    }, {
+      "name" : "36  Profit Ratio",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.36  Profit Ratio",
+      "localization" : {
+        "localizationKey" : "36  Profit Ratio",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_36__Profit_Ratio)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_36__Profit_Ratio)"
+      }
+    }, {
+      "name" : "40  Avg Monthly Revenue by FTE",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.40  Avg Monthly Revenue by FTE",
+      "localization" : {
+        "localizationKey" : "40  Avg Monthly Revenue by FTE",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_40__Avg_Monthly_Revenue_by_FTE)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_40__Avg_Monthly_Revenue_by_FTE)"
+      }
+    }, {
+      "name" : "41  Avg Revenue by FTE",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.41  Avg Revenue by FTE",
+      "localization" : {
+        "localizationKey" : "41  Avg Revenue by FTE",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_41__Avg_Revenue_by_FTE)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_41__Avg_Revenue_by_FTE)"
+      }
+    }, {
+      "name" : "43  Backlog Variation (Value)",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.43  Backlog Variation (Value)",
+      "localization" : {
+        "localizationKey" : "43  Backlog Variation (Value)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_43__Backlog_Variation_(Value))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_43__Backlog_Variation_(Value))"
+      }
+    }, {
+      "name" : "44  Early Shipped Value",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.44  Early Shipped Value",
+      "localization" : {
+        "localizationKey" : "44  Early Shipped Value",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_44__Early_Shipped_Value)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_44__Early_Shipped_Value)"
+      }
+    }, {
+      "name" : "45  Early Shipped Pct",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.45  Early Shipped Pct",
+      "localization" : {
+        "localizationKey" : "45  Early Shipped Pct",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_45__Early_Shipped_Pct)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_45__Early_Shipped_Pct)"
+      }
+    }, {
+      "name" : "46  Avg Order Process Time",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.46  Avg Order Process Time",
+      "alternateNames" : [ "OrderProcessTime" ],
+      "localization" : {
+        "localizationKey" : "46  Avg Order Process Time",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_46__Avg_Order_Process_Time)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_46__Avg_Order_Process_Time)"
+      }
+    }, {
+      "name" : "47  Avg FTE over Period",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Logical Calculations Examples.47  Avg FTE over Period",
+      "localization" : {
+        "localizationKey" : "47  Avg FTE over Period",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_47__Avg_FTE_over_Period)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_47__Avg_FTE_over_Period)"
+      }
+    }, {
+      "name" : "48 LTS Filtered Revenue",
+      "description" : "Help :\r\nRevenue data. Sources from Dollars physical column in FactsRev table joining to time using Billed time.  \r\n\r\n- Returns sum of data over any selected dimensions",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Sales Base Measures.48 LTS Filtered Revenue",
+      "alternateNames" : [ "48- LTS Filtered Revenue" ],
+      "localization" : {
+        "localizationKey" : "48 LTS Filtered Revenue",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations_48_LTS_Filtered_Revenue)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations_48_LTS_Filtered_Revenue)"
+      }
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BIConsumer",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "Simple Calculations",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Simple_Calculations)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Simple_Calculations)"
+    }
+  }
+}

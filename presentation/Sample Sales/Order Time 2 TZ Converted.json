@@ -1,0 +1,44 @@
+{
+  "presentationTable" : {
+    "name" : "Order Time 2 TZ Converted",
+    "alternateNames" : [ "Order Time 1 TZ Converted#1" ],
+    "presentationColumns" : [ {
+      "name" : "R80 Order Dtime2 Timezone",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (TimeZone Converted).R80 Order Dtime2 Timezone",
+      "localization" : {
+        "localizationKey" : "R80 Order Dtime2 Timezone",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Order_Time_2_TZ_Converted_R80_Order_Dtime2_Timezone)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Order_Time_2_TZ_Converted_R80_Order_Dtime2_Timezone)"
+      }
+    }, {
+      "name" : "R81 Order Dtime2 Custom Tz",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (TimeZone Converted).R81 Order Dtime2 Custom Tz",
+      "localization" : {
+        "localizationKey" : "R81 Order Dtime2 Custom Tz",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Order_Time_2_TZ_Converted_R81_Order_Dtime2_Custom_Tz)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Order_Time_2_TZ_Converted_R81_Order_Dtime2_Custom_Tz)"
+      }
+    }, {
+      "name" : "R82 Order Dtime2 At Db Tz",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (TimeZone Converted).R82 Order Dtime2 At Db Tz",
+      "localization" : {
+        "localizationKey" : "R82 Order Dtime2 At Db Tz",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Order_Time_2_TZ_Converted_R82_Order_Dtime2_At_Db_Tz)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Order_Time_2_TZ_Converted_R82_Order_Dtime2_At_Db_Tz)"
+      }
+    }, {
+      "name" : "R83 Order Dtime2 Selected Tz",
+      "sourceLogicalColumn" : "logicalColumn:Sample App.Orders (TimeZone Converted).R83 Order Dtime2 Selected Tz",
+      "localization" : {
+        "localizationKey" : "R83 Order Dtime2 Selected Tz",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Order_Time_2_TZ_Converted_R83_Order_Dtime2_Selected_Tz)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Order_Time_2_TZ_Converted_R83_Order_Dtime2_Selected_Tz)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Order Time 2 TZ Converted",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_Sample_Sales_Order_Time_2_TZ_Converted)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_Sample_Sales_Order_Time_2_TZ_Converted)"
+    }
+  }
+}
