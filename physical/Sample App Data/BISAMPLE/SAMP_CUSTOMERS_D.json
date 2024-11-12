@@ -1,7 +1,7 @@
 {
   "physicalTable" : {
     "name" : "SAMP_CUSTOMERS_D",
-    "description" : "Customers Dimension table: Stores customer dimension attribute information",
+    "description" : "Customers Dimension table: Stores customer dimension attribute information - XXX",
     "sourceType" : "TABLE",
     "physicalColumns" : [ {
       "name" : "Gender",
