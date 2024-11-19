@@ -1,7 +1,7 @@
 {
   "presentationTable" : {
     "name" : "Customers",
-    "description" : "Customer dimension attribute objects - User1 changes",
+    "description" : "Customer dimension attribute objects - User1 and User2 changes",
     "alternateNames" : [ "C" ],
     "presentationColumns" : [ {
       "name" : "C1  Customer Name",
