@@ -5,7 +5,7 @@
     "alternateNames" : [ "C" ],
     "presentationColumns" : [ {
       "name" : "C1  Customer Name",
-      "description" : "Help : \nStores the customer name as first name + last name. - user 1 ",
+      "description" : "Help : \nStores the customer name as first name + last name. - user 1 and user 2 ",
       "sourceLogicalColumn" : "logicalColumn:Sample App.Customers (Snowflakes).C1  Customer Name",
       "alternateNames" : [ "Customer" ],
       "permissions" : [ {
