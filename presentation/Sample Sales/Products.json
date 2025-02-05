@@ -1,7 +1,7 @@
 {
   "presentationTable" : {
     "name" : "Products",
-    "description" : "Product dimension attribute objects - user1",
+    "description" : "Product dimension attribute objects - user1 and user2",
     "alternateNames" : [ "P" ],
     "presentationColumns" : [ {
       "name" : "P1  Product",
